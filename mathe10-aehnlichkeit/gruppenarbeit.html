@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gruppenarbeit – Stationen und Gruppenpuzzle · Ähnlichkeit Klasse 10</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/print.css">
+<script src="vendor/katex/katex.min.js"></script>
+<script src="vendor/katex/auto-render.min.js"></script>
+<script src="js/geom.js"></script>
+<script src="js/app.js"></script>
+<script src="js/progress-catalog.js"></script>
+<script src="js/progress.js"></script>
+</head>
+<body data-page="gruppe" data-module="gruppe">
+<main id="main">
+<section class="hero gr">
+  <span class="kicker">Stunde 3 · Gruppenarbeit · druckbar</span>
+  <h1>Gruppenarbeit</h1>
+  <p>Vier Stationen oder ein Gruppenpuzzle: Ihr konstruiert, messt, begründet und erklärt euch gegenseitig. Jede Station hat eine Kontrolle zum Selbstprüfen.</p>
+  <svg class="deco" viewBox="0 0 420 300" aria-hidden="true"><g fill="rgba(255,255,255,.85)"><circle cx="130" cy="110" r="30"/><circle cx="290" cy="110" r="30"/><circle cx="130" cy="220" r="30"/><circle cx="290" cy="220" r="30"/></g><rect x="170" y="130" width="80" height="70" rx="10" fill="rgba(255,255,255,.3)" stroke="#fff" stroke-width="3"/></svg>
+</section>
+<nav class="toc"><a href="#rollen">Rollen</a><a href="#ablauf">Ablauf</a><a href="#stationen">4 Stationen</a><a href="#puzzle">Gruppenpuzzle</a></nav>
+<div class="btn-row noprint"><button class="btn ghost" onclick="window.print()">🖨 Stationskarten drucken</button></div>
+
+<section class="section" id="rollen">
+  <div class="section-title"><span class="num-badge">👥</span><h2>Rollen in der Gruppe</h2><span class="instr lesen">Nur lesen</span></div>
+  <div class="grid g4">
+    <div class="card role"><div class="role-ico">⏱</div><h3>Zeitwächter:in</h3><p>achtet auf die Zeit, sagt „noch 3 Minuten“ und sorgt dafür, dass ihr zur nächsten Aufgabe kommt.</p></div>
+    <div class="card role"><div class="role-ico">✍️</div><h3>Schreiber:in</h3><p>notiert Rechenwege und Ergebnisse sauber auf dem Gruppenblatt. Alle schreiben zusätzlich ins eigene Heft.</p></div>
+    <div class="card role"><div class="role-ico">📣</div><h3>Sprecher:in</h3><p>stellt die Ergebnisse der Klasse vor und erklärt, <i>warum</i> die Figuren ähnlich sind.</p></div>
+    <div class="card role"><div class="role-ico">🔍</div><h3>Prüfer:in</h3><p>kontrolliert mit der Kontrolle auf dieser Seite und fragt nach: „Stimmen die Einheiten? Ist k richtig herum?“</p></div>
+  </div>
+  <p class="small muted">Bei 3 Personen: Zeitwächter:in übernimmt auch Prüfen. Rollen wechseln an jeder Station.</p>
+</section>
+
+<section class="section" id="ablauf">
+  <div class="section-title"><span class="num-badge">⏱</span><h2>Ablauf (45 Minuten)</h2></div>
+  <div class="grid g2">
+    <div class="card"><h3>Variante A: Stationen</h3>
+      <ol><li><b>5′</b> Rollen verteilen, Station wählen</li><li><b>2 × 14′</b> zwei Stationen bearbeiten (Wahl: je eine MUSS- und eine Wahlstation)</li><li><b>12′</b> Sprecher:innen stellen je eine Station vor, Klasse fragt nach</li></ol>
+      <p class="small">Stationen 1 und 2 sind Pflicht (Lehrplan-Kern), 3 und 4 zur Wahl.</p></div>
+    <div class="card"><h3>Variante B: Gruppenpuzzle</h3>
+      <ol><li><b>3′</b> Stammgruppen (4 Personen), jede Person bekommt einen Buchstaben A–D</li><li><b>15′</b> Expertengruppen: alle A zusammen usw. – Thema verstehen, Erklär-Karte ausfüllen</li><li><b>20′</b> zurück in die Stammgruppe: jede:r erklärt 4–5 Minuten und stellt die Mini-Aufgabe</li><li><b>7′</b> gemeinsamer Abschluss: eine <a href="pruefung.html">Prüfungsaufgabe</a></li></ol></div>
+  </div>
+</section>
+
+<section class="section" id="stationen">
+  <div class="section-title"><span class="num-badge">🧩</span><h2>Die vier Stationen</h2></div>
+  <div class="grid g2 stations">
+    <article class="gcard" id="st1">
+      <div class="ghead"><div class="gnum" style="background:#e8590c">1</div><div><h3 style="margin:0">Streckungs-Werkstatt</h3><span class="lvl muss">MUSS</span> <span class="tag lp">Lehrplan</span></div></div>
+      <p><b>Ziel:</b> Ein Viereck zentrisch strecken und Eigenschaften überprüfen.</p>
+      <p><b>Material:</b> Karopapier, Lineal, Geodreieck, Farbstifte</p>
+      <div class="box schriftlich small-box"><span class="instr schriftlich">Schriftlich</span>
+        <ol><li>Zeichnet ein Viereck $ABCD$ mit $A(2|1)$, $B(6|1)$, $C(7|4)$, $D(3|5)$ und das Zentrum $Z(0|0)$ (1 Kästchen = 0,5 cm).</li>
+        <li>Jede Person streckt mit einem anderen Faktor: $k = 2$, $k = \tfrac12$, $k = 1{,}5$ (auf einem eigenen Blatt).</li>
+        <li>Messt alle Seiten und einen Winkel. Tragt sie in eine Tabelle ein.</li></ol></div>
+      <div class="box diskutieren small-box"><span class="instr diskutieren">Diskutieren</span>
+        <ul><li>Wie erkennt man an der Tabelle den Faktor $k$?</li><li>Warum liegt bei $k = \tfrac12$ das Bild zwischen $Z$ und dem Original?</li><li>Was passiert mit den Winkeln – und mit parallelen Seiten?</li></ul></div>
+      <div class="tasks-mini" data-tasks="gr-1,gr-2"></div>
+    </article>
+    <article class="gcard" id="st2">
+      <div class="ghead"><div class="gnum" style="background:#2f9e44">2</div><div><h3 style="margin:0">Ähnlich oder nicht?</h3><span class="lvl muss">MUSS</span> <span class="tag lp">Lehrplan</span></div></div>
+      <p><b>Ziel:</b> Mit dem Hauptähnlichkeitssatz (ww) begründen.</p>
+      <p><b>Material:</b> Arbeitsblatt/Heft, Geodreieck</p>
+      <div class="box schriftlich small-box"><span class="instr schriftlich">Schriftlich</span>
+        <ol><li>Jede Person zeichnet ein Dreieck mit $\alpha = 40^\circ$ und $\beta = 60^\circ$ – aber jede mit einer anderen Seite $c$ (3 cm, 4 cm, 5 cm, 6 cm).</li><li>Schneidet die Dreiecke aus und legt sie übereinander (Ecke auf Ecke).</li><li>Bearbeitet die Kontrolle unten.</li></ol></div>
+      <div class="box diskutieren small-box"><span class="instr diskutieren">Diskutieren</span>
+        <ul><li>Warum reichen zwei Winkel?</li><li>Welche Seiten entsprechen sich? Woran erkennt ihr das?</li><li>Prüfung 2022: „Halbe Seiten, halber Winkel“ – ähnlich? (Tipp: <a href="pruefung.html#LSA-2022-PA1c">Aufgabe ansehen</a>)</li></ul></div>
+      <div class="tasks-mini" data-tasks="gr-3,gr-4"></div>
+    </article>
+    <article class="gcard" id="st3">
+      <div class="ghead"><div class="gnum" style="background:#e67700">3</div><div><h3 style="margin:0">Messen wie die Profis</h3><span class="lvl soll">SOLL</span> <span class="tag lp">Anwendung</span></div></div>
+      <p><b>Ziel:</b> Höhen über ähnliche Dreiecke bestimmen (Schatten, Försterdreieck).</p>
+      <p><b>Material:</b> Maßband/Zollstock, Stab (1 m), Geodreieck als Försterdreieck; bei schlechtem Wetter: Daten unten</p>
+      <div class="box schriftlich small-box"><span class="instr schriftlich">Schriftlich</span>
+        <ol><li>Draußen: Messt den Schatten eines 1-m-Stabs und den Schatten eines Laternenmasts/Baums. Berechnet die Höhe.</li><li>Mit dem Geodreieck (45°) über die lange Seite die Spitze anpeilen. Abstand messen, Augenhöhe addieren.</li><li>Vergleicht beide Ergebnisse.</li></ol></div>
+      <div class="box diskutieren small-box"><span class="instr diskutieren">Diskutieren</span>
+        <ul><li>Warum sind die Dreiecke ähnlich? (Welche Winkel sind gleich?)</li><li>Welche Messfehler können auftreten?</li></ul></div>
+      <div class="tasks-mini" data-tasks="gr-5,gr-6"></div>
+    </article>
+    <article class="gcard" id="st4">
+      <div class="ghead"><div class="gnum" style="background:#1098ad">4</div><div><h3 style="margin:0">Modellbau &amp; Maßstab</h3><span class="lvl soll">SOLL</span> <span class="tag lp">Anwendung</span></div></div>
+      <p><b>Ziel:</b> Maßstab als Ähnlichkeitsfaktor anwenden.</p>
+      <p><b>Material:</b> Zollstock, Karopapier, eine Spielfigur</p>
+      <div class="box schriftlich small-box"><span class="instr schriftlich">Schriftlich</span>
+        <ol><li>Messt euren Klassenraum (Länge, Breite) und zeichnet einen Grundriss im Maßstab $1 : 50$.</li><li>Messt eine Spielfigur. Welchen Maßstab hat sie, wenn sie einen 1,80 m großen Menschen darstellt?</li><li>Wie groß wäre eure Lehrkraft in diesem Maßstab?</li></ol></div>
+      <div class="box diskutieren small-box"><span class="instr diskutieren">Diskutieren</span>
+        <ul><li>Warum gibt man den Maßstab ohne Einheiten an?</li><li>KANN: Der Grundriss hat $\tfrac{1}{2500}$ der Fläche. Warum nicht $\tfrac{1}{50}$?</li></ul></div>
+      <div class="tasks-mini" data-tasks="gr-7,gr-8"></div>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="puzzle">
+  <div class="section-title"><span class="num-badge">🧩</span><h2>Gruppenpuzzle: Expertengruppen A–D</h2><span class="instr diskutieren">Diskutieren</span></div>
+  <p>Jede Expertengruppe liest den Abschnitt im Modul, füllt die Erklär-Karte aus und bereitet die Mini-Aufgabe für die Stammgruppe vor.</p>
+  <div class="grid g2 stations">
+    <div class="gcard"><div class="ghead"><div class="gnum" style="background:#e8590c">A</div><h3 style="margin:0">Zentrische Streckung</h3></div>
+      <p><b>Lesen:</b> <a href="modul1-zentrische-streckung.html#begriffe">Modul 1.1</a>, <a href="modul1-zentrische-streckung.html#eigenschaften">1.3</a>, <a href="modul1-zentrische-streckung.html#viereck">Beispiel 5 (Viereck)</a></p>
+      <p><b>Erklär-Karte:</b> ① Was bedeuten $Z$, $P$, $P'$ und $k$? ② Wie konstruiert man $P'$? ③ Drei Eigenschaften der Streckung.</p>
+      <p><b>Mini-Aufgabe für die Stammgruppe:</b> $\overline{ZA} = 3\,\text{cm}$, $k = 2{,}5$. Wie lang ist $\overline{ZA'}$? <span class="spoiler">(7,5 cm)</span></p></div>
+    <div class="gcard"><div class="ghead"><div class="gnum" style="background:#2f9e44">B</div><h3 style="margin:0">Ähnliche Dreiecke</h3></div>
+      <p><b>Lesen:</b> <a href="modul2-aehnliche-dreiecke.html#ww">Modul 2.1</a>, <a href="modul2-aehnliche-dreiecke.html#entsprechend">2.3</a>, 2.4</p>
+      <p><b>Erklär-Karte:</b> ① Hauptähnlichkeitssatz in eigenen Worten. ② Wie findet man entsprechende Seiten? ③ Musterbeispiel „fehlende Seite“.</p>
+      <p><b>Mini-Aufgabe:</b> Zwei Dreiecke stimmen in zwei Winkeln überein. $a = 4\,\text{cm}$ entspricht $a' = 6\,\text{cm}$; $b = 5\,\text{cm}$. Berechne $b'$. <span class="spoiler">(7,5 cm)</span></p></div>
+    <div class="gcard"><div class="ghead"><div class="gnum" style="background:#5f3dc4">C</div><h3 style="margin:0">Strahlensätze (Werkzeug)</h3></div>
+      <p><b>Lesen:</b> <a href="modul3-strahlensaetze.html#figur">Modul 3.1</a>, <a href="modul3-strahlensaetze.html#sts1">3.3</a>, <a href="modul3-strahlensaetze.html#rezept">3.6</a></p>
+      <p><b>Erklär-Karte:</b> ① Warum sind in der V-Figur die Dreiecke ähnlich? ② Die Falle beim 2. Strahlensatz. ③ Wie sieht die X-Figur aus?</p>
+      <p><b>Mini-Aufgabe:</b> V-Figur: $\overline{SA} = 4$, $\overline{AA'} = 2$, $\overline{AB} = 3$. Berechne $\overline{A'B'}$. <span class="spoiler">(4,5 – nicht 1,5!)</span></p></div>
+    <div class="gcard"><div class="ghead"><div class="gnum" style="background:#e67700">D</div><h3 style="margin:0">Anwendungen</h3></div>
+      <p><b>Lesen:</b> <a href="modul5-anwendungen.html#rezept">Modul 5.1</a>, <a href="modul5-anwendungen.html#beispiele">5.3</a></p>
+      <p><b>Erklär-Karte:</b> ① Das 5-Schritte-Rezept. ② Schatten: Warum ähnlich? ③ Maßstab = Ähnlichkeitsfaktor.</p>
+      <p><b>Mini-Aufgabe:</b> Ein 1,5 m langer Stab wirft 2 m Schatten, ein Baum 12 m. Wie hoch ist der Baum? <span class="spoiler">(9 m)</span></p></div>
+  </div>
+  <p class="small muted">Lösungen der Mini-Aufgaben sind verdeckt – zum Anzeigen darauf tippen.</p>
+</section>
+<div class="pager"><a class="btn ghost" href="modul5-anwendungen.html">← Modul 5</a><a class="btn" href="training.html">Training →</a></div>
+
+</main>
+<script src="js/gruppe.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start · Ähnlichkeit Klasse 10</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/print.css">
+<script src="vendor/katex/katex.min.js"></script>
+<script src="vendor/katex/auto-render.min.js"></script>
+<script src="js/geom.js"></script>
+<script src="js/app.js"></script>
+<script src="js/progress-catalog.js"></script>
+<script src="js/progress.js"></script>
+</head>
+<body data-page="start">
+<main id="main">
+<section class="hero">
+  <span class="kicker">Mathematik · Klasse 10 · Lernpfad</span>
+  <div class="small" style="margin:.45rem 0 0;font-weight:700">Theodor Fontane Gemeinschaftsschule · Lehrer P. Kurlavičius</div>
+  <h1>Ähnlichkeit</h1>
+  <p>Vergrößern, verkleinern, messen, was man nicht messen kann: Mit zentrischer Streckung, ähnlichen Dreiecken und Strahlensätzen berechnest du die Höhe eines Baumes, ohne hinaufzuklettern.</p>
+  <div class="btn-row"><a class="btn" style="background:#fff;color:#3b5bdb" id="continueBtn" href="modul0-wiederholung.html">▶ Los geht's</a><a class="btn ghost" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.4)" href="#zeitplan">Zeitplan ansehen</a></div>
+  <svg class="deco" viewBox="0 0 420 300" aria-hidden="true">
+    <g stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-dasharray="6 6"><line x1="40" y1="260" x2="400" y2="30"/><line x1="40" y1="260" x2="410" y2="200"/><line x1="40" y1="260" x2="300" y2="20"/></g>
+    <polygon points="130,202 175,228 150,168" fill="rgba(165,216,255,.55)" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+    <polygon points="265,116 355,168 305,48" fill="rgba(255,212,59,.35)" stroke="#ffd43b" stroke-width="3.5" stroke-linejoin="round"/>
+    <circle cx="40" cy="260" r="8" fill="#ffd43b"/><text x="22" y="290" fill="#fff" font-weight="800" font-size="22">Z</text>
+  </svg>
+</section>
+
+<div class="grid g3">
+  <div class="card"><div class="muted small">Gesamtfortschritt</div><div class="bigstat" id="totalPct">0 %</div><div class="small muted" id="totalInfo">Noch nichts bearbeitet – starte mit Modul 0.</div></div>
+  <div class="card"><div class="muted small">Gelöste Aufgaben</div><div class="bigstat" id="taskCount">0</div><div class="small muted">in den Modulen (ohne Training)</div></div>
+  <div class="card"><div class="muted small">Training</div><div class="bigstat" id="genCount">0</div><div class="small muted">richtig gelöste Generator-Aufgaben</div></div>
+</div>
+
+<section class="section card pg-home no-print" id="progressBox">
+  <div class="pg-home-grid">
+    <div>
+      <div class="section-title"><span class="num-badge">💾</span><h2>Mein Fortschritt sichern</h2></div>
+      <p>Dein Fortschritt wird zuerst nur in diesem Browser gemerkt. <b>Schulrechner löschen das oft</b> – speichere ihn deshalb als Datei:</p>
+      <ol class="pg-steps">
+        <li>Namen eintragen und <b>„Fortschritt speichern“</b> klicken. Die Datei landet im Ordner <b>Downloads</b>.</li>
+        <li>Datei auf den <b>USB-Stick</b>, ins <b>Schul-Netzlaufwerk / die Schul-Cloud</b> kopieren oder deiner Lehrkraft schicken.</li>
+        <li>Nächstes Mal: <b>„Fortschritt laden“</b> (oder Datei hierher ziehen) – und genau dort weitermachen, wo du aufgehört hast.</li>
+      </ol>
+      <p class="small muted">Den Knopf <b>💾 Mein Fortschritt</b> findest du auch oben auf jeder Seite.</p>
+    </div>
+    <div class="pg-home-widget"></div>
+  </div>
+</section>
+
+<section class="section" id="lernpfad">
+  <div class="section-title"><span class="num-badge">↗</span><h2>Dein Lernpfad</h2></div>
+  <p class="muted">Arbeite die Module der Reihe nach durch. <span class="tag recap">Wiederholung</span> = kennst du schon, kurz auffrischen und üben. <span class="tag new">Neu</span> = neuer Stoff mit Erklärungen, Beispielen und Übungen.</p>
+  <div class="path" id="pathList"></div>
+</section>
+
+<section class="section" id="anleitung">
+  <div class="section-title"><span class="num-badge">?</span><h2>So arbeitest du mit dieser Seite</h2></div>
+  <div class="grid g2">
+    <div class="card">
+      <h3>🏫 In der Schule (Gruppe 3–4)</h3>
+      <ul>
+        <li>Verteilt die <a href="gruppenarbeit.html#rollen">Rollen</a>: Zeitwächter:in, Schreiber:in, Sprecher:in, Prüfer:in.</li>
+        <li>Ein Tablet/Laptop pro Gruppe genügt. Einer bedient, alle denken mit – wechselt nach jedem Abschnitt.</li>
+        <li><b>DISKUTIEREN</b>-Kästen besprecht ihr gemeinsam, bevor ihr weiterklickt.</li>
+        <li><b>SCHRIFTLICH</b>: erst jede:r allein ins Heft, dann vergleichen, dann eintippen und prüfen.</li>
+        <li>Nicht weiter? 1. Tipp-Knöpfe nutzen · 2. andere Gruppe fragen · 3. erst dann die Lehrkraft.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🏠 Zuhause (allein)</h3>
+      <ul>
+        <li>Mach die markierten Hausaufgaben (siehe Zeitplan) und hake Abschnitte ab. Am Ende: <a href="#progressBox">Fortschritt als Datei speichern</a>, dann kannst du in der Schule weitermachen.</li>
+        <li>Im <a href="training.html">Training</a> kannst du unbegrenzt neue Aufgaben erzeugen. Ziel: 5 richtige am Stück pro Aufgabentyp.</li>
+        <li>Vor der Arbeit: <a href="selbsttest.html">Selbsttest</a> machen und <a href="merksaetze.html">Merksätze</a> wiederholen.</li>
+        <li>Nutze Tipps ehrlich: erst selbst probieren, dann Tipp 1, dann Tipp 2, dann den Lösungsweg.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card" style="margin-top:1rem">
+    <h3 style="margin-top:.2em">Farben und Zeichen auf dieser Seite</h3>
+    <div class="legend" style="margin:.4rem 0 .8rem">
+      <span class="instr abschreiben">Abschreiben</span><span class="small muted">Merksatz ins Heft</span>
+      <span class="instr beispiel">Beispiel ins Heft</span><span class="small muted">Musterlösung übernehmen</span>
+      <span class="instr lesen">Nur lesen</span><span class="small muted">lesen und verstehen</span>
+      <span class="instr diskutieren">Diskutieren</span><span class="small muted">in der Gruppe besprechen</span>
+      <span class="instr schriftlich">Schriftlich</span><span class="small muted">erst allein, dann vergleichen</span>
+    </div>
+    <div class="legend">
+      <span class="lvl muss">MUSS</span><span class="small muted">das braucht jede:r</span>
+      <span class="lvl soll">SOLL</span><span class="small muted">das schaffst du mit etwas Übung</span>
+      <span class="lvl kann">KANN</span><span class="small muted">Knobeln und Erweitern</span>
+      <span class="small muted" style="margin-left:1rem">In Zeichnungen: <b class="c-orig">Blau = Original (Urbild)</b>, <b class="c-img">Orange = Bild</b>, <b class="c-z">Pink = Zentrum Z</b></span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="zeitplan">
+  <div class="section-title"><span class="num-badge">⏱</span><h2>Zeitplan: 3 Stunden + Zuhause</h2></div>
+  <div class="timeline">
+    <div class="tl" style="border-top-color:#e8590c">
+      <h3>Stunde 1</h3><div class="muted small">Zentrische Streckung (Lehrplan-Schwerpunkt)</div>
+      <ul>
+        <li><span class="min">8′</span> <a href="modul0-wiederholung.html#schnellcheck">Schnellcheck Modul 0</a> (allein)</li>
+        <li><span class="min">22′</span> <a href="modul1-zentrische-streckung.html">Modul 1</a> in Gruppen: Streckungslabor, D1–D4, Konstruieren Schritt für Schritt</li>
+        <li><span class="min">12′</span> <a href="modul1-zentrische-streckung.html#bauen">Selbst konstruieren</a>: Dreieck, dann <b>Viereck</b></li>
+        <li><span class="min">3′</span> Selbsteinschätzung A–C</li>
+      </ul>
+    </div>
+    <div class="tl" style="border-top-color:#2f9e44">
+      <h3>Stunde 2</h3><div class="muted small">Ähnliche Dreiecke, Längen berechnen</div>
+      <ul>
+        <li><span class="min">20′</span> <a href="modul2-aehnliche-dreiecke.html">Modul 2</a>: ww, entsprechende Seiten, fehlende Seiten berechnen</li>
+        <li><span class="min">15′</span> <a href="modul3-strahlensaetze.html">Modul 3</a> als Werkzeug: V-/X-Figur = ähnliche Dreiecke</li>
+        <li><span class="min">10′</span> <a href="modul5-anwendungen.html#schatten">Schatten-Applet</a> + Maßstab/Modelle</li>
+      </ul>
+    </div>
+    <div class="tl" style="border-top-color:#e67700">
+      <h3>Stunde 3</h3><div class="muted small">Anwenden in Gruppen</div>
+      <ul>
+        <li><span class="min">5′</span> Rollen verteilen, Stationen wählen</li>
+        <li><span class="min">28′</span> <a href="gruppenarbeit.html">Stationen / Gruppenpuzzle</a> (Anwendungen, Modul 5)</li>
+        <li><span class="min">12′</span> Sprecher:innen stellen vor; eine <a href="pruefung.html">echte Prüfungsaufgabe</a> gemeinsam</li>
+      </ul>
+    </div>
+    <div class="tl" style="border-top-color:#7048e8">
+      <h3>Zuhause</h3><div class="muted small">je ca. 20–30 Minuten</div>
+      <ul>
+        <li><b>HA 1:</b> Modul 1 Aufgaben (inkl. Vierecke) + <a href="training.html#streckung">Training „Streckung“</a> (5 richtige)</li>
+        <li><b>HA 2:</b> Modul 2 Aufgaben + <a href="training.html#seiten">Training „Seiten“</a>; wer mag: <a href="training.html#sts1">Strahlensätze</a></li>
+        <li><b>HA 3:</b> <a href="pruefung.html">Prüfungsaufgaben</a> ★ und ★★, <a href="selbsttest.html">Selbsttest</a>; KANN: <a href="modul4-flaeche-volumen.html">Modul 4</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="lp-note small"><b>Lehrplanbezug (Sachsen-Anhalt, Sek., Kl. 10, „Ähnlichkeit“):</b> Streckenverhältnis, zentrische Streckung mit $k &gt; 0$ (Zentrum, Eigenschaften, Konstruieren von Dreiecken und Vierecken), „zueinander ähnlich“, Hauptähnlichkeitssatz, Anwendungen. Strahlensätze und $k^2$/$k^3$ sind als <span class="tag tool">Werkzeug / Erweiterung</span> markiert, weil sie in Prüfungsaufgaben vorkommen. Details: .</div>
+</section>
+
+<section class="section">
+  <div class="section-title"><span class="num-badge">★</span><h2>Werkzeuge</h2></div>
+  <div class="grid g4" id="toolCards"></div>
+</section>
+
+<section class="section card no-print" id="weitere-optionen">
+  <details>
+    <summary>Weitere Optionen: Fortschritt als Code übertragen oder zurücksetzen</summary>
+    <p class="small muted">Statt einer Datei kannst du deinen Fortschritt auch als Text-Code kopieren (z. B. in eine E-Mail an dich selbst) und auf einem anderen Gerät einfügen.</p>
+    <div class="btn-row">
+      <button class="btn ghost small" id="exportBtn">Fortschritt als Code kopieren</button>
+      <button class="btn ghost small" id="importBtn">Code einfügen</button>
+      <button class="btn ghost small" id="resetBtn" style="color:#c92a2a">Alles zurücksetzen</button>
+    </div>
+    <textarea id="codeBox" rows="3" style="width:100%;display:none" aria-label="Fortschrittscode"></textarea>
+  </details>
+</section>
+
+</main>
+<script src="js/start.js"></script>
+</body>
+</html>

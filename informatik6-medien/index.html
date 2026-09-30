@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Informationen und Medien im Alltag – Informatik Klasse 6</title>
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/deck.css">
+<link rel="stylesheet" href="assets/css/slides.css">
+</head>
+<body>
+<!-- ============ SVG-Symbole (eigene Zeichnungen) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <symbol id="i-pencil" viewBox="0 0 64 64"><g transform="rotate(45 32 32)"><rect x="24" y="4" width="16" height="10" rx="3" fill="#f28b8b"/><rect x="24" y="13" width="16" height="4" fill="#c7cdd6"/><rect x="24" y="17" width="16" height="30" fill="#f7c948"/><rect x="29" y="17" width="6" height="30" fill="#f2b705"/><path d="M24 47h16l-8 14z" fill="#f5d7b0"/><path d="M29.4 56.5h5.2L32 61z" fill="#1b2536"/></g></symbol>
+  <symbol id="i-search" viewBox="0 0 64 64"><circle cx="26" cy="26" r="17" fill="#dff1ff" stroke="currentColor" stroke-width="7"/><path d="M39 39l17 17" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><path d="M17 22a10 10 0 0 1 8-7" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 64 64"><path d="M6 12h32a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H20l-9 8v-8H6a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4z" fill="currentColor"/><path d="M28 26h30a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4h-4v8l-9-8H28a4 4 0 0 1-4-4V30a4 4 0 0 1 4-4z" fill="#fff" opacity=".9"/><circle cx="36" cy="38" r="3" fill="currentColor"/><circle cx="45" cy="38" r="3" fill="currentColor"/><circle cx="54" cy="38" r="3" fill="currentColor"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 64 64"><g fill="#fff"><rect x="14" y="18" width="9" height="26" rx="4.5"/><rect x="23" y="8" width="9" height="34" rx="4.5"/><rect x="32" y="6" width="9" height="36" rx="4.5"/><rect x="41" y="12" width="9" height="32" rx="4.5"/><path d="M14 34h36v8c0 11-7 18-18 18s-18-7-18-18z"/><rect x="4" y="30" width="9" height="20" rx="4.5" transform="rotate(-35 8 40)"/></g></symbol>
+  <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="#fff"/><path d="M26 19l20 13-20 13z" fill="currentColor"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 64 64"><path d="M32 4a20 20 0 0 0-12 36c3 3 4 6 4 9h16c0-3 1-6 4-9A20 20 0 0 0 32 4z" fill="#ffd166"/><rect x="24" y="51" width="16" height="5" rx="2" fill="#fff"/><rect x="26" y="57" width="12" height="4" rx="2" fill="#fff"/></symbol>
+  <!-- Trägermedien -->
+  <symbol id="m-air" viewBox="0 0 120 120"><circle cx="40" cy="60" r="28" fill="#f5c9a0"/><path d="M13 55c0-22 18-32 36-28 10 2 16 10 17 20-10-6-25-6-38 0-6 3-11 6-15 8z" fill="#6b3f26"/><circle cx="50" cy="56" r="3.5" fill="#1b2536"/><ellipse cx="60" cy="71" rx="6" ry="7" fill="#9b2c2c"/><g fill="none" stroke="#2f7fe0" stroke-width="6" stroke-linecap="round"><path d="M78 56q8 14 0 28"/><path d="M89 46q14 24 0 48"/><path d="M100 36q20 34 0 68"/></g></symbol>
+  <symbol id="m-paper" viewBox="0 0 120 120"><path d="M26 10h50l20 20v80H26z" fill="#fff" stroke="#1b2536" stroke-width="5" stroke-linejoin="round"/><path d="M76 10v20h20" fill="#e9e1d1" stroke="#1b2536" stroke-width="5" stroke-linejoin="round"/><g stroke="#2f7fe0" stroke-width="5" stroke-linecap="round"><path d="M38 46h44"/><path d="M38 60h44"/><path d="M38 74h30"/></g><path d="M38 92c6-8 10 4 16-2s8 4 14-2" stroke="#d9483b" stroke-width="4" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="m-screen" viewBox="0 0 120 120"><rect x="32" y="6" width="56" height="108" rx="12" fill="#1b2536"/><rect x="37" y="16" width="46" height="84" rx="4" fill="#dbeafe"/><rect x="42" y="24" width="28" height="12" rx="6" fill="#fff"/><rect x="50" y="42" width="28" height="12" rx="6" fill="#22a45d"/><rect x="42" y="60" width="22" height="12" rx="6" fill="#fff"/><circle cx="60" cy="107" r="3" fill="#6b7688"/></symbol>
+  <symbol id="m-wood" viewBox="0 0 120 120"><rect x="6" y="44" width="108" height="30" rx="14" fill="#b07a45"/><rect x="6" y="44" width="108" height="10" rx="5" fill="#c99664" opacity=".7"/><ellipse cx="108" cy="59" rx="6" ry="14" fill="#8a5a2b"/><g stroke="#5b3a1a" stroke-width="4" stroke-linecap="round"><path d="M20 46v12M30 46v12M40 46v12M50 46v12M60 46v12M70 46v12M80 46v12"/></g></symbol>
+  <symbol id="m-stone" viewBox="0 0 120 120"><path d="M8 100l6-58 22-28 38-6 30 20 10 40-8 32z" fill="#a39a8e"/><path d="M8 100l6-58 22-28 10 20-8 40z" fill="#8f877c"/><g fill="#c0392b" opacity=".9"><ellipse cx="72" cy="66" rx="13" ry="15"/><rect x="58" y="36" width="6" height="22" rx="3" transform="rotate(-15 61 47)"/><rect x="66" y="30" width="6" height="24" rx="3"/><rect x="74" y="31" width="6" height="24" rx="3" transform="rotate(8 77 43)"/><rect x="82" y="38" width="6" height="20" rx="3" transform="rotate(18 85 48)"/><rect x="50" y="60" width="6" height="18" rx="3" transform="rotate(-55 53 69)"/></g><path d="M22 84l10-8 10 8 8-6" stroke="#5b3a1a" stroke-width="4" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="m-usb" viewBox="0 0 120 120"><g transform="rotate(-35 60 60)"><rect x="40" y="36" width="40" height="66" rx="10" fill="#2f7fe0"/><rect x="46" y="14" width="28" height="26" rx="3" fill="#c7cdd6" stroke="#6b7688" stroke-width="3"/><rect x="52" y="20" width="6" height="6" fill="#6b7688"/><rect x="62" y="20" width="6" height="6" fill="#6b7688"/><circle cx="60" cy="86" r="6" fill="#fff" opacity=".8"/></g></symbol>
+  <symbol id="m-sand" viewBox="0 0 120 120"><rect x="0" y="0" width="120" height="120" rx="18" fill="#7cc6f2"/><path d="M0 40q15-8 30 0t30 0 30 0 30 0v62a18 18 0 0 1-18 18H18A18 18 0 0 1 0 102z" fill="#f2d28b"/><text x="60" y="94" text-anchor="middle" font-family="Fredoka,Arial,sans-serif" font-weight="700" font-size="34" fill="#c49a45">HALLO</text></symbol>
+  <symbol id="m-light" viewBox="0 0 120 120"><rect x="38" y="6" width="44" height="100" rx="14" fill="#1b2536"/><circle cx="60" cy="28" r="12" fill="#5a2a2a"/><circle cx="60" cy="56" r="12" fill="#5a4a1a"/><circle cx="60" cy="84" r="12" fill="#2ee27a"/><circle cx="60" cy="84" r="18" fill="#2ee27a" opacity=".25"/><rect x="56" y="106" width="8" height="12" fill="#1b2536"/></symbol>
+  <!-- Avatare -->
+  <symbol id="av-lena" viewBox="0 0 200 200"><circle cx="100" cy="100" r="96" fill="#ffe3ec"/><path d="M40 190c4-40 28-58 60-58s56 18 60 58z" fill="#e2455b"/><path d="M52 92c0-36 22-58 50-58s48 22 48 58c0 30-6 44-10 50H60c-4-6-8-20-8-50z" fill="#6b3f26"/><circle cx="100" cy="92" r="38" fill="#f5c9a0"/><path d="M62 86c8-26 28-36 52-30 12 3 22 12 24 26-20-2-44-8-58-20-4 10-10 18-18 24z" fill="#6b3f26"/><circle cx="87" cy="96" r="5" fill="#1b2536"/><circle cx="113" cy="96" r="5" fill="#1b2536"/><path d="M88 112q12 10 24 0" stroke="#9b2c2c" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="78" cy="108" r="6" fill="#f28b8b" opacity=".5"/><circle cx="122" cy="108" r="6" fill="#f28b8b" opacity=".5"/></symbol>
+  <symbol id="av-tom" viewBox="0 0 200 200"><circle cx="100" cy="100" r="96" fill="#dff1ff"/><path d="M40 190c4-40 28-58 60-58s56 18 60 58z" fill="#2f7fe0"/><circle cx="100" cy="92" r="38" fill="#e0ac7e"/><path d="M60 84c0-26 18-40 42-40 22 0 40 14 38 38-8-8-20-14-36-14-18 0-32 8-44 16z" fill="#2b2b35"/><circle cx="87" cy="96" r="5" fill="#1b2536"/><circle cx="113" cy="96" r="5" fill="#1b2536"/><path d="M88 112q12 10 24 0" stroke="#7a3b1c" stroke-width="5" fill="none" stroke-linecap="round"/></symbol>
+  <!-- Flaggen (Emoji-Flaggen fehlen unter Windows) -->
+  <symbol id="f-de" viewBox="0 0 90 60"><rect width="90" height="20" fill="#111"/><rect y="20" width="90" height="20" fill="#dd0000"/><rect y="40" width="90" height="20" fill="#ffce00"/></symbol>
+  <symbol id="f-us" viewBox="0 0 90 60"><rect width="90" height="60" fill="#fff"/><g fill="#b22234"><rect width="90" height="4.6"/><rect y="9.2" width="90" height="4.6"/><rect y="18.4" width="90" height="4.6"/><rect y="27.6" width="90" height="4.6"/><rect y="36.8" width="90" height="4.6"/><rect y="46" width="90" height="4.6"/><rect y="55.2" width="90" height="4.8"/></g><rect width="40" height="32" fill="#3c3b6e"/><g fill="#fff"><circle cx="7" cy="6" r="1.8"/><circle cx="17" cy="6" r="1.8"/><circle cx="27" cy="6" r="1.8"/><circle cx="12" cy="13" r="1.8"/><circle cx="22" cy="13" r="1.8"/><circle cx="32" cy="13" r="1.8"/><circle cx="7" cy="20" r="1.8"/><circle cx="17" cy="20" r="1.8"/><circle cx="27" cy="20" r="1.8"/><circle cx="12" cy="27" r="1.8"/><circle cx="22" cy="27" r="1.8"/><circle cx="32" cy="27" r="1.8"/></g></symbol>
+  <symbol id="f-world" viewBox="0 0 60 60"><circle cx="30" cy="30" r="27" fill="#2f7fe0"/><path d="M16 14c8 2 10 8 6 12s2 10 8 10 4 8 0 12M38 8c-2 6 4 8 8 8s6 6 4 10" stroke="#8fe3a8" stroke-width="7" fill="none" stroke-linecap="round"/></symbol>
+ </defs>
+</svg>
+
+<div id="viewport"><div id="stage">
+<!-- =================== KAPITEL 1: START =================== -->
+<section class="slide title" data-chapter="1" data-title="Titel: Informationen und Medien im Alltag">
+  <div class="kicker">Informatik · Klasse 6</div>
+  <h1>Informationen<br>und <span class="hl">Medien</span><br>im Alltag</h1>
+  <p class="sub">Wie kommt eine Idee von einem Kopf in den anderen?</p>
+  <svg class="art" viewBox="0 0 760 860" aria-hidden="true">
+    <circle cx="380" cy="430" r="300" fill="none" stroke="#5b5bd6" stroke-opacity=".25" stroke-width="6" stroke-dasharray="4 18" stroke-linecap="round"/>
+    <circle cx="380" cy="430" r="190" fill="#5b5bd6" opacity=".1"/>
+    <g class="float f0"><circle cx="380" cy="430" r="130" fill="#5b5bd6"/><text x="380" y="492" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="190" fill="#fff">i</text></g>
+    <g class="float f1" transform="translate(120 110)"><rect width="210" height="130" rx="34" fill="#fff" filter="url(#sh)"/><path d="M40 128l-6 40 44-40z" fill="#fff"/><text x="105" y="84" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="600" font-size="46" fill="#1b2536">Hallo!</text></g>
+    <g class="float f2" transform="translate(520 120)"><rect width="170" height="120" rx="16" fill="#ef8a2e"/><path d="M0 14l85 60 85-60" fill="none" stroke="#fff" stroke-width="10" stroke-linejoin="round"/></g>
+    <g class="float f3" transform="translate(600 400)"><use href="#m-screen" width="150" height="150"/></g>
+    <g class="float f1" transform="translate(520 640)"><rect width="150" height="150" rx="18" fill="#fff" filter="url(#sh)"/><g fill="#1b2536"><rect x="18" y="18" width="40" height="40"/><rect x="92" y="18" width="40" height="40"/><rect x="18" y="92" width="40" height="40"/><rect x="70" y="70" width="14" height="14"/><rect x="92" y="92" width="14" height="14"/><rect x="118" y="106" width="14" height="26"/><rect x="92" y="118" width="14" height="14"/><rect x="70" y="30" width="14" height="14"/><rect x="30" y="70" width="14" height="14"/></g><g fill="#fff"><rect x="26" y="26" width="24" height="24"/><rect x="100" y="26" width="24" height="24"/><rect x="26" y="100" width="24" height="24"/></g><g fill="#1b2536"><rect x="32" y="32" width="12" height="12"/><rect x="106" y="32" width="12" height="12"/><rect x="32" y="106" width="12" height="12"/></g></g>
+    <g class="float f2" transform="translate(110 620)"><use href="#m-stone" width="170" height="170"/></g>
+    <g class="float f3" transform="translate(40 380)"><rect width="190" height="90" rx="45" fill="#1b2536"/><circle cx="46" cy="45" r="12" fill="#ffd166"/><rect x="74" y="39" width="40" height="12" rx="6" fill="#ffd166"/><circle cx="140" cy="45" r="12" fill="#ffd166"/></g>
+    <defs><filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1b2536" flood-opacity=".15"/></filter></defs>
+  </svg>
+  <div class="title-foot"><span class="title-credit">Theodor Fontane Gemeinschaftsschule · Lehrer P. Kurlavičius</span><br><span class="kbd">→</span> weiter &nbsp; <span class="kbd">O</span> Kapitel &nbsp; <span class="kbd">N</span> Notizen &nbsp; <span class="kbd">H</span> Hilfe</div>
+  <aside class="notes">
+    <p><b>Start:</b> Vollbild mit <b>F</b>. Menü mit <b>O</b>. Notizen mit <b>N</b> bei Bedarf einblenden.</p>
+    <p>Leitfrage vorlesen: „Wie kommt eine Idee von einem Kopf in den anderen?“ – kurz 2–3 Schüler antworten lassen, nicht auflösen.</p>
+    <p>Hinweis: Die Hälfte der Klasse kennt das Thema schon → diese Schüler als „Expertinnen/Experten“ ansprechen: Sie dürfen bei Denkfragen zuerst erklären.</p>
+  </aside>
+</section>
+
+<section class="slide" data-chapter="1" data-title="Unsere Reise (Kapitelübersicht)">
+  <h2>Unsere <span class="hl">Reise</span> durch das Thema</h2>
+  <div class="roadmap">
+    <div class="lesson-lbl">Stunde 1</div>
+    <div class="lesson-lbl l2">Stunde 2</div>
+    <button class="stop" data-chapter="2" data-goto-ch="2"><span class="n">2</span><span class="emoji">💭</span><b>Information &amp; Daten</b></button>
+    <button class="stop" data-chapter="3" data-goto-ch="3"><span class="n">3</span><span class="emoji">📶</span><b>Daten – Information – Wissen</b></button>
+    <button class="stop" data-chapter="4" data-goto-ch="4"><span class="n">4</span><span class="emoji">🔢</span><b>Codes im Alltag</b></button>
+    <button class="stop" data-chapter="5" data-goto-ch="5"><span class="n">5</span><span class="emoji">📨</span><b>Kommunikations&shy;kette</b></button>
+    <button class="stop" data-chapter="6" data-goto-ch="6"><span class="n">6</span><span class="emoji">⏳</span><b>Zeitreise der Kommunikation</b></button>
+    <button class="stop" data-chapter="7" data-goto-ch="7"><span class="n">7</span><span class="emoji">🧐</span><b>Medien kritisch prüfen</b></button>
+    <button class="stop" data-chapter="8" data-goto-ch="8"><span class="n">8</span><span class="emoji">🏁</span><b>Quiz &amp; Abschluss</b></button>
+  </div>
+  <div class="legend">
+    <span><i class="lg heft"><svg><use href="#i-pencil"/></svg></i> Heft-Eintrag</span>
+    <span><i class="lg recherche"><svg><use href="#i-search"/></svg></i> Recherche</span>
+    <span><i class="lg denk"><svg><use href="#i-chat"/></svg></i> Denkfrage</span>
+    <span><i class="lg quiz"><svg><use href="#i-hand"/></svg></i> Quiz</span>
+    <span><i class="lg demo"><svg><use href="#i-play"/></svg></i> Live-Demo</span>
+  </div>
+  <aside class="notes">
+    <p>Überblick geben. Die Symbole erklären: <b>Gelb = Heft raus!</b> Blau = Recherche am PC. Lila = Denkfrage / Partner. Rot = Quiz mit Handzeichen. Grün = Live-Demo.</p>
+    <p>Die Kapitelkarten sind anklickbar (Sprung zum Kapitel).</p>
+  </aside>
+</section>
+
+<section class="slide denk" data-chapter="1" data-title="Einstieg: Dein Morgen voller Informationen" data-badge="Denkfrage">
+  <h2>Dein Morgen – <span class="hl">voller Informationen!</span></h2>
+  <div class="morning">
+    <div class="mcard step"><div class="t">6:45</div><div class="emoji e">⏰</div><b>Wecker klingelt</b><span>Ton</span></div>
+    <div class="mcard step"><div class="t">7:00</div><div class="emoji e">📱</div><b>Nachricht von Oma</b><span>Text + Emoji</span></div>
+    <div class="mcard step"><div class="t">7:10</div><div class="emoji e">🥛</div><b>„Haltbar bis …“</b><span>Zahlen</span></div>
+    <div class="mcard step"><div class="t">7:30</div><div class="emoji e">🚦</div><b>Ampel wird grün</b><span>Licht + Farbe</span></div>
+    <div class="mcard step"><div class="t">7:55</div><div class="emoji e">🔔</div><b>Schulgong</b><span>Ton</span></div>
+  </div>
+  <div class="bubble step">Wie viele Informationen hast du heute schon bekommen – bevor die Schule anfing?</div>
+  <aside class="notes">
+    <p><b>Einstieg (ca. 4 min).</b> Mit jedem Klick erscheint eine Karte. Schüler ergänzen eigene Beispiele: Radio im Auto, Busanzeige, Wetter-App, Geruch von Toast (!), Gesicht der Mutter …</p>
+    <p>Erwartung: „ganz viele“ – Ziel: Informationen sind <b>überall</b> und kommen in <b>verschiedenen Formen</b> (Ton, Text, Zahl, Licht).</p>
+    <p>Partner: 1 Minute – „Zählt mit eurem Nachbarn: Wie viele fallen euch ein?“</p>
+  </aside>
+</section>
+
+<!-- =================== KAPITEL 2: INFORMATION & DATEN =================== -->
+<section class="slide chapter" data-chapter="2" data-title="Kapitel 2: Information & Daten">
+  <div class="kn">Kapitel 2 · Stunde 1</div>
+  <h2>Information<br>&amp; Daten</h2>
+  <p>Was ist eigentlich eine Information – und worauf reist sie?</p>
+  <svg class="bigicon" viewBox="0 0 200 200"><circle cx="100" cy="100" r="90" fill="#fff" opacity=".15"/><path d="M60 70c0-22 18-36 40-36s40 14 40 36c0 18-12 26-20 32v16H80v-16c-8-6-20-14-20-32z" fill="#fff"/><rect x="80" y="124" width="40" height="10" rx="5" fill="#fff"/><rect x="86" y="140" width="28" height="10" rx="5" fill="#fff"/><g stroke="#ffd166" stroke-width="7" stroke-linecap="round"><path d="M100 10v10M30 40l8 8M170 40l-8 8M18 100h10M172 100h10"/></g></svg>
+  <aside class="notes"><p>Kapitel 2 dauert ca. 18 Minuten. Enthält 3 Heft-Einträge.</p></aside>
+</section>
+
+<section class="slide denk" data-chapter="2" data-title="Was sagt dir dieses Bild?" data-badge="Denkfrage">
+  <h2>Was <span class="hl">sagt</span> dir das?</h2>
+  <div class="grid g3 signs">
+    <div class="card sign">
+      <svg viewBox="0 0 300 200"><rect width="300" height="200" rx="20" fill="#5c6b80"/><g fill="#3d4757"><ellipse cx="110" cy="80" rx="80" ry="42"/><ellipse cx="190" cy="70" rx="70" ry="46"/><ellipse cx="160" cy="100" rx="100" ry="36"/></g><path d="M150 110l-20 40h22l-14 36 40-52h-24l16-24z" fill="#ffd166"/><g stroke="#9ec5ff" stroke-width="5" stroke-linecap="round"><path d="M70 140l-8 20M100 150l-8 20M220 140l-8 20M250 150l-8 20"/></g></svg>
+      <div class="meaning step">„Gleich gewittert es.<br><b>Schnell rein!</b>“</div>
+    </div>
+    <div class="card sign">
+      <svg viewBox="0 0 300 200"><rect width="300" height="200" rx="20" fill="#e8eef5"/><rect x="110" y="14" width="80" height="172" rx="18" fill="#1b2536"/><circle cx="150" cy="60" r="30" fill="#ff4d4d"/><circle cx="150" cy="60" r="44" fill="#ff4d4d" opacity=".2"/><g fill="#fff"><circle cx="150" cy="44" r="7"/><path d="M142 54h16l4 22h-6l-2 14h-8l-2-14h-6z"/></g><circle cx="150" cy="136" r="30" fill="#2d3a2d"/></svg>
+      <div class="meaning step">„<b>Stehen bleiben!</b><br>Nicht über die Straße.“</div>
+    </div>
+    <div class="card sign">
+      <svg viewBox="0 0 300 200"><rect width="300" height="200" rx="20" fill="#fff4e5"/><rect x="70" y="60" width="150" height="80" rx="14" fill="none" stroke="#1b2536" stroke-width="10"/><rect x="222" y="84" width="14" height="32" rx="4" fill="#1b2536"/><rect x="82" y="72" width="14" height="56" rx="4" fill="#ff4d4d"/><text x="160" y="118" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="44" fill="#ff4d4d">3 %</text></svg>
+      <div class="meaning step">„Mein Akku ist fast leer.<br><b>Schnell laden!</b>“</div>
+    </div>
+  </div>
+  <div class="takeaway step"><span class="emoji">💡</span> Auf dem Bild sind nur Farben und Formen. Die <b>Bedeutung</b> entsteht <b>in deinem Kopf</b>.</div>
+  <aside class="notes">
+    <p>Bilder einzeln besprechen: „Was denkst du, wenn du das siehst?“ – Dann aufdecken.</p>
+    <p><b>Kernaussage:</b> Das Bild selbst „weiß“ nichts – erst du machst daraus eine Bedeutung. Das nennen wir <b>Information</b>.</p>
+    <p>Zusatzfrage: „Versteht ein Baby das Ampelmännchen?“ → Nein, es kennt die Regel noch nicht.</p>
+  </aside>
+</section>
+
+<section class="slide demo" data-chapter="2" data-title="Live-Demo: Eine Idee – viele Formen">
+  <h2>Eine Idee – <span class="hl">viele Formen</span></h2>
+  <div class="idea-bar">
+    <span class="lbl">Idee im Kopf:</span>
+    <div class="seg" id="idea-seg">
+      <button class="on" data-idea="kalt">„Mir ist kalt“</button>
+      <button data-idea="hunger">„Ich habe Hunger“</button>
+      <button data-idea="freude">„Ich freue mich!“</button>
+    </div>
+  </div>
+  <div class="forms">
+    <div class="fcard" data-f="text"><div class="ftag">✍️ geschrieben</div><div class="paper"><span id="f-text">Mir ist kalt.</span></div></div>
+    <div class="fcard" data-f="emoji"><div class="ftag">😀 Emoji</div><div class="emoji bigemo" id="f-emoji">🥶</div></div>
+    <div class="fcard" data-f="ton"><div class="ftag">🔊 gesprochen</div>
+      <button class="speak" id="f-speak" title="Vorlesen"><span class="emoji">🔊</span></button>
+      <div class="waves" id="f-waves"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="fcard" data-f="geste"><div class="ftag">🙌 Geste</div>
+      <svg id="f-figure" class="figure kalt" viewBox="0 0 240 280">
+        <g class="body">
+          <ellipse cx="120" cy="268" rx="60" ry="8" fill="#1b2536" opacity=".12"/>
+          <rect x="92" y="200" width="18" height="64" rx="9" fill="#34405a"/><rect x="130" y="200" width="18" height="64" rx="9" fill="#34405a"/>
+          <rect x="78" y="110" width="84" height="104" rx="34" fill="#2f7fe0" class="shirt"/>
+          <circle cx="120" cy="70" r="44" fill="#f5c9a0"/>
+          <path d="M78 62c2-30 24-44 46-42 20 2 38 16 38 40-16-8-40-16-60-10-8 2-16 6-24 12z" fill="#6b3f26"/>
+          <g class="face-kalt"><circle cx="104" cy="72" r="5" fill="#1b2536"/><circle cx="136" cy="72" r="5" fill="#1b2536"/><path d="M104 94h32" stroke="#1b2536" stroke-width="5" stroke-linecap="round"/><path d="M108 90v8M116 90v8M124 90v8M132 90v8" stroke="#1b2536" stroke-width="2"/></g>
+          <g class="face-hunger"><circle cx="104" cy="72" r="5" fill="#1b2536"/><circle cx="136" cy="72" r="5" fill="#1b2536"/><ellipse cx="120" cy="96" rx="9" ry="7" fill="#9b2c2c"/></g>
+          <g class="face-freude"><path d="M98 72q6-8 12 0M130 72q6-8 12 0" stroke="#1b2536" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M100 88q20 22 40 0z" fill="#9b2c2c"/></g>
+          <g class="arms-kalt"><path d="M84 132q30 30 64 6" stroke="#f5c9a0" stroke-width="20" fill="none" stroke-linecap="round"/><path d="M156 132q-30 34-64 10" stroke="#e8b88c" stroke-width="20" fill="none" stroke-linecap="round"/><g stroke="#7fb8ff" stroke-width="5" stroke-linecap="round"><path d="M40 90l-14-6M40 110h-16M44 130l-14 8M200 90l14-6M200 110h16M196 130l14 8"/></g></g>
+          <g class="arms-hunger"><path d="M84 132q-10 40 30 52" stroke="#f5c9a0" stroke-width="20" fill="none" stroke-linecap="round"/><path d="M156 132q20 30 10 60" stroke="#f5c9a0" stroke-width="20" fill="none" stroke-linecap="round"/><circle cx="196" cy="38" r="26" fill="#fff" stroke="#d9dee6" stroke-width="3"/><text x="196" y="50" text-anchor="middle" font-size="32" class="emoji">🍕</text></g>
+          <g class="arms-freude"><path d="M86 126L52 60" stroke="#f5c9a0" stroke-width="20" fill="none" stroke-linecap="round"/><path d="M154 126l34-66" stroke="#f5c9a0" stroke-width="20" fill="none" stroke-linecap="round"/><g fill="#ffd166"><circle cx="40" cy="40" r="6"/><circle cx="204" cy="36" r="6"/><circle cx="120" cy="12" r="5"/></g></g>
+        </g>
+      </svg>
+    </div>
+    <div class="fcard" data-f="code"><div class="ftag">📡 Code (Morse)</div><div class="morse-mini" id="f-morse">−·− ·− ·−·· −</div><div class="small" id="f-morse-w">K A L T</div><button class="btn mini" id="f-morse-play"><span class="emoji">▶</span> hören</button></div>
+  </div>
+  <div class="takeaway step"><span class="emoji">💡</span> Die <b>Information</b> bleibt gleich – nur die <b>Form</b> ändert sich.</div>
+  <aside class="notes">
+    <p><b>Live-Demo.</b> Oben eine Idee wählen. Karten zeigen fünf Formen (Repräsentationen). 🔊 liest den Satz vor (wenn der PC eine deutsche Stimme hat), „hören“ spielt den Morse-Code.</p>
+    <p>Aktivierung: Ein Schüler zeigt die Idee <b>ohne Worte</b> (Geste), die Klasse rät. Neue Idee ausdenken lassen: „Ich bin müde“ → Welche Formen?</p>
+    <p>Erwartete Antwort auf „Was ist gleich geblieben?“: <b>Die Bedeutung</b> (= Information). Was hat sich verändert? <b>Die Form</b> (= Repräsentation).</p>
+  </aside>
+</section>
+
+<section class="slide heft" data-chapter="2" data-heft="1" data-title="HEFT: Information und Repräsentation">
+  <aside class="notes"><p><b>Heft-Eintrag 1.</b> Zeilen mit Klick einzeln aufdecken (<b>A</b> = alle). Überschrift + Datum ins Heft. Zeit geben (ca. 3 min). „Information“ und „Repräsentation“ farbig unterstreichen lassen.</p><p>Merkhilfe: Re-<b>präsent</b>-ation = etwas wird „präsentiert“, also in eine Form gebracht.</p></aside>
+</section>
+
+<section class="slide" data-chapter="2" data-title="Worauf reisen Daten? (Trägermedien)">
+  <h2>Worauf <span class="hl">reisen</span> die Zeichen?</h2>
+  <div class="grid g4 media">
+    <div class="icard step"><svg><use href="#m-air"/></svg><b>Luft</b><span>Stimme, Musik, Pfiff</span></div>
+    <div class="icard step"><svg><use href="#m-paper"/></svg><b>Papier</b><span>Brief, Buch, Zettel</span></div>
+    <div class="icard step"><svg><use href="#m-screen"/></svg><b>Bildschirm</b><span>Handy, Tablet, Tafel</span></div>
+    <div class="icard step"><svg><use href="#m-wood"/></svg><b>Holz</b><span>Kerben im Ast</span></div>
+    <div class="icard step"><svg><use href="#m-stone"/></svg><b>Stein</b><span>Höhlenwand</span></div>
+    <div class="icard step"><svg><use href="#m-usb"/></svg><b>USB-Stick</b><span>Fotos, Texte, Spiele</span></div>
+    <div class="icard step"><svg><use href="#m-sand"/></svg><b>Sand</b><span>Nachricht am Strand</span></div>
+    <div class="icard step"><svg><use href="#m-light"/></svg><b>Licht</b><span>Ampel, Leuchtturm</span></div>
+  </div>
+  <aside class="notes">
+    <p>Das Wort <b>Trägermedium</b> einführen: „Die Zeichen brauchen etwas, das sie <i>trägt</i> – wie ein Bus die Fahrgäste.“</p>
+    <p>Karten nacheinander aufdecken. Vor jeder Karte raten lassen. Neu gegenüber früher: <b>Sand</b> (Nachricht am Strand, verschwindet mit der Welle!) und <b>Licht</b> (Ampel).</p>
+    <p>Frage: „Welches Trägermedium hält am längsten?“ → Stein (Höhlenmalerei: Zehntausende Jahre). „Am kürzesten?“ → Sand, Luft.</p>
+  </aside>
+</section>
+
+<section class="slide quiz" data-chapter="2" data-title="Quiz: Form oder Trägermedium?">
+  <h2>Form oder <span class="hl">Trägermedium</span>?</h2>
+  <p class="lead">Ruft es in die Klasse: <b class="c-form">Form</b> oder <b class="c-med">Medium</b>?</p>
+  <div class="grid g4 flips">
+    <div class="flip step"><div class="in"><div class="fa"><span class="emoji fe">😂</span><b>Emoji</b></div><div class="fb form">FORM</div></div></div>
+    <div class="flip step"><div class="in"><div class="fa"><svg class="fsvg"><use href="#m-paper"/></svg><b>Papier</b></div><div class="fb med">MEDIUM</div></div></div>
+    <div class="flip step"><div class="in"><div class="fa"><span class="fe mono">·−·</span><b>Morse-Code</b></div><div class="fb form">FORM</div></div></div>
+    <div class="flip step"><div class="in"><div class="fa"><svg class="fsvg"><use href="#m-air"/></svg><b>Luft</b></div><div class="fb med">MEDIUM</div></div></div>
+    <div class="flip step"><div class="in"><div class="fa"><span class="emoji fe">📷</span><b>Foto</b></div><div class="fb form">FORM</div></div></div>
+    <div class="flip step"><div class="in"><div class="fa"><svg class="fsvg"><use href="#m-usb"/></svg><b>USB-Stick</b></div><div class="fb med">MEDIUM</div></div></div>
+    <div class="flip step"><div class="in"><div class="fa"><span class="emoji fe">👋</span><b>Winken</b></div><div class="fb form">FORM<small>(Geste)</small></div></div></div>
+    <div class="flip step"><div class="in"><div class="fa"><span class="emoji fe">🖥️</span><b>Bildschirm</b></div><div class="fb med">MEDIUM</div></div></div>
+  </div>
+  <aside class="notes">
+    <p>Klasse ruft laut „Form!“ oder „Medium!“ – dann Karte umdrehen (Klick oder →).</p>
+    <p>Stolperstein <b>USB-Stick</b>: Ist er eine Information? Nein – er <b>trägt</b> die Daten. Ohne Gerät und Regel ist er nur Plastik und Metall.</p>
+    <p>Beim <b>Foto</b> diskutieren: Das Foto auf Papier = Form (Bild) auf Medium (Papier). Beides gehört zusammen!</p>
+  </aside>
+</section>
+
+<section class="slide heft" data-chapter="2" data-heft="2" data-title="HEFT: Daten, Trägermedium, Interpretation">
+  <aside class="notes"><p><b>Heft-Eintrag 2.</b> Zeilenweise aufdecken, abschreiben lassen (ca. 4 min).</p><p>„Interpretation“ ist ein schweres Wort → „deuten, verstehen“. Wichtig ist der Zusatz <b>„nur mit gemeinsamer Regel“</b> – das wird auf den nächsten Folien gezeigt.</p></aside>
+</section>
+
+<section class="slide denk" data-chapter="2" data-title="Wer kann diese Daten lesen?" data-badge="Denkfrage">
+  <h2>Wer kann diese <span class="hl">Daten</span> lesen?</h2>
+  <div class="grid g2 twostory">
+    <div class="card story">
+      <svg viewBox="0 0 600 190" class="stick"><rect x="10" y="70" width="580" height="60" rx="30" fill="#b07a45"/><rect x="10" y="70" width="580" height="18" rx="9" fill="#c99664"/><ellipse cx="580" cy="100" rx="12" ry="30" fill="#8a5a2b"/><g id="notches" stroke="#5b3a1a" stroke-width="6" stroke-linecap="round"></g><text x="300" y="180" text-anchor="middle" font-family="Nunito,sans-serif" font-weight="800" font-size="30" fill="#6b7688">Kerbholz eines Schäfers</text></svg>
+      <p><b>20 Kerben</b> in einem Ast.</p>
+      <div class="answer step">Regel des Schäfers: <b>1 Kerbe = 1 Schaf</b><br>→ „Ich habe 20 Schafe.“</div>
+    </div>
+    <div class="card story">
+      <svg viewBox="0 0 600 190"><path d="M180 8h240l18 136H162z" fill="#fff" stroke="#9ec5ff" stroke-width="6"/><g stroke="#9ec5ff" stroke-width="3" opacity=".6"><path d="M210 8l-16 136M265 8l-8 136M335 8l8 136M390 8l16 136M170 50h260M166 96h268"/></g><circle cx="300" cy="78" r="28" fill="#e2455b"/><path d="M272 78c-30-20-50 10-70 0M328 78c30-20 50 10 70 0" stroke="#e2455b" stroke-width="14" fill="none" stroke-linecap="round"/><text x="300" y="186" text-anchor="middle" font-family="Nunito,sans-serif" font-weight="800" font-size="30" fill="#6b7688">Knoten im Taschentuch</text></svg>
+      <p>Oma macht einen <b>Knoten</b> ins Taschentuch.</p>
+      <div class="answer step">Nur Oma kennt die Regel: <b>Knoten = „Pauls Geburtstag!“</b><br>Alle anderen sehen nur einen Knoten.</div>
+    </div>
+  </div>
+  <div class="takeaway step"><span class="emoji">🔑</span> Daten ohne <b>gemeinsame Regel</b> bleiben nur Zeichen.</div>
+  <aside class="notes">
+    <p>Zuerst fragen: „Was bedeuten die 20 Kerben?“ → viele Antworten möglich (20 Tage? 20 Euro?). Genau das ist der Punkt: <b>ohne Regel keine eindeutige Information</b>.</p>
+    <p>Knoten: Schüler fragen, ob sie so etwas kennen (Notiz auf der Hand, Zettel am Kühlschrank). <b>Nur wer die Regel kennt</b>, kann interpretieren.</p>
+  </aside>
+</section>
+
+<section class="slide demo" data-chapter="2" data-title="Live-Demo: Das Datums-Rätsel">
+  <h2>Das <span class="hl">Datums</span>-Rätsel</h2>
+  <div class="daterow">
+    <div class="invite">
+      <div class="inv-top"><span class="emoji">🎉</span> Einladung zur Party</div>
+      <div class="inv-date" id="dt-raw">05/06/27</div>
+      <div class="inv-sub">Wann ist die Party?</div>
+    </div>
+    <div class="datectrl">
+      <p class="small">Welche <b>Regel</b> benutzt du?</p>
+      <div class="rules">
+        <button class="rule on" data-rule="de"><svg class="flag"><use href="#f-de"/></svg><span><b>Deutschland</b><small>Tag / Monat / Jahr</small></span></button>
+        <button class="rule" data-rule="us"><svg class="flag"><use href="#f-us"/></svg><span><b>USA</b><small>Monat / Tag / Jahr</small></span></button>
+        <button class="rule" data-rule="iso"><svg class="flag"><use href="#f-world"/></svg><span><b>Weltweit (ISO)</b><small>Jahr-Monat-Tag</small></span></button>
+      </div>
+      <div class="cal" id="dt-cal"><div class="cal-m" id="dt-m">Juni</div><div class="cal-d" id="dt-d">5</div><div class="cal-y" id="dt-y">2027</div></div>
+      <div class="dt-iso" id="dt-iso">Eindeutig geschrieben: <b>2027-06-05</b></div>
+    </div>
+  </div>
+  <div class="takeaway step"><span class="emoji">💡</span> Gleiche Zeichen – andere Regel – <b>andere Information</b>!</div>
+  <aside class="notes">
+    <p>Erst fragen: „Wann ist die Party?“ (Handzeichen: 5. Juni oder 6. Mai?). Dann zwischen Deutschland und USA umschalten.</p>
+    <p>Die Zeichen „05/06/27“ ändern sich nicht – nur die <b>Regel der Interpretation</b>. Folge: Man kommt einen Monat zu früh oder zu spät!</p>
+    <p>ISO-Format (Jahr-Monat-Tag) ist international eindeutig – so speichern auch viele Computer Datumsangaben.</p>
+    <p>Hinweis: Das bekannte Beispiel 09.04.27 aus der letzten Präsentation kann hier gleich wiederholt werden: DE = 9. April, USA = 4. September.</p>
+  </aside>
+</section>
+
+<section class="slide quiz" data-chapter="2" data-title="Quiz: Das geheimnisvolle Buch">
+  <div class="quiz-split">
+    <svg class="book" viewBox="0 0 420 320" aria-hidden="true">
+      <path d="M210 40C160 20 80 16 20 30v260c60-14 140-10 190 10z" fill="#fff" stroke="#8e6b3a" stroke-width="6"/>
+      <path d="M210 40c50-20 130-24 190-10v260c-60-14-140-10-190 10z" fill="#fffaf0" stroke="#8e6b3a" stroke-width="6"/>
+      <g stroke="#1b2536" stroke-width="5" fill="none" stroke-linecap="round">
+        <path d="M50 70h20M80 64l10 12 10-12M112 70a8 8 0 1 0 16 0M140 62v16M150 70h14"/>
+        <path d="M50 110l10-10 10 10M84 104h16v12M112 100v16h14M140 108a8 8 0 1 1 16 0v8M170 104h8"/>
+        <path d="M50 150h14l-6 12M80 146a7 7 0 1 0 14 0 7 7 0 1 0-14 0M108 142l14 16M140 146h16M146 140v16"/>
+        <path d="M50 190l8 12 8-12 8 12M92 186h14M100 186v16M122 190a8 8 0 1 1 16 0M150 184l8 16"/>
+        <path d="M244 70l10 12 10-12M276 64v16h14M300 70a8 8 0 1 0 16 0M330 62l8 16M346 70h14"/>
+        <path d="M244 110h16M252 104v16M272 100l12 16M298 108a8 8 0 1 0 16 0M326 104h14v12"/>
+        <path d="M244 150a7 7 0 1 0 14 0M270 144l10 12 10-12M302 146h16M330 140v16h10"/>
+        <path d="M244 190l8 12 8-12M272 186h16v12M300 190l14 10M328 184a8 8 0 1 1 16 0"/>
+      </g>
+    </svg>
+    <div>
+      <div class="qq">Ein Buch in einer Schrift, die <b>niemand</b> hier lesen kann. Was steckt für uns darin?</div>
+      <div class="opts one">
+        <div class="opt"><span class="L">A</span>Informationen – da stehen doch Zeichen!</div>
+        <div class="opt correct"><span class="L">B</span>Daten – aber für uns noch keine Information</div>
+        <div class="opt"><span class="L">C</span>Gar nichts – es ist nur Papier</div>
+      </div>
+      <i class="step marker" data-toggle-class="revealed"></i>
+      <div class="explain step">Die Zeichen (Daten) sind da. Zur <b>Information</b> werden sie erst, wenn jemand die <b>Regel</b> (die Schrift) kennt.</div>
+    </div>
+  </div>
+  <div class="hands"><span class="emoji">✋</span> Hand hoch: A, B oder C?</div>
+  <aside class="notes">
+    <p>Abstimmung per Handzeichen, dann auflösen (→).</p>
+    <p>Richtig: <b>B</b>. Für jemanden, der die Schrift kann, ist es voller Informationen. Vergleich: Ägyptische Hieroglyphen konnte lange niemand lesen – bis man 1822 mit dem „Stein von Rosetta“ die Regel knackte.</p>
+  </aside>
+</section>
+
+<section class="slide merk" data-chapter="2" data-title="Das ist kein Apfel!" data-badge="Merksatz">
+  <div class="apple-wrap">
+    <div class="frame">
+      <svg viewBox="0 0 400 400" class="apple"><defs><radialGradient id="ag" cx=".35" cy=".35" r=".8"><stop offset="0" stop-color="#ff7a6b"/><stop offset=".6" stop-color="#e2352b"/><stop offset="1" stop-color="#a51d17"/></radialGradient></defs>
+        <path d="M200 110c-30-24-110-30-130 50-18 72 30 190 90 190 22 0 26-10 40-10s18 10 40 10c60 0 108-118 90-190-20-80-100-74-130-50z" fill="url(#ag)"/>
+        <path d="M200 112c2-30 10-52 26-70" stroke="#6b3f26" stroke-width="12" fill="none" stroke-linecap="round"/>
+        <path d="M214 76c20-36 64-40 86-26-16 30-54 44-86 26z" fill="#3fae5a"/>
+        <ellipse cx="130" cy="170" rx="22" ry="40" fill="#fff" opacity=".35" transform="rotate(20 130 170)"/>
+      </svg>
+      <div class="caption">Das ist kein Apfel.</div>
+    </div>
+    <div class="apple-q">
+      <div class="bubble small-b">Kannst du diesen Apfel essen?</div>
+      <div class="big step apple-a">Nein! 😄<br>Das ist nur ein <span class="hl">Bild</span> von einem Apfel.</div>
+      <div class="merkbox step"><span class="emoji">💡</span> Eine Darstellung ist nicht die Sache selbst.</div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Anspielung auf René Magritte, „Der Verrat der Bilder“ (1929): „Ceci n’est pas une pipe.“ Für die Klasse reicht der Apfel.</p>
+    <p>Weitere Beispiele: Ein Foto von Oma ist nicht Oma. Eine Landkarte ist nicht die Stadt. Das Wort „Feuer“ ist nicht heiß.</p>
+  </aside>
+</section>
+
+<section class="slide heft" data-chapter="2" data-heft="3" data-title="HEFT: Die goldene Regel">
+  <div class="formula step">
+    <span class="fx f1"><span class="emoji">🎨</span> Form</span><span class="op">+</span>
+    <span class="fx f2"><span class="emoji">📄</span> Medium</span><span class="op">+</span>
+    <span class="fx f3"><span class="emoji">🧠</span> Regel-Kenner</span><span class="op">=</span>
+    <span class="fx f4"><span class="emoji">💡</span> Information</span>
+  </div>
+  <aside class="notes"><p><b>Heft-Eintrag 3</b> – die drei wichtigsten Sätze der Einheit. Groß und ordentlich, evtl. in einen Kasten.</p><p>„Information reist nie nackt“: Eine Information braucht <b>immer</b> eine Form (Kleidung) und ein Medium (Fahrzeug). Die Formel unten kann als Bild ins Heft.</p></aside>
+</section>
+<!-- =================== KAPITEL 3: DATEN – INFORMATION – WISSEN =================== -->
+<section class="slide chapter" data-chapter="3" data-title="Kapitel 3: Daten – Information – Wissen">
+  <div class="kn">Kapitel 3 · Stunde 1</div>
+  <h2>Daten –<br>Information –<br>Wissen</h2>
+  <p>Drei Stufen auf einer Treppe.</p>
+  <svg class="bigicon" viewBox="0 0 200 200"><rect x="20" y="130" width="54" height="50" rx="8" fill="#fff" opacity=".55"/><rect x="74" y="90" width="54" height="90" rx="8" fill="#fff" opacity=".75"/><rect x="128" y="50" width="54" height="130" rx="8" fill="#fff"/><text x="47" y="164" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="30" fill="#8e4fd8">D</text><text x="101" y="144" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="30" fill="#8e4fd8">I</text><text x="155" y="124" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="30" fill="#8e4fd8">W</text></svg>
+  <aside class="notes"><p>Kapitel 3: ca. 8 Minuten. Neu im Lehrplan Kl. 5/6: <b>Unterschied Daten – Information – Wissen</b>.</p></aside>
+</section>
+
+<section class="slide demo" data-chapter="3" data-title="Live-Demo: Die Wissens-Treppe">
+  <h2>Die <span class="hl">Wissens</span>-Treppe</h2>
+  <div class="seg ex-seg" id="stair-seg">
+    <button class="on" data-ex="fieber"><span class="emoji">🤒</span> Fieber</button>
+    <button data-ex="wetter"><span class="emoji">🌧️</span> Wetter</button>
+    <button data-ex="akku"><span class="emoji">🔋</span> Akku</button>
+  </div>
+  <div class="stairs">
+    <div class="stair s1 step"><div class="lvl">1 · Daten</div><div class="val" id="st-d">38,9</div><div class="hint">nur Zeichen</div></div>
+    <div class="stair s2 step"><div class="lvl">2 · Information</div><div class="val" id="st-i">„Ich habe 38,9 °C Fieber.“</div><div class="hint">Zeichen + Bedeutung</div></div>
+    <div class="stair s3 step"><div class="lvl">3 · Wissen</div><div class="val" id="st-w">„Bei Fieber bleibe ich im Bett und trinke viel.“</div><div class="hint">verknüpfen + anwenden</div></div>
+  </div>
+  <aside class="notes">
+    <p>Stufen nacheinander aufdecken. Oben kann man das Beispiel wechseln (Fieber, Wetter, Akku).</p>
+    <p>Fragen: „Was sagt dir ‚38,9‘ ganz allein?“ → nichts Genaues (Preis? Temperatur? Zeit?). „Und wenn ich sage: Das Thermometer zeigt 38,9?“ → Fieber! = Information. „Was machst du jetzt damit?“ → Wissen: <b>verknüpfen</b> mit dem, was ich schon weiß, und <b>handeln</b>.</p>
+    <p>Wissen = Informationen, die ich verknüpfe und anwenden kann (neuer Merksatz, passt zu den bisherigen).</p>
+  </aside>
+</section>
+
+<section class="slide heft" data-chapter="3" data-heft="4" data-title="HEFT: Daten – Information – Wissen">
+  <aside class="notes"><p><b>Heft-Eintrag 4.</b> Am besten als <b>Treppe</b> ins Heft zeichnen lassen (drei Stufen von unten nach oben). Eigenes Beispiel ergänzen lassen (z. B. Akku 12 %).</p></aside>
+</section>
+
+<section class="slide quiz" data-chapter="3" data-title="Quiz: Daten, Information oder Wissen?">
+  <h2>Daten, Information oder <span class="hl">Wissen</span>?</h2>
+  <div class="grid g3 flips diw">
+    <div class="flip step"><div class="in"><div class="fa"><b class="q">1,29</b></div><div class="fb d">DATEN</div></div></div>
+    <div class="flip step"><div class="in"><div class="fa"><b class="q">„Ein Apfel kostet 1,29 €.“</b></div><div class="fb i">INFORMATION</div></div></div>
+    <div class="flip step"><div class="in"><div class="fa"><b class="q">„Für 5 € bekomme ich 3 Äpfel – und Geld zurück.“</b></div><div class="fb w">WISSEN</div></div></div>
+    <div class="flip step"><div class="in"><div class="fa"><b class="q mono">01001000</b></div><div class="fb d">DATEN</div></div></div>
+    <div class="flip step"><div class="in"><div class="fa"><b class="q">„Die Ampel ist rot.“</b></div><div class="fb i">INFORMATION</div></div></div>
+    <div class="flip step"><div class="in"><div class="fa"><b class="q">„Bei Rot warte ich, sonst kann mich ein Auto erwischen.“</b></div><div class="fb w">WISSEN</div></div></div>
+  </div>
+  <div class="hands"><span class="emoji">✋</span> 1 Finger = Daten · 2 Finger = Information · 3 Finger = Wissen</div>
+  <aside class="notes">
+    <p>Klasse zeigt mit Fingern (1/2/3). Dann Karte umdrehen.</p>
+    <p>„01001000“ sind Bits – für den Computer der Buchstabe „H“ (Ausblick auf Bit/Byte, Lehrplan Kl. 5/6).</p>
+  </aside>
+</section>
+
+<!-- =================== KAPITEL 4: CODES IM ALLTAG =================== -->
+<section class="slide chapter" data-chapter="4" data-title="Kapitel 4: Codes im Alltag">
+  <div class="kn">Kapitel 4 · Stunde 1</div>
+  <h2>Codes<br>im Alltag</h2>
+  <p>Strichcode, QR-Code, Verkehrszeichen, Emojis: Überall stecken Regeln.</p>
+  <svg class="bigicon" viewBox="0 0 200 200"><rect x="20" y="40" width="160" height="120" rx="14" fill="#fff"/><g fill="#1b2536"><rect x="36" y="56" width="6" height="74"/><rect x="48" y="56" width="3" height="74"/><rect x="56" y="56" width="9" height="74"/><rect x="70" y="56" width="3" height="74"/><rect x="78" y="56" width="6" height="74"/><rect x="92" y="56" width="3" height="74"/><rect x="100" y="56" width="9" height="74"/><rect x="114" y="56" width="3" height="74"/><rect x="122" y="56" width="6" height="74"/><rect x="134" y="56" width="3" height="74"/><rect x="142" y="56" width="9" height="74"/><rect x="156" y="56" width="6" height="74"/></g><rect x="14" y="92" width="172" height="6" rx="3" fill="#ff3b3b"/></svg>
+  <aside class="notes"><p>Kapitel 4: ca. 14 Minuten inkl. Recherche (5 min).</p></aside>
+</section>
+
+<section class="slide" data-chapter="4" data-title="Überall Codes!">
+  <h2>Überall <span class="hl">Codes</span>!</h2>
+  <div class="grid g4 codes">
+    <div class="ctile"><svg viewBox="0 0 120 90"><g fill="#1b2536"><rect x="8" y="8" width="5" height="64"/><rect x="16" y="8" width="2" height="64"/><rect x="22" y="8" width="7" height="64"/><rect x="33" y="8" width="2" height="64"/><rect x="39" y="8" width="5" height="64"/><rect x="48" y="8" width="7" height="64"/><rect x="58" y="8" width="2" height="64"/><rect x="64" y="8" width="5" height="64"/><rect x="73" y="8" width="2" height="64"/><rect x="79" y="8" width="7" height="64"/><rect x="90" y="8" width="2" height="64"/><rect x="96" y="8" width="5" height="64"/><rect x="105" y="8" width="7" height="64"/></g><text x="60" y="86" text-anchor="middle" font-size="12" font-family="monospace">4 001234 567891</text></svg><b>Strichcode</b></div>
+    <div class="ctile"><svg viewBox="0 0 90 90" class="qr-tile"></svg><b>QR-Code</b></div>
+    <div class="ctile"><svg viewBox="0 0 100 100"><path d="M30 4h40l26 26v40L70 96H30L4 70V30z" fill="#d9232e" stroke="#fff" stroke-width="4"/><text x="50" y="61" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="26" fill="#fff">STOP</text></svg><b>Verkehrszeichen</b></div>
+    <div class="ctile"><span class="emoji ce">😂</span><b>Emoji</b></div>
+    <div class="ctile"><span class="emoji ce">⛅</span><b>Wettersymbol</b></div>
+    <div class="ctile"><svg viewBox="0 0 100 100"><g fill="#1b2536"><ellipse cx="30" cy="72" rx="14" ry="10" transform="rotate(-20 30 72)"/><ellipse cx="70" cy="62" rx="14" ry="10" transform="rotate(-20 70 62)"/><rect x="40" y="16" width="5" height="56"/><rect x="80" y="6" width="5" height="56"/><path d="M40 16l45-10v12l-45 10z"/></g></svg><b>Noten</b></div>
+    <div class="ctile"><svg viewBox="0 0 100 100"><rect x="10" y="10" width="80" height="80" rx="14" fill="#f3ecdf"/><g fill="#1b2536"><circle cx="35" cy="30" r="8"/><circle cx="35" cy="50" r="8"/><circle cx="65" cy="30" r="8"/><circle cx="65" cy="70" r="8"/></g><g fill="none" stroke="#b9ae9a" stroke-width="3"><circle cx="35" cy="70" r="7"/><circle cx="65" cy="50" r="7"/></g></svg><b>Blindenschrift</b></div>
+    <div class="ctile"><svg viewBox="0 0 100 100"><rect x="30" y="4" width="40" height="92" rx="12" fill="#1b2536"/><circle cx="50" cy="24" r="11" fill="#ff4d4d"/><circle cx="50" cy="50" r="11" fill="#5a4a1a"/><circle cx="50" cy="76" r="11" fill="#2d3a2d"/></svg><b>Ampel</b></div>
+  </div>
+  <div class="takeaway step"><span class="emoji">🔑</span> Ein <b>Code</b> ist eine <b>vereinbarte Regel</b>: Welches Zeichen bedeutet was?</div>
+  <aside class="notes">
+    <p>Frage: „Was haben alle acht Dinge gemeinsam?“ → Sie sind Zeichen, die etwas <b>bedeuten</b> – aber nur, wenn man die <b>Regel</b> kennt.</p>
+    <p>Blindenschrift (Braille): Punkte werden mit den Fingern ertastet. Das Beispiel zeigt ein Zeichen aus 6 Punkten.</p>
+  </aside>
+</section>
+
+<section class="slide demo" data-chapter="4" data-title="Live-Demo: Strichcode an der Kasse">
+  <h2>Was „liest“ die <span class="hl">Kasse</span>?</h2>
+  <div class="ean-demo">
+    <div class="prods" id="ean-prods">
+      <button class="prod on" data-i="0"><span class="emoji">🧃</span>Apfelsaft</button>
+      <button class="prod" data-i="1"><span class="emoji">🥣</span>Schoko-Müsli</button>
+      <button class="prod" data-i="2"><span class="emoji">📒</span>Heft A4</button>
+    </div>
+    <div class="ean-mid">
+      <div class="ean-card"><svg id="ean-svg" viewBox="0 0 230 130"></svg><div class="laser" id="ean-laser"></div></div>
+      <button class="btn primary big-btn" id="ean-scan"><span class="emoji">🔴</span> Scannen</button>
+      <label class="dbtoggle"><input type="checkbox" id="ean-db" checked> <span>Kasse kennt die Regel (Datenbank)</span></label>
+    </div>
+    <div class="register">
+      <div class="reg-screen" id="ean-screen"><div class="l1">Bereit …</div><div class="l2">&nbsp;</div></div>
+      <div class="reg-body"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+  </div>
+  <div class="chain-mini">
+    <span>Striche <small>(Daten)</small></span><b>→</b><span>Scanner <small>(liest Zahl)</small></span><b>→</b><span>Datenbank <small>(Regel)</small></span><b>→</b><span id="ean-last">„Apfelsaft 1 l 1,19 €“ <small>(Information)</small></span>
+  </div>
+  <aside class="notes">
+    <p>Produkt wählen → <b>Scannen</b>. Der Scanner liest nur eine <b>Zahl</b> aus dicken und dünnen Strichen. Erst die <b>Datenbank</b> der Kasse (die Regel) sagt: Diese Zahl = Apfelsaft, 1,19 €.</p>
+    <p>Dann Häkchen „Kasse kennt die Regel“ ausschalten und nochmal scannen → „Artikel unbekannt“. Genau wie bei „20 Kerben“ ohne Regel!</p>
+    <p>Die Strichcodes sind echt berechnete EAN-13-Codes (mit Prüfziffer), aber erfundene Produkte. Die Ziffern 400–440 am Anfang stehen für Deutschland (Recherche-Frage A).</p>
+  </aside>
+</section>
+
+<section class="slide demo" data-chapter="4" data-title="Live-Demo: QR-Code selbst erzeugen">
+  <h2>Ein <span class="hl">QR-Code</span> – live gemacht</h2>
+  <div class="qr-demo">
+    <div class="qr-left">
+      <label class="small">Nachricht eintippen:</label>
+      <input class="txt" id="qr-in" value="Hallo Klasse 6! Information reist nie nackt." maxlength="120">
+      <div class="presets">
+        <button class="btn" data-qr="Hallo Klasse 6! Information reist nie nackt.">👋 Gruß</button>
+        <button class="btn" data-qr="Hausaufgabe: Finde 3 Codes in deiner Küche!">🏠 Hausaufgabe</button>
+        <button class="btn" data-qr="https://www.fragfinn.de">🔍 fragFINN</button>
+      </div>
+      <label class="dbtoggle"><input type="checkbox" id="qr-finder"> <span>Die 3 „Augen“ zeigen</span></label>
+      <div class="qr-facts">
+        <div><b id="qr-count">625</b> Kästchen</div>
+        <div>jedes ist <b>schwarz</b> oder <b>weiß</b> – wie 1 und 0</div>
+      </div>
+    </div>
+    <div class="qr-card"><svg id="qr-svg" viewBox="0 0 100 100"></svg><div class="qr-scan" id="qr-hint">📱 Scannt mich – wenn Handys erlaubt sind!</div></div>
+  </div>
+  <aside class="notes">
+    <p>Text eintippen (Pfeiltasten wirken im Eingabefeld nicht – mit <b>Esc</b> das Feld verlassen, dann wieder weiter mit →).</p>
+    <p>Mit Tablet/Handy (falls erlaubt) scannen → Der Text erscheint. Die App kennt die <b>Regel</b>, wie die Kästchen zu lesen sind.</p>
+    <p>„Augen“ = Positionsmuster: Daran erkennt die Kamera, wo oben links ist – egal wie schief man das Handy hält.</p>
+    <p>Mehr Text → mehr Kästchen. Ausprobieren: kurzer Text vs. langer Text.</p>
+  </aside>
+</section>
+
+<section class="slide quiz" data-chapter="4" data-title="Quiz: Code-Knacker">
+  <h2>Code-<span class="hl">Knacker</span>: Was bedeutet das?</h2>
+  <div class="knack">
+    <div class="rowlbl">Verkehr</div>
+    <div class="flip step"><div class="in"><div class="fa"><svg viewBox="0 0 100 100"><path d="M30 4h40l26 26v40L70 96H30L4 70V30z" fill="#d9232e" stroke="#fff" stroke-width="4"/><text x="50" y="61" text-anchor="middle" font-family="Arial" font-weight="700" font-size="26" fill="#fff">STOP</text></svg></div><div class="fb k1">Anhalten!<small>auch wenn niemand kommt</small></div></div></div>
+    <div class="flip step"><div class="in"><div class="fa"><svg viewBox="0 0 100 100"><rect x="6" y="6" width="88" height="88" rx="8" fill="#1d5fc4" stroke="#fff" stroke-width="3"/><path d="M50 16l36 64H14z" fill="#fff"/><g fill="#1b2536"><circle cx="52" cy="38" r="5"/><path d="M47 46h8l6 14-4 2-4-8-2 10 6 10h-5l-5-8-5 8h-5l6-12 1-10-4 6-4-2z"/></g><g fill="#fff"><rect x="18" y="82" width="10" height="6"/><rect x="34" y="82" width="10" height="6"/><rect x="50" y="82" width="10" height="6"/><rect x="66" y="82" width="10" height="6"/></g></svg></div><div class="fb k1">Zebrastreifen<small>Fußgänger haben Vorrang</small></div></div></div>
+    <div class="flip step"><div class="in"><div class="fa"><svg viewBox="0 0 100 100"><path d="M6 12h88L50 90z" fill="#fff" stroke="#d9232e" stroke-width="10" stroke-linejoin="round"/></svg></div><div class="fb k1">Vorfahrt achten<small>die anderen dürfen zuerst</small></div></div></div>
+    <div class="rowlbl">Wetter</div>
+    <div class="flip step"><div class="in"><div class="fa"><span class="emoji ke">⛅</span></div><div class="fb k2">Sonne und Wolken</div></div></div>
+    <div class="flip step"><div class="in"><div class="fa"><span class="emoji ke">⛈️</span></div><div class="fb k2">Gewitter</div></div></div>
+    <div class="flip step"><div class="in"><div class="fa"><span class="emoji ke">❄️</span></div><div class="fb k2">Schnee / Frost</div></div></div>
+    <div class="rowlbl">Chat</div>
+    <div class="flip step"><div class="in"><div class="fa"><span class="emoji ke">👍</span></div><div class="fb k3">„Super!“<small>in manchen Ländern aber unhöflich!</small></div></div></div>
+    <div class="flip step"><div class="in"><div class="fa"><span class="emoji ke">🙏</span></div><div class="fb k3">„Bitte“? „Danke“?<small>oder ein High five?</small></div></div></div>
+    <div class="flip step"><div class="in"><div class="fa"><span class="emoji ke">💀</span></div><div class="fb k3">„Gefahr!“?<small>im Chat oft: „Ich lach mich tot“</small></div></div></div>
+  </div>
+  <aside class="notes">
+    <p>Reihe für Reihe raten lassen, dann umdrehen.</p>
+    <p><b>Verkehrszeichen</b>: Die Regel ist <b>gesetzlich</b> festgelegt – alle müssen sie kennen (Fahrradprüfung Kl. 4!). Das STOP-Schild hat eine besondere Form (Achteck), damit man es auch von hinten oder verschneit erkennt.</p>
+    <p><b>Emojis</b>: Hier ist die Regel <b>nicht</b> für alle gleich! 🙏 heißt in Japan „bitte/danke“, manche sehen darin ein High five. 💀 benutzen Jugendliche für „Ich lach mich tot“ – Oma denkt vielleicht an Gefahr. → Missverständnisse im Chat!</p>
+  </aside>
+</section>
+
+<section class="slide heft" data-chapter="4" data-heft="5" data-title="HEFT: Codes im Alltag">
+  <aside class="notes"><p><b>Heft-Eintrag 5.</b> Neben den Eintrag 2–3 kleine Codes zeichnen lassen (Stoppschild, Wettersymbol, Emoji).</p><p>Verbindung zu Heft-Eintrag 2: Interpretation klappt „nur mit gemeinsamer Regel“ – ein Code <b>ist</b> so eine Regel.</p></aside>
+</section>
+
+<section class="slide" data-chapter="4" data-title="So recherchierst du (fragFINN, Blinde Kuh)">
+  <h2>So <span class="hl">recherchierst</span> du</h2>
+  <div class="search-row">
+    <div class="browsers">
+      <div class="browser b1"><div class="bbar"><i></i><i></i><i></i><span>www.fragfinn.de</span></div><div class="bbody"><b>fragFINN</b><span>Suchmaschine für Kinder</span><div class="sbox"><span>Brieftaube Geschwindigkeit</span><em>🔍</em></div></div></div>
+      <div class="browser b2"><div class="bbar"><i></i><i></i><i></i><span>www.blinde-kuh.de</span></div><div class="bbody"><b>Blinde Kuh</b><span>Suchmaschine für Kinder</span><div class="sbox"><span>Emoji Geschichte</span><em>🔍</em></div></div></div>
+      <p class="small">Dort findest du nur Seiten, die für Kinder geprüft sind.</p>
+    </div>
+    <ol class="tips">
+      <li class="step"><span class="n">1</span><div><b>Wenige Suchwörter</b><small>„Brieftaube Geschwindigkeit“ statt „Wie schnell fliegt eigentlich eine Brieftaube?“</small></div></li>
+      <li class="step"><span class="n">2</span><div><b>Mehrere Treffer vergleichen</b><small>Steht es auf zwei Seiten gleich?</small></div></li>
+      <li class="step"><span class="n">3</span><div><b>Quelle notieren</b><small>Name der Webseite aufschreiben</small></div></li>
+      <li class="step"><span class="n">4</span><div><b>In eigenen Worten</b><small>nicht abschreiben – selbst formulieren!</small></div></li>
+    </ol>
+  </div>
+  <aside class="notes">
+    <p>Kindgerechte Suchmaschinen (Lehrplan: Suchstrategien, Quellenangaben): <b>fragFINN.de</b> und <b>blinde-kuh.de</b>. Die Browser-Fenster hier sind nur Zeichnungen (offline).</p>
+    <p>Falls die Schule eine eigene Schul-Suche nutzt, diese nennen.</p>
+    <p>Tipp 4 ist wichtig (Urheberrecht): Antworten <b>selbst formulieren</b>, Quelle angeben.</p>
+  </aside>
+</section>
+
+<section class="slide recherche" data-chapter="4" data-title="RECHERCHE 1: Code-Detektive">
+  <div class="rq">Code-Detektive: Wählt <b>eine</b> Karte!</div>
+  <div class="rgrid">
+    <div class="rcards">
+      <div class="rcard" style="--rc:#ef8a2e"><h4><span class="gl">A</span>Strichcode</h4><p>Was bedeuten die <b>ersten Ziffern</b> unter einem Strichcode?</p><div class="terms"><span class="term-chip">Strichcode Ziffern</span><span class="term-chip">EAN Code</span></div></div>
+      <div class="rcard" style="--rc:#2f7fe0"><h4><span class="gl">B</span>QR-Code</h4><p>Wer hat den QR-Code erfunden – und <b>wofür</b>?</p><div class="terms"><span class="term-chip">QR-Code Erfindung</span></div></div>
+      <div class="rcard" style="--rc:#e2455b"><h4><span class="gl">C</span>Emojis</h4><p>Aus welchem Land kommen Emojis? Was bedeutet das <b>Wort</b>?</p><div class="terms"><span class="term-chip">Emoji Geschichte</span></div></div>
+      <div class="rcard" style="--rc:#22a45d"><h4><span class="gl">D</span>Blindenschrift</h4><p>Wer hat sie erfunden? Aus <b>wie vielen Punkten</b> besteht ein Zeichen?</p><div class="terms"><span class="term-chip">Blindenschrift Kinder</span><span class="term-chip">Braille</span></div></div>
+    </div>
+    <div class="rside">
+      <div class="twidget" data-min="5" data-label="Recherche: Code-Detektive"></div>
+      <div class="where"><span>Suche mit:</span><span class="site">🔍 fragFINN</span><span class="site">🐮 Blinde Kuh</span></div>
+      <div class="write"><h4><svg width="34" height="34"><use href="#i-pencil"/></svg> Ins Heft</h4><ul><li>Buchstabe + Thema</li><li><b>2 Fakten</b> in eigenen Worten</li><li>Quelle (Name der Webseite)</li></ul></div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p><b>Recherche 5 min</b>, Partnerarbeit am PC. Timer mit „Start“ oder groß mit <b>T</b>. Danach 2–3 Gruppen kurz vorstellen lassen (je 30 s).</p>
+    <p><b>Erwartete Antworten:</b></p>
+    <ul>
+      <li><b>A Strichcode:</b> Die ersten 2–3 Ziffern (Länderpräfix) zeigen, wo die Nummer vergeben wurde: <b>400–440 = Deutschland</b>. Danach Hersteller-, Artikelnummer und eine Prüfziffer.</li>
+      <li><b>B QR-Code:</b> 1994 von der japanischen Firma <b>Denso Wave</b> (Masahiro Hara) erfunden, um <b>Autoteile in Fabriken</b> schnell zu erkennen. QR = „Quick Response“ (schnelle Antwort).</li>
+      <li><b>C Emojis:</b> aus <b>Japan</b>, ca. 1999 (Shigetaka Kurita, erste Sammlung mit 176 Zeichen). „e“ = Bild, „moji“ = Schriftzeichen.</li>
+      <li><b>D Blindenschrift:</b> <b>Louis Braille</b> (Frankreich, selbst blind), 1825 mit 16 Jahren entwickelt; jedes Zeichen aus bis zu <b>6 Punkten</b> (2 × 3).</li>
+    </ul>
+    <p>Expertinnen/Experten (Schüler, die das Thema schon hatten) als Helfer einsetzen.</p>
+  </aside>
+</section>
+
+<section class="slide denk" data-chapter="4" data-title="Blitzlicht: Ende Stunde 1" data-badge="Blitzlicht">
+  <h2>Blitzlicht <span class="hl">zum Schluss</span></h2>
+  <div class="bubble">Erkläre deinem Nachbarn in <b>einem Satz</b>: Was ist der Unterschied zwischen <b>Daten</b> und <b>Information</b>?</div>
+  <div class="tps">
+    <div class="s"><span class="e">🤔</span><div><b>1. Denken</b>30 Sekunden allein</div></div>
+    <div class="s"><span class="e">🗣️</span><div><b>2. Austauschen</b>mit dem Nachbarn</div></div>
+    <div class="s"><span class="e">🙋</span><div><b>3. Vorstellen</b>2–3 Sätze für alle</div></div>
+  </div>
+  <div class="nextup step"><b>Nächste Stunde:</b> <span class="emoji">📨</span> Kommunikationskette · <span class="emoji">⏳</span> Zeitreise · <span class="emoji">🧐</span> Medien-Check</div>
+  <aside class="notes">
+    <p>Ende Stunde 1 (ca. 2 min). Erwartung: „Daten sind die Zeichen, Information ist die Bedeutung im Kopf.“</p>
+    <p>Hausaufgabe (optional): „Finde zu Hause drei Codes (z. B. in der Küche) und schreibe auf, was sie bedeuten.“</p>
+  </aside>
+</section>
+<!-- =================== KAPITEL 5: KOMMUNIKATIONSKETTE (Stunde 2) =================== -->
+<section class="slide chapter" data-chapter="5" data-title="Kapitel 5: Kommunikationskette (Stunde 2)">
+  <div class="kn">Kapitel 5 · Stunde 2</div>
+  <h2>Die Kommuni&shy;kations&shy;kette</h2>
+  <p>Wie kommt eine Nachricht von Lena zu Tom – und wo kann sie verloren gehen?</p>
+  <svg class="bigicon" viewBox="0 0 200 200"><circle cx="36" cy="100" r="26" fill="#fff"/><rect x="82" y="74" width="36" height="52" rx="8" fill="#fff"/><circle cx="164" cy="100" r="26" fill="#fff"/><g stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-dasharray="2 14"><path d="M66 100h10M126 100h10"/></g></svg>
+  <aside class="notes"><p><b>Beginn Stunde 2.</b> Zuerst kurze Wiederholung (nächste Folie), dann Kommunikationskette (ca. 10 min).</p></aside>
+</section>
+
+<section class="slide quiz" data-chapter="5" data-title="Wiederholung: Weißt du’s noch?" data-badge="Wiederholung">
+  <h2>Weißt du’s <span class="hl">noch</span>?</h2>
+  <div class="grid g3 recap">
+    <div class="card"><div class="rq-q">Information ist …</div><div class="rq-a step cover">die <b>Bedeutung</b> (im Kopf).</div></div>
+    <div class="card"><div class="rq-q">Nenne drei Trägermedien!</div><div class="rq-a step cover">Papier, Bildschirm, Luft, Holz, Stein, USB-Stick …</div></div>
+    <div class="card"><div class="rq-q">Warum lesen Amerikaner „05/06“ anders?</div><div class="rq-a step cover">Sie benutzen eine <b>andere Regel</b>: Monat / Tag.</div></div>
+  </div>
+  <div class="goldline step"><span class="emoji">⭐</span> Immer: Form + Medium + jemand, der die Regel kennt.</div>
+  <aside class="notes"><p>Schnelle Wiederholung (3 min). Schüler antworten mündlich, dann aufdecken. Den Merksatz im Chor sprechen lassen.</p></aside>
+</section>
+
+<section class="slide demo" data-chapter="5" data-title="Live-Demo: Wo knackt die Kette?">
+  <h2>Wo <span class="hl">knackt</span> die Kette?</h2>
+  <div class="kette" id="kette">
+    <div class="node" id="k-n0"><svg class="av"><use href="#av-lena"/></svg><b>Sender</b><span>Lena</span></div>
+    <div class="klink" id="k-l0"></div>
+    <div class="node" id="k-n1"><svg class="av" viewBox="0 0 200 200"><circle cx="100" cy="100" r="96" fill="#e3f7ea"/><rect x="72" y="44" width="56" height="108" rx="12" fill="#1b2536"/><rect x="78" y="54" width="44" height="84" rx="4" fill="#bfe3ff"/><g fill="none" stroke="#22a45d" stroke-width="8" stroke-linecap="round" id="k-wifi"><path d="M150 70a40 40 0 0 1 0 60"/><path d="M164 56a60 60 0 0 1 0 88"/><path d="M50 70a40 40 0 0 0 0 60"/><path d="M36 56a60 60 0 0 0 0 88"/></g></svg><b>Medium</b><span id="k-medname">Handy + WLAN</span></div>
+    <div class="klink" id="k-l1"></div>
+    <div class="node" id="k-n2"><svg class="av"><use href="#av-tom"/></svg><b>Empfänger</b><span>Tom</span></div>
+    <div class="kmsg out" id="k-out">„Treffen um 15 Uhr am Spielplatz!“</div>
+    <div class="kmsg in" id="k-in">…</div>
+    <div class="packet" id="k-packet"><span class="emoji">✉️</span></div>
+  </div>
+  <div class="kbtns">
+    <button class="btn primary" data-k="ok"><span class="emoji">▶</span> Normal senden</button>
+    <button class="btn danger" data-k="wlan"><span class="emoji">📵</span> WLAN aus</button>
+    <button class="btn danger" data-k="laerm"><span class="emoji">🔊</span> Lärm</button>
+    <button class="btn danger" data-k="sprache"><span class="emoji">🌍</span> Fremde Sprache</button>
+    <button class="btn danger" data-k="tipp"><span class="emoji">⌨️</span> Tippfehler</button>
+    <button class="btn danger" data-k="akku"><span class="emoji">🔋</span> Akku leer</button>
+  </div>
+  <div class="kinfo" id="k-info">Klicke auf <b>Normal senden</b> oder wähle eine <b>Störung</b>!</div>
+  <aside class="notes">
+    <p>Erst „Normal senden“ zeigen. Dann bei jeder Störung <b>vorher fragen</b>: „Wo knackt die Kette – beim Sender, beim Medium oder beim Empfänger?“ Dann klicken.</p>
+    <ul>
+      <li><b>WLAN aus</b> → Medium: Die Daten kommen gar nicht an.</li>
+      <li><b>Lärm</b> (Sprachnachricht auf dem Schulhof) → Medium Luft gestört: nur Teile kommen an.</li>
+      <li><b>Fremde Sprache</b> (Finnisch) → Empfänger: Daten kommen an, aber keine gemeinsame Regel.</li>
+      <li><b>Tippfehler</b> („51 Uhr“) → Sender: Idee falsch in die Form gepackt.</li>
+      <li><b>Akku leer</b> → Empfänger: Die Nachricht wartet, aber niemand liest sie.</li>
+    </ul>
+    <p>Schüler weitere Störungen erfinden lassen (Handschrift unleserlich, Brief nass geworden, falsche Nummer …).</p>
+  </aside>
+</section>
+
+<section class="slide heft" data-chapter="5" data-heft="6" data-title="HEFT: Die Kommunikationskette">
+  <aside class="notes"><p><b>Heft-Eintrag 6.</b> Als Kette mit drei Kästen und Pfeilen ins Heft zeichnen. Unter jeden Kasten den Satz in Anführungszeichen.</p><p>Beispiel dazuschreiben lassen: Lena → Handy/WLAN → Tom.</p></aside>
+</section>
+
+<section class="slide denk" data-chapter="5" data-title="Partnerarbeit: Findet die Kette!" data-badge="Partnerarbeit">
+  <h2>Findet die <span class="hl">Kette</span>!</h2>
+  <div class="pa-row">
+    <div class="grid g2 pa">
+      <div class="card sit"><span class="emoji se">🔔</span><div><b>Die Pausenklingel</b><div class="sol step cover"><i>S:</i> Hausmeister/Uhr · <i>M:</i> Luft · <i>E:</i> alle Schüler<br><i>Störung:</i> Kopfhörer, Lärm</div></div></div>
+      <div class="card sit"><span class="emoji se">🚉</span><div><b>Durchsage am Bahnhof</b><div class="sol step cover"><i>S:</i> Bahn-Mitarbeiter · <i>M:</i> Lautsprecher + Luft · <i>E:</i> Reisende<br><i>Störung:</i> Zug fährt ein, Nuscheln</div></div></div>
+      <div class="card sit"><span class="emoji se">🏖️</span><div><b>Postkarte aus dem Urlaub</b><div class="sol step cover"><i>S:</i> Oma · <i>M:</i> Papier + Post · <i>E:</i> du<br><i>Störung:</i> Regen, falsche Adresse</div></div></div>
+      <div class="card sit"><span class="emoji se">🚒</span><div><b>Sirene der Feuerwehr</b><div class="sol step cover"><i>S:</i> Feuerwehr · <i>M:</i> Luft (Ton) · <i>E:</i> alle in der Nähe<br><i>Störung:</i> Man kennt die Regel nicht</div></div></div>
+    </div>
+    <div class="pa-side">
+      <div class="task"><b>Auftrag</b> (zu zweit):<br>Sucht euch <b>2 Situationen</b> aus. Wer ist <b>Sender</b>, was ist das <b>Medium</b>, wer ist <b>Empfänger</b>? Was könnte <b>stören</b>?</div>
+      <div class="twidget" data-min="3" data-label="Partnerarbeit: Findet die Kette"></div>
+    </div>
+  </div>
+  <aside class="notes"><p><b>3 min</b> Partnerarbeit, danach Lösungen aufdecken (klicken). Mehrere Lösungen sind richtig – begründen lassen!</p><p>Sirene: Es gibt feste Signale (z. B. 1 Minute auf- und abschwellender Ton = Warnung). Wer die Regel nicht kennt, weiß nicht, was zu tun ist.</p></aside>
+</section>
+
+<!-- =================== KAPITEL 6: ZEITREISE =================== -->
+<section class="slide chapter" data-chapter="6" data-title="Kapitel 6: Zeitreise der Kommunikation">
+  <div class="kn">Kapitel 6 · Stunde 2</div>
+  <h2>Zeitreise der<br>Kommunikation</h2>
+  <p>Von der Höhlenwand bis zum Smartphone.</p>
+  <svg class="bigicon" viewBox="0 0 200 200"><path d="M60 20h80M60 180h80" stroke="#fff" stroke-width="12" stroke-linecap="round"/><path d="M68 24c0 40 64 50 64 76s-64 36-64 76M132 24c0 40-64 50-64 76s64 36 64 76" fill="none" stroke="#fff" stroke-width="10"/><path d="M80 170c10-20 30-20 40 0z" fill="#ffd166"/><path d="M84 50h32c-6 14-26 14-32 0z" fill="#ffd166"/></svg>
+  <aside class="notes"><p>Kapitel 6: ca. 14 min inkl. Recherche (6 min).</p></aside>
+</section>
+
+<section class="slide denk" data-chapter="6" data-title="Wie weit? Wie schnell? Wie viele?" data-badge="Denkfrage">
+  <h2>„Ich komme <span class="hl">morgen</span>!“</h2>
+  <p class="lead">Du willst das deiner Freundin in Berlin sagen. Wie geht das …</p>
+  <div class="eras">
+    <div class="era step"><span class="emoji">🔥</span><b>vor 40 000 Jahren?</b></div>
+    <div class="era step"><span class="emoji">🏰</span><b>vor 500 Jahren?</b></div>
+    <div class="era step"><span class="emoji">📱</span><b>heute?</b></div>
+  </div>
+  <div class="leit step">
+    <div class="lf"><span class="emoji">📏</span><b>Wie weit?</b><small>Wie weit kommt die Nachricht?</small></div>
+    <div class="lf"><span class="emoji">⏱️</span><b>Wie schnell?</b><small>Wie lange dauert es?</small></div>
+    <div class="lf"><span class="emoji">👥</span><b>Wie viele?</b><small>Wie viele Menschen erreicht sie?</small></div>
+  </div>
+  <aside class="notes">
+    <p>Erwartete Ideen: vor 40 000 Jahren → gar nicht (hinlaufen, Wochen!). Vor 500 Jahren → Brief mit Bote/Pferd (Tage). Heute → Nachricht, Sekunden.</p>
+    <p>Die drei <b>Leitfragen</b> begleiten die ganze Zeitreise. Tafel: drei Spalten „weit / schnell / viele“.</p>
+  </aside>
+</section>
+
+<section class="slide demo" data-chapter="6" data-title="Live-Demo: Zeitstrahl der Kommunikation">
+  <div class="tl" id="tl">
+    <div class="tl-track" id="tl-track"><div class="tl-line"><div class="tl-fill" id="tl-fill"></div></div></div>
+    <div class="tl-detail">
+      <figure class="tl-img" id="tl-img"></figure>
+      <div class="tl-info">
+        <div class="tl-when" id="tl-when"></div>
+        <h3 id="tl-title"></h3>
+        <p id="tl-text"></p>
+        <div class="tl-chips"><span>Medium: <b id="tl-med"></b></span><span>Form: <b id="tl-form"></b></span></div>
+        <div class="meters" id="tl-meters"></div>
+      </div>
+    </div>
+  </div>
+  <i class="step marker"></i><i class="step marker"></i><i class="step marker"></i><i class="step marker"></i><i class="step marker"></i><i class="step marker"></i><i class="step marker"></i><i class="step marker"></i>
+  <aside class="notes">
+    <p>Mit → geht es Station für Station weiter (oder auf die Punkte klicken). Bei jeder Station die drei Leitfragen stellen, dann die Balken zeigen.</p>
+    <ul>
+      <li><b>Höhlenmalerei:</b> älteste bekannte Höhlenbilder sind über 40 000 Jahre alt (z. B. Sulawesi/Indonesien). Lascaux (Foto) ca. 17 000 Jahre.</li>
+      <li><b>Rauchzeichen/Trommeln:</b> schnell und weit sichtbar/hörbar – aber nur einfache, vorher vereinbarte Nachrichten.</li>
+      <li><b>Buchdruck:</b> Gutenberg, Mainz, um 1450 – bewegliche Metall-Buchstaben.</li>
+      <li><b>Telegraf:</b> Samuel Morse, 1844 erste lange Leitung Washington–Baltimore.</li>
+      <li><b>Telefon:</b> Philipp Reis 1861 (Deutschland), Alexander Graham Bell 1876 (Patent).</li>
+      <li><b>Radio/TV:</b> Rundfunk in Deutschland ab 1923, Fernsehen im Wohnzimmer ab den 1950ern. Viele Empfänger, aber nur <b>eine Richtung</b>.</li>
+      <li><b>Z3:</b> Konrad Zuse, Berlin 1941 – erster funktionsfähiger programmierbarer Computer.</li>
+      <li><b>Internet:</b> 1969 erste Verbindung (ARPANET, USA), 1991 World Wide Web (Tim Berners-Lee, CERN).</li>
+      <li><b>Smartphone:</b> ab 2007 massenhaft verbreitet – alle Formen in einem Gerät.</li>
+    </ul>
+  </aside>
+</section>
+
+<section class="slide demo" data-chapter="6" data-title="Live-Demo: Morse-Code funken">
+  <h2>Funken wie <span class="hl">1844</span>: Morse-Code</h2>
+  <div class="morse">
+    <div class="morse-left">
+      <div class="lamp-row"><div class="lamp" id="mo-lamp"></div><div class="tape" id="mo-tape"></div></div>
+      <input class="txt" id="mo-in" value="SOS" maxlength="24">
+      <div class="mo-btns">
+        <button class="btn primary" id="mo-play"><span class="emoji">▶</span> Funken</button>
+        <button class="btn" id="mo-secret"><span class="emoji">🤫</span> Geheimwort</button>
+        <button class="btn" id="mo-reveal" disabled><span class="emoji">👀</span> Auflösen</button>
+        <div class="seg" id="mo-speed"><button data-s="1.6">langsam</button><button class="on" data-s="1">normal</button></div>
+      </div>
+      <div class="mo-code" id="mo-code">··· −−− ···</div>
+    </div>
+    <div class="mo-table" id="mo-table"></div>
+  </div>
+  <aside class="notes">
+    <p><b>Lautsprecher an!</b> Text eintippen (Esc verlässt das Feld) → „Funken“: Lampe blinkt, Töne erklingen.</p>
+    <p><b>Spiel „Geheimwort“:</b> Ein Wort wird gefunkt, aber nicht angezeigt. Die Klasse schreibt die Zeichen mit (kurz = Punkt, lang = Strich) und entschlüsselt mit der Tabelle. Tipp: „langsam“ wählen.</p>
+    <p>SOS (··· −−− ···) ist das berühmteste Notsignal – leicht zu funken und zu erkennen. Morse = Form (Code), Draht/Strom = Medium.</p>
+  </aside>
+</section>
+
+<section class="slide denk" data-chapter="6" data-title="Konrad Zuse und die Z3 (1941)" data-badge="Denkfrage">
+  <div class="z3">
+    <figure class="z3-img"><img src="assets/img/z3.jpg" alt="Nachbau der Zuse Z3 im Deutschen Museum München"><figcaption>Nachbau der Z3 im Deutschen Museum · Foto: Venusianer, CC BY-SA 3.0</figcaption></figure>
+    <div class="z3-info">
+      <h2>Die <span class="hl">Z3</span> von Konrad Zuse</h2>
+      <ul class="facts">
+        <li><span class="emoji">📅</span> <b>1941</b> in Berlin gebaut</li>
+        <li><span class="emoji">🥇</span> erster funktionierender <b>programmierbarer Computer</b></li>
+        <li><span class="emoji">🔌</span> ca. <b>2 600 Relais</b> (Schalter)</li>
+        <li><span class="emoji">🐢</span> für eine Plus-Rechnung: <b>fast 1 Sekunde</b></li>
+      </ul>
+      <div class="vs step"><span class="emoji">📱</span> Dein Smartphone: <b>Milliarden</b> Rechnungen pro Sekunde!</div>
+      <div class="bubble small-b step">Was kann dein Handy, was die Z3 nicht konnte?</div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Z3: vorgestellt am 12. Mai 1941, rechnete mit 0 und 1 (binär), ca. 1 Tonne schwer. Das Original wurde 1943 im Krieg zerstört, der Nachbau steht im Deutschen Museum München.</p>
+    <p>Zum Vergleich <b>ENIAC</b> (USA, 1945/46): ca. 27 Tonnen, 17 468 Elektronenröhren – oft als „erster elektronischer Universalrechner“ bezeichnet. Z3 = elektromechanisch (Relais).</p>
+    <p>Erwartete Antworten zur Denkfrage: Fotos, Videos, Musik, Internet, Nachrichten schicken, in die Hosentasche passen …</p>
+  </aside>
+</section>
+
+<section class="slide heft" data-chapter="6" data-heft="7" data-title="HEFT: Zeitreise der Kommunikation">
+  <aside class="notes"><p><b>Heft-Eintrag 7</b> als Tabelle (3 Spalten). Zeilen nacheinander aufdecken. Schnelle Schüler ergänzen eine Zeile „Telefon – 1861/1876 – Draht – Stimme“.</p></aside>
+</section>
+
+<section class="slide recherche" data-chapter="6" data-title="RECHERCHE 2: Zeitreise-Reporter">
+  <div class="rq">Zeitreise-Reporter: Wählt <b>eine</b> Erfindung!</div>
+  <div class="rgrid">
+    <div class="rcards">
+      <div class="rcard" style="--rc:#8e6b3a"><h4><span class="gl">A</span>Buchdruck</h4><p>Wann und wo druckte <b>Johannes Gutenberg</b>? Was war neu?</p><div class="terms"><span class="term-chip">Gutenberg Buchdruck</span></div></div>
+      <div class="rcard" style="--rc:#2f7fe0"><h4><span class="gl">B</span>Telefon</h4><p>Wer war <b>Philipp Reis</b>? Welchen Satz übertrug er zuerst?</p><div class="terms"><span class="term-chip">Philipp Reis Telefon</span></div></div>
+      <div class="rcard" style="--rc:#22a45d"><h4><span class="gl">C</span>Brieftauben</h4><p>Wie <b>schnell</b> und wie <b>weit</b> fliegt eine Brieftaube?</p><div class="terms"><span class="term-chip">Brieftaube Geschwindigkeit</span></div></div>
+      <div class="rcard" style="--rc:#e2455b"><h4><span class="gl">D</span>Die erste SMS</h4><p>Wann wurde sie verschickt – und <b>was stand drin</b>?</p><div class="terms"><span class="term-chip">erste SMS</span></div></div>
+    </div>
+    <div class="rside">
+      <div class="twidget" data-min="6" data-label="Recherche: Zeitreise-Reporter"></div>
+      <div class="where"><span>Suche mit:</span><span class="site">🔍 fragFINN</span><span class="site">🐮 Blinde Kuh</span></div>
+      <div class="write"><h4><svg width="34" height="34"><use href="#i-pencil"/></svg> Ins Heft</h4><ul><li><b>Wann? Wer?</b></li><li>Wie weit / schnell / viele?</li><li>Quelle (Webseite)</li></ul></div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p><b>Recherche 6 min</b> (Partner), danach Reporter-Runde: jede Gruppe 1 Satz (3 min).</p>
+    <ul>
+      <li><b>A Buchdruck:</b> um 1450 in <b>Mainz</b>. Neu: <b>bewegliche Buchstaben</b> aus Metall, die man immer wieder neu zusammensetzen kann → viele gleiche Bücher schnell (berühmt: Gutenberg-Bibel).</li>
+      <li><b>B Telefon:</b> Philipp Reis, Lehrer aus Friedrichsdorf (Hessen), 1861. Erster Satz: <b>„Das Pferd frisst keinen Gurkensalat.“</b> Bell meldete 1876 das Patent an.</li>
+      <li><b>C Brieftauben:</b> finden nach Hause zurück; ca. <b>60–100 km/h</b>, Strecken von mehreren <b>hundert Kilometern</b> (Rekorde über 1000 km). Früher für Nachrichten im Krieg und für Zeitungen.</li>
+      <li><b>D Erste SMS:</b> <b>3. Dezember 1992</b> in England, Text: <b>„Merry Christmas“</b> (von einem Computer an ein Handy).</li>
+    </ul>
+  </aside>
+</section>
+<!-- =================== KAPITEL 7: MEDIEN KRITISCH PRÜFEN =================== -->
+<section class="slide chapter" data-chapter="7" data-title="Kapitel 7: Medien kritisch prüfen">
+  <div class="kn">Kapitel 7 · Stunde 2</div>
+  <h2>Medien<br>kritisch prüfen</h2>
+  <p>Kann ein echtes Foto täuschen? Und wem kann ich glauben?</p>
+  <svg class="bigicon" viewBox="0 0 200 200"><circle cx="86" cy="86" r="56" fill="none" stroke="#fff" stroke-width="16"/><path d="M128 128l44 44" stroke="#fff" stroke-width="20" stroke-linecap="round"/><text x="86" y="108" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="64" fill="#ffd166">?</text></svg>
+  <aside class="notes"><p>Kapitel 7: ca. 13 min inkl. Recherche (6 min). Lehrplan: Fake News, Quellen, kindgerechte Suche.</p></aside>
+</section>
+
+<section class="slide demo" data-chapter="7" data-title="Live-Demo: Ein Foto – zwei Geschichten">
+  <h2>Ein Foto – <span class="hl">zwei</span> Geschichten</h2>
+  <div class="photo-demo">
+    <div class="news" id="ph-news">
+      <div class="headline" id="ph-head">&nbsp;</div>
+      <div class="photo"><svg id="ph-svg" viewBox="480 300 360 230" preserveAspectRatio="xMidYMid slice">
+        <rect x="0" y="0" width="1200" height="700" fill="#bfe3ff"/>
+        <rect x="60" y="120" width="560" height="260" fill="#f2c6a0"/><rect x="60" y="100" width="560" height="30" fill="#c0392b"/>
+        <g fill="#8fd0ff" stroke="#fff" stroke-width="6"><rect x="100" y="170" width="80" height="70"/><rect x="220" y="170" width="80" height="70"/><rect x="380" y="170" width="80" height="70"/><rect x="500" y="170" width="80" height="70"/></g>
+        <rect x="300" y="270" width="80" height="110" fill="#8a5a2b"/><text x="340" y="160" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="30" fill="#fff">SCHULE</text>
+        <rect x="960" y="170" width="30" height="220" fill="#8a5a2b"/><circle cx="975" cy="150" r="100" fill="#3fae5a"/><circle cx="920" cy="190" r="60" fill="#36a050"/><circle cx="1040" cy="190" r="60" fill="#36a050"/>
+        <rect x="0" y="380" width="1200" height="320" fill="#c9ccd3"/>
+        <g stroke="#b0b4bd" stroke-width="4"><path d="M0 460h1200M0 560h1200M0 660h1200"/></g>
+        <!-- spielende Kinder hinten links -->
+        <g stroke-linecap="round"><g stroke="#34405a" stroke-width="10"><path d="M170 470l-12 40M170 470l14 38"/></g><path d="M170 470v-44" stroke="#ef8a2e" stroke-width="26"/><g stroke="#f5c9a0" stroke-width="9"><path d="M170 436l-26-22M170 436l28-18"/></g><circle cx="170" cy="400" r="18" fill="#f5c9a0"/><path d="M152 396c2-18 34-18 36 0" fill="#2b2b35"/><path d="M162 404q8 8 16 0" stroke="#9b2c2c" stroke-width="3" fill="none"/></g>
+        <g stroke-linecap="round"><g stroke="#34405a" stroke-width="10"><path d="M260 470l-8 40M260 470l18 36"/></g><path d="M260 470v-44" stroke="#8e4fd8" stroke-width="26"/><g stroke="#e0ac7e" stroke-width="9"><path d="M260 436l-30 10M260 436l26-24"/></g><circle cx="260" cy="400" r="18" fill="#e0ac7e"/><path d="M242 398c0-22 36-22 36 0-10-6-26-6-36 0z" fill="#6b3f26"/><path d="M252 404q8 8 16 0" stroke="#7a3b1c" stroke-width="3" fill="none"/></g>
+        <!-- Kind A: gestürzt -->
+        <g stroke-linecap="round" id="kidA">
+          <path d="M560 482l40-10 30 18" stroke="#34405a" stroke-width="13" fill="none"/><path d="M560 486l52 8" stroke="#34405a" stroke-width="13"/>
+          <circle cx="598" cy="474" r="6" fill="#e2455b"/>
+          <path d="M560 484l-10-46" stroke="#22a45d" stroke-width="30"/>
+          <path d="M550 446l-28 34" stroke="#f5c9a0" stroke-width="10"/><path d="M552 446l42 24" stroke="#f5c9a0" stroke-width="10"/>
+          <circle cx="546" cy="414" r="22" fill="#f5c9a0"/><path d="M524 410c0-26 42-28 44-4-12-8-30-8-44 4z" fill="#b5651d"/>
+          <path d="M538 428q8-7 16 0" stroke="#9b2c2c" stroke-width="3.5" fill="none"/><circle cx="539" cy="414" r="2.6" fill="#1b2536"/><circle cx="555" cy="414" r="2.6" fill="#1b2536"/><path d="M537 420q-3 6 0 9q3-3 0-9z" fill="#4aa8ff"/>
+        </g>
+        <!-- Kind B: hilft -->
+        <g stroke-linecap="round" id="kidB">
+          <path d="M668 442l-16 68M668 442l20 66" stroke="#34405a" stroke-width="13" fill="none"/>
+          <path d="M668 444l-20-46" stroke="#2f7fe0" stroke-width="30"/>
+          <path d="M650 404l-44 26" stroke="#e0ac7e" stroke-width="10"/><path d="M654 404l22 30" stroke="#e0ac7e" stroke-width="10"/>
+          <circle cx="636" cy="378" r="22" fill="#e0ac7e"/><path d="M614 376c0-26 44-28 44 0-12-8-30-8-44 0z" fill="#2b2b35"/>
+          <circle cx="628" cy="380" r="2.6" fill="#1b2536"/><circle cx="642" cy="382" r="2.6" fill="#1b2536"/><path d="M628 394q6 -4 12 0" stroke="#7a3b1c" stroke-width="3" fill="none"/>
+        </g>
+        <!-- Ball -->
+        <g id="ball"><circle cx="800" cy="498" r="16" fill="#fff" stroke="#1b2536" stroke-width="3"/><path d="M794 490l10 2 2 10-8 4-6-8z" fill="#1b2536"/><path d="M820 506h30M822 494h22" stroke="#6b7688" stroke-width="3" stroke-linecap="round"/></g>
+        <!-- Kind C: bringt Pflaster -->
+        <g stroke-linecap="round" id="kidC">
+          <path d="M900 446l-30 50M900 446l28 44" stroke="#34405a" stroke-width="13" fill="none"/>
+          <path d="M900 446l-6-50" stroke="#e0a614" stroke-width="30"/>
+          <path d="M894 406l-34 14" stroke="#f5c9a0" stroke-width="10"/><path d="M898 406l26 26" stroke="#f5c9a0" stroke-width="10"/>
+          <rect x="836" y="408" width="30" height="24" rx="4" fill="#fff" stroke="#1b2536" stroke-width="2"/><path d="M851 413v14M844 420h14" stroke="#e2455b" stroke-width="5"/>
+          <circle cx="892" cy="374" r="22" fill="#f5c9a0"/><path d="M870 372c0-28 46-28 44 2-14-8-30-8-44-2z" fill="#e0a614"/>
+          <circle cx="884" cy="376" r="2.6" fill="#1b2536"/><path d="M880 386q6 4 12 0" stroke="#9b2c2c" stroke-width="3" fill="none"/>
+        </g>
+        <!-- Lehrerin -->
+        <g stroke-linecap="round"><path d="M1080 450l-10 60M1080 450l14 60" stroke="#1b2536" stroke-width="13"/><path d="M1080 452v-60" stroke="#0d9aa8" stroke-width="34"/><path d="M1080 400l-30 30" stroke="#e0ac7e" stroke-width="10"/><path d="M1080 400l24 34" stroke="#e0ac7e" stroke-width="10"/><circle cx="1080" cy="364" r="22" fill="#e0ac7e"/><path d="M1056 370c-4-34 48-40 48-4v20c-6-10-6-20-12-26-10 4-24 4-36 10z" fill="#6b3f26"/><path d="M1072 376q8 6 16 0" stroke="#7a3b1c" stroke-width="3" fill="none"/></g>
+      </svg></div>
+    </div>
+    <div class="ph-ctrl">
+      <p class="small">Bildausschnitt</p>
+      <div class="seg vseg" id="ph-crop"><button class="on" data-crop="1">🔍 Ausschnitt</button><button data-crop="0">🖼️ Ganzes Bild</button></div>
+      <p class="small">Überschrift</p>
+      <div class="seg vseg" id="ph-headseg"><button class="on" data-h="0">keine</button><button data-h="1">Überschrift A</button><button data-h="2">Überschrift B</button></div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p><b>Ablauf:</b> 1) Nur den <b>Ausschnitt</b> zeigen, ohne Überschrift: „Was ist hier passiert?“ (viele denken: Streit, Schubsen). 2) <b>Überschrift A</b> („Brutal!“) einblenden – verstärkt den Eindruck. 3) <b>Ganzes Bild</b>: Ball, ein Kind bringt Pflaster, die Lehrerin lächelt → Ein Kind ist beim Fußball gestürzt, das andere hilft. 4) <b>Überschrift B</b>.</p>
+    <p><b>Kernaussage:</b> Auch ein <b>echtes</b> Foto kann täuschen – durch <b>Ausschnitt</b> und <b>Überschrift</b>. Nichts ist gefälscht, und trotzdem entsteht ein falscher Eindruck.</p>
+  </aside>
+</section>
+
+<section class="slide" data-chapter="7" data-title="Medien können steuern">
+  <h2>Medien können <span class="hl">steuern</span></h2>
+  <div class="grid g2 steer">
+    <div class="card st step"><span class="emoji se">📰</span><div><b>Überschrift</b><p>„Chaos!“ oder „Tolle Pause!“ – sie sagt uns, <b>was wir denken sollen</b>.</p></div></div>
+    <div class="card st step"><span class="emoji se">✂️</span><div><b>Bildausschnitt</b><p>Was <b>weggeschnitten</b> ist, sehen wir nicht.</p></div></div>
+    <div class="card st step"><span class="emoji se">🎨</span><div><b>Farbe &amp; Musik</b><p>Rot und dramatische Musik = Gefahr! Blau und ruhige Musik = alles gut.</p></div></div>
+    <div class="card st step"><span class="emoji se">🔀</span><div><b>Reihenfolge &amp; Weglassen</b><p>Was <b>zuerst</b> kommt, wirkt wichtig. Was <b>fehlt</b>, erfahren wir nie.</p></div></div>
+  </div>
+  <aside class="notes">
+    <p>Beispiele aus der Lebenswelt: Werbung (Farbe/Musik), YouTube-Vorschaubilder mit roten Pfeilen und Schock-Gesichtern („Clickbait“), Nachrichten-Überschriften.</p>
+    <p>Frage: „Wo habt ihr so etwas schon gesehen?“</p>
+  </aside>
+</section>
+
+<section class="slide denk" data-chapter="7" data-title="Echt oder Fake?" data-badge="Denkfrage">
+  <div class="fake-row">
+    <div class="phone">
+      <div class="p-top"><span class="p-av">N</span><div><b>news4u_echt</b><small>vor 2 Std.</small></div></div>
+      <div class="p-body"><b class="alarm">EILMELDUNG!!! <span class="emoji">😱</span></b><br>Ab Montag gibt es <b>KEINE SCHULE</b> mehr – für immer!!! Die Regierung hat es beschlossen.<br><b class="alarm">SOFORT TEILEN!!!</b></div>
+      <div class="p-foot"><span><span class="emoji">❤️</span> 3,2 Mio.</span><span><span class="emoji">🔁</span> 890 000</span></div>
+    </div>
+    <div class="fake-q">
+      <div class="bubble small-b">Woran merkst du, dass hier etwas <b>faul</b> ist?</div>
+      <ul class="checks">
+        <li class="step"><span class="emoji">❓</span> Keine Quelle – wer ist „news4u_echt“?</li>
+        <li class="step"><span class="emoji">❗</span> Viele Ausrufezeichen und GROSSBUCHSTABEN</li>
+        <li class="step"><span class="emoji">⏰</span> „Sofort teilen!“ – Druck, nicht nachzudenken</li>
+        <li class="step"><span class="emoji">🍭</span> Zu schön (oder zu schlimm), um wahr zu sein</li>
+        <li class="step"><span class="emoji">🔎</span> Steht nirgendwo sonst – z. B. nicht bei logo! oder in der Zeitung</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Erst sammeln lassen (1 min zu zweit), dann Punkte aufdecken.</p>
+    <p>Wichtig: Viele Likes bedeuten <b>nicht</b>, dass etwas stimmt. Gute Kindernachrichten: <b>logo!</b> (ZDF), <b>Die Sendung mit der Maus</b>, <b>Kinderzeitungen</b>.</p>
+  </aside>
+</section>
+
+<section class="slide heft" data-chapter="7" data-heft="8" data-title="HEFT: Medien-Check">
+  <aside class="notes"><p><b>Heft-Eintrag 8.</b> Die drei Fragen als Checkliste mit Kästchen ☐ ins Heft. Merksatz zur Suche darunter.</p></aside>
+</section>
+
+<section class="slide recherche" data-chapter="7" data-title="RECHERCHE 3: Mythen-Jäger">
+  <div class="rq">Mythen-Jäger: <b>Stimmt das</b> – oder nicht?</div>
+  <div class="rgrid">
+    <div class="rcards">
+      <div class="rcard" style="--rc:#ef8a2e"><h4><span class="gl">A</span><span class="emoji">🐠</span> Goldfische</h4><p>„Goldfische vergessen alles nach <b>3 Sekunden</b>.“</p><div class="terms"><span class="term-chip">Goldfisch Gedächtnis</span></div></div>
+      <div class="rcard" style="--rc:#e2455b"><h4><span class="gl">B</span><span class="emoji">🐂</span> Stiere</h4><p>„Stiere werden wütend, wenn sie die Farbe <b>Rot</b> sehen.“</p><div class="terms"><span class="term-chip">Stier rot Farbe</span></div></div>
+      <div class="rcard" style="--rc:#2f7fe0"><h4><span class="gl">C</span><span class="emoji">🌙</span> Chinesische Mauer</h4><p>„Man kann sie <b>vom Mond aus</b> sehen.“</p><div class="terms"><span class="term-chip">Chinesische Mauer Mond</span></div></div>
+      <div class="rcard" style="--rc:#22a45d"><h4><span class="gl">D</span><span class="emoji">🍬</span> Kaugummi</h4><p>„Verschluckter Kaugummi bleibt <b>7 Jahre</b> im Magen.“</p><div class="terms"><span class="term-chip">Kaugummi verschluckt</span></div></div>
+    </div>
+    <div class="rside">
+      <div class="twidget" data-min="6" data-label="Recherche: Mythen-Jäger"></div>
+      <div class="where"><span>Suche mit:</span><span class="site">🔍 fragFINN</span><span class="site">🐮 Blinde Kuh</span></div>
+      <div class="write"><h4><svg width="34" height="34"><use href="#i-pencil"/></svg> Ins Heft</h4><ul><li><b>Stimmt / stimmt nicht</b></li><li>Begründung in 1 Satz</li><li><b>2 Quellen</b> (Webseiten)</li></ul></div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p><b>Recherche 6 min</b>, dann Auflösung (2 min). Ziel: den <b>Medien-Check</b> anwenden – zwei Quellen vergleichen!</p>
+    <p><b>Alle vier Behauptungen stimmen nicht:</b></p>
+    <ul>
+      <li><b>A:</b> Goldfische können sich <b>Monate</b> lang an Dinge erinnern (z. B. Fütterungszeiten, Töne).</li>
+      <li><b>B:</b> Stiere sehen Rot nicht besonders; sie reagieren auf die <b>Bewegung</b> des Tuchs.</li>
+      <li><b>C:</b> Die Mauer ist nur wenige Meter breit – vom Mond (ca. 384 000 km) <b>unsichtbar</b>. Selbst aus dem Weltall nur schwer zu erkennen.</li>
+      <li><b>D:</b> Kaugummi wird nicht verdaut, aber nach <b>wenigen Tagen</b> ganz normal ausgeschieden.</li>
+    </ul>
+    <p>Diskussion: Warum verbreiten sich solche Mythen? (klingen lustig/überraschend, werden weitererzählt, niemand prüft nach).</p>
+  </aside>
+</section>
+
+<!-- =================== KAPITEL 8: ABSCHLUSS =================== -->
+<section class="slide chapter" data-chapter="8" data-title="Kapitel 8: Quiz & Abschluss">
+  <div class="kn">Kapitel 8 · Stunde 2</div>
+  <h2>Quiz &amp;<br>Abschluss</h2>
+  <p>Drei Fragen – wer weiß es?</p>
+  <svg class="bigicon" viewBox="0 0 200 200"><path d="M60 30h80v40c0 30-18 50-40 50s-40-20-40-50z" fill="#fff"/><path d="M60 44H34c0 30 14 40 30 40M140 44h26c0 30-14 40-30 40" fill="none" stroke="#fff" stroke-width="10"/><rect x="90" y="118" width="20" height="30" fill="#fff"/><rect x="62" y="148" width="76" height="22" rx="6" fill="#fff"/><text x="100" y="92" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="50" fill="#e0a614">1</text></svg>
+  <aside class="notes"><p>Abschluss ca. 5 min. Quizfragen per Handzeichen, danach Exit-Ticket.</p></aside>
+</section>
+
+<section class="slide quiz" data-chapter="8" data-title="Quiz 1: Das Emoji">
+  <div class="qq">Tom bekommt die Nachricht <span class="emoji">🥶</span>. Was ist das Emoji?</div>
+  <div class="opts">
+    <div class="opt"><span class="L">A</span>die Information</div>
+    <div class="opt correct"><span class="L">B</span>eine Form (Repräsentation)</div>
+    <div class="opt"><span class="L">C</span>das Trägermedium</div>
+    <div class="opt"><span class="L">D</span>der Empfänger</div>
+  </div>
+  <i class="step marker" data-toggle-class="revealed"></i>
+  <div class="explain step">Das Emoji ist die <b>Form</b>. Die Information („Mir ist kalt“) entsteht erst in Toms Kopf.</div>
+  <div class="hands"><span class="emoji">✋</span> Hand hoch: A, B, C oder D?</div>
+  <aside class="notes"><p>Richtig: <b>B</b>. Trägermedium wäre der Bildschirm (und Funk/WLAN).</p></aside>
+</section>
+
+<section class="slide quiz" data-chapter="8" data-title="Quiz 2: Was kam zuerst?">
+  <div class="qq">Welche Erfindung gab es <b>zuerst</b>?</div>
+  <div class="opts">
+    <div class="opt"><span class="L">A</span><span class="emoji">☎️</span>&nbsp;Telefon</div>
+    <div class="opt correct"><span class="L">B</span><span class="emoji">📜</span>&nbsp;Buchdruck</div>
+    <div class="opt"><span class="L">C</span><span class="emoji">📻</span>&nbsp;Radio</div>
+    <div class="opt"><span class="L">D</span><span class="emoji">📡</span>&nbsp;Telegraf</div>
+  </div>
+  <i class="step marker" data-toggle-class="revealed"></i>
+  <div class="explain step">Buchdruck (um 1450) → Telegraf (1844) → Telefon (1861/1876) → Radio (ab 1923 in Deutschland).</div>
+  <div class="hands"><span class="emoji">✋</span> Hand hoch: A, B, C oder D?</div>
+  <aside class="notes"><p>Richtig: <b>B</b>. Bonusfrage: Reihenfolge aller vier nennen lassen.</p></aside>
+</section>
+
+<section class="slide quiz" data-chapter="8" data-title="Quiz 3: Handy in der Mikrowelle?">
+  <div class="qq">Im Netz steht: „Handys laden sich in der <b>Mikrowelle</b> in 1 Minute auf!“ Was tust du?</div>
+  <div class="opts">
+    <div class="opt"><span class="L">A</span>Sofort ausprobieren</div>
+    <div class="opt"><span class="L">B</span>An alle Freunde schicken</div>
+    <div class="opt correct"><span class="L">C</span>Quelle prüfen und woanders nachsehen</div>
+    <div class="opt"><span class="L">D</span>Glauben – steht ja im Internet</div>
+  </div>
+  <i class="step marker" data-toggle-class="revealed"></i>
+  <div class="explain step"><b>Medien-Check!</b> Wer? Wozu? Wo noch? (Und: Das stimmt natürlich nicht – das Handy wird zerstört und es kann brennen!)</div>
+  <div class="hands"><span class="emoji">✋</span> Hand hoch: A, B, C oder D?</div>
+  <aside class="notes"><p>Richtig: <b>C</b>. Diese Falschmeldung gab es wirklich (2014, „Wave“-Update) – Menschen haben ihre Handys zerstört.</p></aside>
+</section>
+
+<section class="slide denk" data-chapter="8" data-title="Exit-Ticket: Das kann ich jetzt" data-badge="Exit-Ticket">
+  <h2>Exit-Ticket: <span class="hl">Das kann ich jetzt</span></h2>
+  <div class="exit-row">
+    <ul class="cando">
+      <li><span class="box"></span>Ich kann <b>Information</b>, <b>Daten</b> und <b>Trägermedium</b> unterscheiden.</li>
+      <li><span class="box"></span>Ich kann die <b>Kommunikationskette</b> erklären und Störungen finden.</li>
+      <li><span class="box"></span>Ich kenne <b>Codes</b> aus dem Alltag und weiß: Man braucht die Regel.</li>
+      <li><span class="box"></span>Ich kann <b>3 Erfindungen</b> der Kommunikation ordnen.</li>
+      <li><span class="box"></span>Ich prüfe Medien mit <b>Wer? Wozu? Wo noch?</b></li>
+    </ul>
+    <div class="ticket">
+      <div class="t-h"><span class="emoji">🎟️</span> Auf einen Zettel:</div>
+      <div class="t-b">„Information reist nie nackt, weil …“</div>
+      <div class="thumbs"><span class="emoji">👍</span><span class="emoji">✊</span><span class="emoji">👎</span></div>
+      <div class="small">Daumen-Abfrage zu jedem Satz</div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Zu jedem „Ich kann“-Satz: Daumen hoch / Mitte / runter. Exit-Ticket beim Rausgehen abgeben.</p>
+    <p>Gute Antwort: „… weil sie immer eine Form (z. B. Text, Emoji) und ein Medium (z. B. Papier, Bildschirm) braucht – und jemanden, der die Regel kennt.“</p>
+  </aside>
+</section>
+
+<section class="slide" data-chapter="8" data-title="Bildnachweis & Lizenzen">
+  <h2>Bildnachweis &amp; <span class="hl">Lizenzen</span></h2>
+  <div class="credits" id="credits">
+    <div class="cr"><img src="assets/img/lascaux.jpg" alt=""><div><b>Höhlenmalerei, Lascaux (Frankreich)</b><br>Foto: unbekannt (Wikimedia Commons) · Lizenz: Public domain<br><span class="small">https://commons.wikimedia.org/wiki/File:Lascaux_painting.jpg</span></div></div>
+    <div class="cr"><img src="assets/img/z3.jpg" alt=""><div><b>Nachbau der Zuse Z3, Deutsches Museum München</b><br>Foto: Venusianer (de.wikipedia) · Lizenz: CC BY-SA 3.0<br><span class="small">https://commons.wikimedia.org/wiki/File:Z3_Deutsches_Museum.JPG</span></div></div>
+    <div class="cr"><img src="assets/img/waehlscheibe.jpg" alt=""><div><b>Telefon-Wählscheibe</b><br>Foto: Gestumblindi · Lizenz: Public domain<br><span class="small">https://commons.wikimedia.org/wiki/File:Waehlscheibe-kurzwahlnummern.jpg</span></div></div>
+    <div class="cr"><span class="ic emoji">✏️</span><div><b>Alle Zeichnungen &amp; Icons</b><br>eigene SVG-Illustrationen, erstellt für diese Präsentation</div></div>
+    <div class="cr"><span class="ic emoji">🔤</span><div><b>Schriften: Nunito &amp; Fredoka</b><br>SIL Open Font License 1.1 · Google Fonts / Fontsource (lokal eingebunden)</div></div>
+    <div class="cr"><span class="ic emoji">▦</span><div><b>QR-Code-Erzeugung: qrcode-generator 2.0.4</b><br>© 2009 Kazuhiko Arase, MIT-Lizenz · „QR Code“ ist eine Marke der DENSO WAVE INC.</div></div>
+    <div class="cr"><span class="ic emoji">😀</span><div><b>Emojis</b><br>werden von der Emoji-Schrift des Computers angezeigt (z. B. Segoe UI Emoji)</div></div>
+  </div>
+  <aside class="notes"><p>Alle Zeichnungen (SVG) sind selbst erstellt. Fotos von Wikimedia Commons, lokal gespeichert. Emojis werden von der Systemschrift des Computers dargestellt.</p></aside>
+</section>
+</div></div>
+<script>
+window.IMAGES = ["lascaux.jpg", "waehlscheibe.jpg", "z3.jpg"];
+window.CHAPTERS = [
+  {name:'Start', lesson:'Stunde 1'},
+  {name:'Information & Daten', lesson:'Stunde 1'},
+  {name:'Daten – Information – Wissen', lesson:'Stunde 1'},
+  {name:'Codes im Alltag', lesson:'Stunde 1'},
+  {name:'Kommunikationskette', lesson:'Stunde 2'},
+  {name:'Zeitreise der Kommunikation', lesson:'Stunde 2'},
+  {name:'Medien kritisch prüfen', lesson:'Stunde 2'},
+  {name:'Quiz & Abschluss', lesson:'Stunde 2'}
+];
+</script>
+<script src="assets/vendor/qrcode-generator/qrcode.js"></script>
+<script src="assets/js/heft-content.js"></script>
+<script src="assets/js/demos.js"></script>
+<script src="assets/js/deck.js"></script>
+</body>
+</html>

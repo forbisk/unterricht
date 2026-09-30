@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modul 1 – Zentrische Streckung · Ähnlichkeit Klasse 10</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/print.css">
+<script src="vendor/katex/katex.min.js"></script>
+<script src="vendor/katex/auto-render.min.js"></script>
+<script src="js/geom.js"></script>
+<script src="js/app.js"></script>
+<script src="js/progress-catalog.js"></script>
+<script src="js/progress.js"></script>
+</head>
+<body data-page="m1" data-module="m1">
+<main id="main">
+<section class="hero m1">
+  <span class="kicker">Modul 1 · Neu · Stunde 1 + HA 1</span>
+  <h1>Zentrische Streckung</h1>
+  <p>Mit einem Zentrum $Z$ und einem Streckungsfaktor $k$ vergrößerst oder verkleinerst du jede Figur – exakt und ohne Verzerren. So entstehen ähnliche Figuren.</p>
+  <svg class="deco" viewBox="0 0 420 300" aria-hidden="true"><g stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-dasharray="5 6"><line x1="30" y1="270" x2="330" y2="30"/><line x1="30" y1="270" x2="400" y2="170"/><line x1="30" y1="270" x2="410" y2="90"/></g><polygon points="130,190 180,196 160,150" fill="rgba(255,255,255,.35)" stroke="#fff" stroke-width="3"/><polygon points="230,110 330,122 290,30" fill="rgba(255,236,153,.35)" stroke="#ffe066" stroke-width="3.5"/><circle cx="30" cy="270" r="8" fill="#fff"/></svg>
+</section>
+<nav class="toc"><a href="#begriffe">1.1 Begriffe</a><a href="#labor">1.2 Streckungslabor</a><a href="#eigenschaften">1.3 Eigenschaften</a><a href="#konstruktion">1.4 Konstruieren</a><a href="#berechnen">1.5 Berechnen</a><a href="#bauen">1.6 Selbst konstruieren</a><a href="#zentrum">1.7 Zentrum finden</a><a href="#aufgaben">1.8 Aufgaben</a></nav>
+
+<section class="section" id="begriffe">
+  <div class="section-title"><span class="num-badge">1.1</span><h2>Was ist eine zentrische Streckung?</h2><span class="lvl muss">MUSS</span></div>
+  <div class="two-col">
+    <div>
+      <div class="box lesen"><span class="instr lesen">Nur lesen</span>
+        <p>Stell dir eine Taschenlampe im Punkt $Z$ vor. Sie wirft den Schatten einer Figur an die Wand. Jeder Lichtstrahl geht von $Z$ aus durch einen Punkt $P$ der Figur und trifft die Wand im Punkt $P'$. Je weiter die Wand weg ist, desto größer wird der Schatten – aber die <b>Form bleibt gleich</b>.</p>
+        <p>Genau so funktioniert die zentrische Streckung: Jeder Punkt wird von $Z$ aus auf seinem Strahl „weggeschoben“ (oder „herangezogen“) – immer mit demselben Faktor $k$.</p>
+      </div>
+      <div class="box abschreiben"><span class="instr abschreiben">Abschreiben</span>
+        <h4><span class="merk-id">M1</span> Zentrische Streckung</h4>
+        <p>Eine zentrische Streckung ist festgelegt durch das <b>Streckungszentrum $Z$</b> und den <b>Streckungsfaktor $k$</b> ($k&gt;0$).</p>
+        <p>Zu jedem Punkt $P$ findet man den <b>Bildpunkt $P'$</b> so:</p>
+        <ol><li>$P'$ liegt auf dem Strahl von $Z$ durch $P$.</li><li>$\overline{ZP'} = k \cdot \overline{ZP}$</li></ol>
+        <p class="formula-big center">$k = \dfrac{\overline{ZP'}}{\overline{ZP}}$</p>
+        <p>$k&gt;1$: Vergrößerung &nbsp;·&nbsp; $0&lt;k&lt;1$: Verkleinerung &nbsp;·&nbsp; $k=1$: Bild = Original</p>
+      </div>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:.2em">Skizze: $k = 2$</h4>
+      <div id="figM1" class="fig center"></div>
+      <p class="small muted">$Z$, $P$ und $P'$ liegen auf einer Geraden. Hier ist $\overline{ZP'}$ doppelt so lang wie $\overline{ZP}$.</p>
+      <p class="small"><b>Sprechweise:</b> „$P'$ ist der Bildpunkt von $P$ bei der zentrischen Streckung mit dem Zentrum $Z$ und dem Faktor $k=2$.“ Kurz: $P \xrightarrow{Z;\,k=2} P'$</p>
+    </div>
+  </div>
+  <div class="checkoff" data-sec="m1-begriffe"></div>
+</section>
+
+<section class="section" id="labor">
+  <div class="section-title"><span class="num-badge">1.2</span><h2>Streckungslabor – entdecke selbst</h2><span class="instr diskutieren">Diskutieren</span></div>
+  <p>Ziehe die Punkte <b class="c-z">Z</b>, <b class="c-orig">A</b>, <b class="c-orig">B</b>, <b class="c-orig">C</b> und verändere $k$ mit dem Schieberegler. Das Gitter: <b>1 Kästchen = 0,5 cm</b>.</p>
+  <div class="applet">
+    <div class="applet-head"><h3>Streckungslabor</h3><span class="tag">Ziehen mit Maus oder Finger</span></div>
+    <div class="applet-body">
+      <div class="stage" id="labStage"></div>
+      <div class="panel">
+        <div class="row"><span>Streckungsfaktor</span><span class="kval" id="kOut">k = 2</span></div>
+        <input type="range" id="kSlider" min="0.1" max="3" step="0.05" value="2" aria-label="Streckungsfaktor k">
+        <div class="presets" id="kPresets"></div>
+        <div class="row" style="gap:.2rem 1rem">
+          <label class="chk"><input type="checkbox" id="optRays" checked> Strahlen</label>
+          <label class="chk"><input type="checkbox" id="optAngles"> Winkel</label>
+          <label class="chk"><input type="checkbox" id="optSnap" checked> Einrasten</label>
+          <label class="chk"><input type="checkbox" id="optLabels" checked> Längen</label>
+          <label class="chk"><input type="checkbox" id="optQuad"> Viereck (Punkt D)</label>
+        </div>
+        <table class="data" id="labTable"></table>
+        <div id="labInfo" class="small"></div>
+      </div>
+    </div>
+  </div>
+  <div class="grid g2">
+    <div class="box diskutieren"><span class="instr diskutieren">Diskutieren</span>
+      <p><b>D1:</b> Stellt nacheinander $k=2$, $k=\frac12$ und $k=1$ ein. Wo liegt $A'$ jeweils – <i>hinter</i> $A$, <i>zwischen</i> $Z$ und $A$ oder <i>auf</i> $A$?</p>
+      <p><b>D2:</b> Schaut in die Tabelle: Was fällt euch an der letzten Spalte (Bild : Original) auf? Gilt das nur für die Strahlen oder auch für die Dreiecksseiten?</p>
+    </div>
+    <div class="box diskutieren"><span class="instr diskutieren">Diskutieren</span>
+      <p><b>D3:</b> Schaltet „Winkel“ ein. Was passiert mit den Winkeln, wenn ihr $k$ verändert?</p>
+      <p><b>D4:</b> Vergleicht die Richtung von $\overline{AB}$ und $\overline{A'B'}$. Zieht $Z$ ins Innere des Dreiecks. Was bleibt gleich, was ändert sich?</p>
+    </div>
+  </div>
+  <h3>Entdeckt? Dann prüft euch:</h3>
+  <div id="labTasks" class="tasks-grid"></div>
+  <div class="checkoff" data-sec="m1-labor"></div>
+</section>
+
+<section class="section" id="eigenschaften">
+  <div class="section-title"><span class="num-badge">1.3</span><h2>Eigenschaften der zentrischen Streckung</h2><span class="lvl muss">MUSS</span><span class="lvl soll">SOLL</span></div>
+  <div class="box abschreiben"><span class="instr abschreiben">Abschreiben</span>
+    <h4><span class="merk-id">M2</span> Eigenschaften der zentrischen Streckung</h4>
+    <ol>
+      <li><b>Längen</b> werden mit $k$ multipliziert: $\overline{A'B'} = k \cdot \overline{AB}$ (Streckenverhältnis $\overline{A'B'} : \overline{AB} = k$).</li>
+      <li><b>Winkel</b> bleiben gleich groß (winkeltreu): $\alpha' = \alpha$.</li>
+      <li>Jede Bildstrecke ist <b>parallel</b> zur Originalstrecke: $A'B' \parallel AB$.</li>
+      <li>Das Zentrum $Z$ bleibt an seinem Platz.</li>
+      <li>Bild und Original sind <b>ähnlich</b>: $\triangle A'B'C' \sim \triangle ABC$.</li>
+    </ol>
+  </div>
+  <div class="grid g2">
+    <div class="box abschreiben"><span class="instr abschreiben">Abschreiben</span>
+      <h4><span class="merk-id">M3</span> Streckungsfaktor = Ähnlichkeitsfaktor</h4>
+      <p>Der <b>Streckungsfaktor</b> gehört zu einer Abbildung (mit Zentrum $Z$). Der <b>Ähnlichkeitsfaktor</b> vergleicht zwei Figuren. Bei einer zentrischen Streckung ist es <b>dieselbe Zahl</b> $k$.</p>
+      <p>Zwei ähnliche Figuren müssen nicht so liegen, dass man sie direkt strecken kann: Ähnlichkeit darf zusätzlich <b>Verschieben, Drehen, Spiegeln</b> enthalten.</p>
+    </div>
+    <div class="box abschreiben"><span class="instr abschreiben">Abschreiben</span>
+      <h4><span class="merk-id">M4</span> Umkehrung</h4>
+      <p>Wurde $F$ mit $k$ auf $F'$ gestreckt, dann bringt die Streckung mit demselben Zentrum und dem Faktor $\dfrac{1}{k}$ das Bild $F'$ zurück auf $F$.</p>
+      <p>Beispiel: $k = 2$ &nbsp;⟶&nbsp; zurück mit $\frac{1}{2}$. &nbsp; $k = \frac{3}{2}$ &nbsp;⟶&nbsp; zurück mit $\frac{2}{3}$.</p>
+    </div>
+  </div>
+  <div class="pitfall"><h4>Typische Fehler</h4>
+    <ul>
+      <li><b>Richtung mischen:</b> $k = \dfrac{\text{Bild}}{\text{Urbild}}$ – nicht mal so, mal so! Ist das Bild kleiner, muss $k&lt;1$ sein.</li>
+      <li><b>Vom falschen Punkt messen:</b> $\overline{ZP'}$ wird immer <b>von $Z$ aus</b> gemessen, nicht von $P$ aus. Die Strecke $\overline{PP'}$ ist $\overline{ZP'}-\overline{ZP}$.</li>
+      <li><b>Winkel mit $k$ multiplizieren:</b> Winkel bleiben gleich! Nur Längen ändern sich.</li>
+    </ul>
+  </div>
+  <div class="checkoff" data-sec="m1-eigenschaften"></div>
+</section>
+
+<section class="section" id="konstruktion">
+  <div class="section-title"><span class="num-badge">1.4</span><h2>Konstruieren Schritt für Schritt</h2><span class="instr beispiel">Beispiel ins Heft</span></div>
+  <p>Auf dem Kästchengitter geht es ohne Lineal-Messen: Du <b>zählst</b> von $Z$ aus die Kästchen bis zum Punkt und nimmst die Anzahl mal $k$. <span class="muted">(Zählhilfe aus dem Unterricht: „Z 2 nach rechts, 2 hoch“.)</span></p>
+  <div class="applet">
+    <div class="applet-head"><h3>Konstruktion</h3>
+      <div class="presets" id="consK"></div>
+    </div>
+    <div class="applet-body">
+      <div class="stage" id="consStage"></div>
+      <div class="panel">
+        <div class="steps" id="consDots"></div>
+        <div class="step-text" id="consText"></div>
+        <div class="btn-row"><button class="btn ghost small" id="consPrev">◂ Zurück</button><button class="btn small" id="consNext">Weiter ▸</button><button class="btn ghost small" id="consPlay">▶ Abspielen</button></div>
+        <div class="box beispiel" style="margin-top:.6rem"><span class="instr beispiel">Beispiel ins Heft</span>
+          <p class="small" style="margin-bottom:0">Zeichne das Beispiel mit $k=2$ in dein Heft (1 Kästchen = 0,5 cm). Schreibe zu jedem Punkt die Zählhilfe dazu, z. B. „$Z \to A$: 2 rechts, 1 hoch; $Z \to A'$: 4 rechts, 2 hoch“.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <details><summary>Ohne Gitter: Konstruktion mit Lineal (und Zirkel)</summary>
+    <ol class="step-list">
+      <li>Zeichne den Strahl von $Z$ durch $A$ (über $A$ hinaus).</li>
+      <li>Miss $\overline{ZA}$ mit dem Lineal, z. B. $\overline{ZA} = 2{,}3\,\text{cm}$.</li>
+      <li>Berechne $\overline{ZA'} = k \cdot \overline{ZA}$, z. B. $2 \cdot 2{,}3\,\text{cm} = 4{,}6\,\text{cm}$.</li>
+      <li>Trage $4{,}6\,\text{cm}$ <b>von $Z$ aus</b> auf dem Strahl ab → $A'$. (Bei $k=2$ geht es auch mit dem Zirkel: Kreis um $A$ mit Radius $\overline{ZA}$.)</li>
+      <li>Wiederhole für $B$ und $C$, verbinde $A'$, $B'$, $C'$.</li>
+      <li>Kontrolle: Ist $A'B' \parallel AB$? Sind die Winkel gleich?</li>
+    </ol>
+  </details>
+  <div class="checkoff" data-sec="m1-konstruktion"></div>
+</section>
+
+<section class="section" id="berechnen">
+  <div class="section-title"><span class="num-badge">1.5</span><h2>Berechnen – Musterbeispiele</h2><span class="instr beispiel">Beispiel ins Heft</span></div>
+  <div class="grid g2">
+    <div class="box beispiel"><span class="instr beispiel">Beispiel ins Heft</span>
+      <h4>Beispiel 1: Bildlängen berechnen</h4>
+      <p>Gegeben: $\overline{ZA} = 3\,\text{cm}$, $\overline{AB} = 2\,\text{cm}$, $k = 2{,}5$. Gesucht: $\overline{ZA'}$ und $\overline{A'B'}$.</p>
+      <ol class="step-list" data-reveal>
+        <li>Formel aufschreiben: $\overline{ZA'} = k \cdot \overline{ZA}$</li>
+        <li>Einsetzen: $\overline{ZA'} = 2{,}5 \cdot 3\,\text{cm} = 7{,}5\,\text{cm}$</li>
+        <li>Für Seiten gilt dasselbe: $\overline{A'B'} = k \cdot \overline{AB} = 2{,}5 \cdot 2\,\text{cm} = 5\,\text{cm}$</li>
+        <li>Kontrolle: $k&gt;1$, also müssen die Bildstrecken länger sein. ✓</li>
+      </ol>
+    </div>
+    <div class="box beispiel"><span class="instr beispiel">Beispiel ins Heft</span>
+      <h4>Beispiel 2: $k$ bestimmen, dann weiterrechnen</h4>
+      <p>Gegeben: $\overline{ZP} = 4\,\text{cm}$, $\overline{ZP'} = 10\,\text{cm}$, $\overline{ZQ'} = 6\,\text{cm}$. Gesucht: $k$ und $\overline{ZQ}$.</p>
+      <ol class="step-list" data-reveal>
+        <li>$k = \dfrac{\text{Bild}}{\text{Urbild}} = \dfrac{\overline{ZP'}}{\overline{ZP}} = \dfrac{10\,\text{cm}}{4\,\text{cm}} = 2{,}5$</li>
+        <li>Für $Q$: $\overline{ZQ'} = k \cdot \overline{ZQ}$, also $6\,\text{cm} = 2{,}5 \cdot \overline{ZQ}$</li>
+        <li>Umstellen (durch $k$ teilen): $\overline{ZQ} = 6\,\text{cm} : 2{,}5 = 2{,}4\,\text{cm}$</li>
+        <li>Kontrolle: $2{,}4 \cdot 2{,}5 = 6$ ✓</li>
+      </ol>
+    </div>
+    <div class="box beispiel"><span class="instr beispiel">Beispiel ins Heft</span>
+      <h4>Beispiel 3: Die Strecke $\overline{PP'}$ <span class="lvl soll">SOLL</span></h4>
+      <p>Gegeben: $\overline{ZP} = 4\,\text{cm}$, $k = 1{,}5$. Wie weit ist $P'$ von $P$ entfernt?</p>
+      <ol class="step-list" data-reveal>
+        <li>Skizze machen: $Z$ — $P$ — $P'$ auf einer Linie (bei $k&gt;1$ liegt $P'$ hinter $P$).</li>
+        <li>$\overline{ZP'} = 1{,}5 \cdot 4\,\text{cm} = 6\,\text{cm}$</li>
+        <li>$\overline{PP'} = \overline{ZP'} - \overline{ZP} = 6\,\text{cm} - 4\,\text{cm} = 2\,\text{cm}$</li>
+        <li><b>Achtung:</b> $\overline{PP'}$ ist <b>nicht</b> $k \cdot \overline{ZP}$! Das Verhältnis gilt nur für Strecken, die bei $Z$ beginnen.</li>
+      </ol>
+    </div>
+    <div class="box beispiel"><span class="instr beispiel">Beispiel ins Heft</span>
+      <h4>Beispiel 4: Umfang des Bildes <span class="lvl soll">SOLL</span></h4>
+      <p>Ein Dreieck hat die Seiten $3\,\text{cm}$, $4\,\text{cm}$ und $5\,\text{cm}$. Es wird mit $k = \frac{1}{2}$ gestreckt. Umfang des Bildes?</p>
+      <ol class="step-list" data-reveal>
+        <li>Bildseiten: $\frac12 \cdot 3 = 1{,}5\,\text{cm}$; $\frac12 \cdot 4 = 2\,\text{cm}$; $\frac12 \cdot 5 = 2{,}5\,\text{cm}$</li>
+        <li>$u' = 1{,}5 + 2 + 2{,}5 = 6\,\text{cm}$</li>
+        <li>Schneller: $u = 12\,\text{cm}$, also $u' = k \cdot u = \frac12 \cdot 12\,\text{cm} = 6\,\text{cm}$. Der Umfang ist eine Länge – er wird auch mit $k$ multipliziert.</li>
+      </ol>
+    </div>
+    <div class="box beispiel" id="viereck"><span class="instr beispiel">Beispiel ins Heft</span>
+      <h4>Beispiel 5: Ein Viereck strecken <span class="lvl muss">MUSS</span> <span class="tag recap">Lehrplan: „Dreiecke oder Vierecke“</span></h4>
+      <p>Das Viereck $ABCD$ mit $\overline{AB} = 2\,\text{cm}$, $\overline{BC} = 1{,}5\,\text{cm}$, $\overline{CD} = 1\,\text{cm}$ und $\overline{DA} = 1{,}8\,\text{cm}$ wird am Zentrum $Z$ mit $k = 2$ gestreckt. Konstruiere das Bild und berechne die Bildseiten.</p>
+      <div class="fig center" id="figQuad"></div>
+      <ol class="step-list" data-reveal>
+        <li><b>Konstruieren:</b> Von $Z$ aus vier Strahlen durch $A$, $B$, $C$, $D$ zeichnen.</li>
+        <li>Auf jedem Strahl die Länge ab $Z$ verdoppeln: $\overline{ZA'} = 2 \cdot \overline{ZA}$ usw. (Zirkel oder Kästchen zählen).</li>
+        <li>$A'$, $B'$, $C'$, $D'$ der Reihe nach verbinden. Kontrolle: $A'B' \parallel AB$, $B'C' \parallel BC$ …</li>
+        <li><b>Berechnen:</b> $\overline{A'B'} = 2 \cdot 2 = 4\,\text{cm}$, $\overline{B'C'} = 3\,\text{cm}$, $\overline{C'D'} = 2\,\text{cm}$, $\overline{D'A'} = 3{,}6\,\text{cm}$. Alle Winkel bleiben gleich.</li>
+      </ol>
+      <p class="small muted">Im Streckungslabor (1.2) kannst du „Viereck“ anhaken, im Generator (1.6) „Viereck“ wählen.</p>
+    </div>
+  </div>
+  <div class="checkoff" data-sec="m1-berechnen"></div>
+</section>
+
+<section class="section" id="bauen">
+  <div class="section-title"><span class="num-badge">1.6</span><h2>Jetzt du: Bilddreieck und Bildviereck konstruieren</h2><span class="instr schriftlich">Schriftlich</span></div>
+  <p>Zeichne zuerst im Heft. Ziehe dann die orangen Punkte $A'$, $B'$, $C'$ (beim Viereck auch $D'$) an die richtige Stelle im Gitter und klicke „Prüfen“. Mit „Neue Aufgabe“ bekommst du unbegrenzt neue Aufgaben.</p>
+  <div class="applet">
+    <div class="applet-head"><h3 id="buildTitle">Konstruiere das Bild</h3>
+      <div class="presets"><button class="btn small" data-shape="3">▲ Dreieck</button><button class="btn small ghost" data-shape="4">▰ Viereck (Lehrplan!)</button></div>
+      <div class="presets"><button class="btn small" data-lv="muss">MUSS: k = 2</button><button class="btn small ghost" data-lv="soll">SOLL: k = ½</button><button class="btn small ghost" data-lv="kann">KANN: k = 3/2, Z innen</button></div>
+    </div>
+    <div class="applet-body">
+      <div class="stage" id="buildStage"></div>
+      <div class="panel">
+        <div class="step-text" id="buildTask"></div>
+        <div class="btn-row"><button class="btn" id="buildCheck">Prüfen</button><button class="btn ghost" id="buildNew">Neue Aufgabe</button></div>
+        <div class="btn-row"><button class="btn small warn" id="buildHint">💡 Tipp</button><button class="btn small dark" id="buildSol">Lösung zeigen</button></div>
+        <div class="feedback" id="buildFb"></div>
+        <div class="small muted" id="buildScore"></div>
+      </div>
+    </div>
+  </div>
+  <div class="checkoff" data-sec="m1-bauen" data-label="Mindestens 3 Konstruktionen richtig"></div>
+</section>
+
+<section class="section" id="zentrum">
+  <div class="section-title"><span class="num-badge">1.7</span><h2>Detektiv-Aufgabe: Wo ist Z?</h2><span class="lvl kann">KANN</span></div>
+  <div class="box lesen"><span class="instr lesen">Nur lesen</span>
+    <p>Wenn du Original und Bild kennst, findest du das Zentrum so: Verbinde jeden Punkt mit seinem Bildpunkt ($A$ mit $A'$, $B$ mit $B'$, …) und verlängere die Linien. <b>Alle Geraden schneiden sich in $Z$.</b> Den Faktor bekommst du dann mit $k = \overline{ZA'} : \overline{ZA}$ (Kästchen zählen!).</p>
+  </div>
+  <div class="applet">
+    <div class="applet-head"><h3>Finde Z und k</h3></div>
+    <div class="applet-body">
+      <div class="stage" id="detStage"></div>
+      <div class="panel">
+        <p class="step-text">Ziehe den pinken Punkt <b class="c-z">Z?</b> auf das Streckungszentrum und gib $k$ ein.</p>
+        <div class="answer-row"><span class="lbl">$k =$</span><input class="ans" id="detK" type="text" inputmode="decimal" aria-label="Streckungsfaktor"></div>
+        <div class="btn-row"><button class="btn" id="detCheck">Prüfen</button><button class="btn ghost" id="detNew">Neue Aufgabe</button></div>
+        <div class="btn-row"><button class="btn small warn" id="detHelp">💡 Hilfslinien</button></div>
+        <div class="feedback" id="detFb"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="aufgaben">
+  <div class="section-title"><span class="num-badge">1.8</span><h2>Aufgaben</h2><span class="instr schriftlich">Schriftlich</span></div>
+  <p class="muted">Erst ins Heft rechnen, dann eintippen. MUSS-Aufgaben schaffen alle, SOLL-Aufgaben sind die Hausaufgabe (HA 1), KANN-Aufgaben für Profis.</p>
+  <div id="tasks"></div>
+  <div class="box schriftlich"><span class="instr schriftlich">Schriftlich</span>
+    <h4>Selbstreflexion Modul 1</h4>
+    <p>Trage dich im <a href="selbsttest.html#reflexion">Selbsttest</a> bei <b>A Begriffe</b>, <b>B Zeichnen</b> und <b>C Eigenschaften</b> mit ++ / + / ○ ein.</p>
+  </div>
+</section>
+<div class="pager"><a class="btn ghost" href="modul0-wiederholung.html">← Modul 0</a><a class="btn" href="modul2-aehnliche-dreiecke.html">Modul 2: Ähnliche Dreiecke →</a></div>
+
+</main>
+<script src="js/modul1.js"></script>
+</body>
+</html>

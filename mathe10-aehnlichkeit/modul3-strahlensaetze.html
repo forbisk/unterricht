@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modul 3 – Strahlensätze · Ähnlichkeit Klasse 10</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/print.css">
+<script src="vendor/katex/katex.min.js"></script>
+<script src="vendor/katex/auto-render.min.js"></script>
+<script src="js/geom.js"></script>
+<script src="js/app.js"></script>
+<script src="js/progress-catalog.js"></script>
+<script src="js/progress.js"></script>
+</head>
+<body data-page="m3" data-module="m3">
+<main id="main">
+<section class="hero m3">
+  <span class="kicker">Modul 3 · Werkzeug für Prüfungsaufgaben / Erweiterung · Stunde 2 + HA 2</span>
+  <h1>Strahlensätze</h1>
+  <p>Zwei Strahlen, zwei Parallelen – und schon kannst du unbekannte Längen berechnen. Die Strahlensätze sind die Werkzeuge für Baumhöhen, Flussbreiten und Dachschrägen.</p>
+  <svg class="deco" viewBox="0 0 420 300" aria-hidden="true"><g stroke="#fff" stroke-width="3"><line x1="30" y1="260" x2="410" y2="260"/><line x1="30" y1="260" x2="390" y2="40"/></g><line x1="170" y1="260" x2="170" y2="175" stroke="#a5d8ff" stroke-width="5"/><line x1="320" y1="260" x2="320" y2="83" stroke="#ffe066" stroke-width="5"/><circle cx="30" cy="260" r="8" fill="#fff"/></svg>
+</section>
+<div class="lp-note"><h4>🧰 Werkzeug für Prüfungsaufgaben / Erweiterung</h4>
+  <p style="margin:0">Die Strahlensätze stehen <b>nicht wörtlich im Lehrplan</b> (Sachsen-Anhalt, Klasse 10). In Prüfungsaufgaben braucht man die Idee aber immer wieder, z. B. <a href="pruefung.html#LSA-2019-WPA1c">2019 (Mond, nur 10 % gelöst)</a> und <a href="pruefung.html#LSA-2025-WPA2c">2025 (Suezkanal, nur 8 % gelöst)</a>. <b>Wichtig:</b> Jeder Strahlensatz ist nur eine <b>Abkürzung für ähnliche Dreiecke</b> (Hauptähnlichkeitssatz ww). Wenn du die Formel vergisst, suchst du einfach die zwei ähnlichen Dreiecke und stellst die Verhältnisgleichung auf – das ist immer erlaubt und immer richtig.</p>
+</div>
+<nav class="toc"><a href="#figur">3.1 Die Figur</a><a href="#labor">3.2 Labor</a><a href="#sts1">3.3 1. Strahlensatz</a><a href="#sts2">3.4 2. Strahlensatz</a><a href="#xfigur">3.5 X-Figur</a><a href="#rezept">3.6 Rezept &amp; Fallen</a><a href="#training">3.7 Training</a><a href="#aufgaben">3.8 Aufgaben</a></nav>
+
+<section class="section" id="figur">
+  <div class="section-title"><span class="num-badge">3.1</span><h2>Die Strahlensatzfigur</h2><span class="tag tool">Werkzeug</span><span class="lvl soll">SOLL</span></div>
+  <div class="two-col">
+    <div>
+      <div class="box lesen"><span class="instr lesen">Nur lesen</span>
+        <p>Zwei Strahlen beginnen im gleichen Punkt $S$, dem <b>Scheitel</b>. Sie werden von zwei <b>parallelen Geraden</b> geschnitten. Das nennt man eine <b>Strahlensatzfigur</b> (V-Figur).</p>
+        <ul>
+          <li><b>Scheitelabschnitte</b> (beginnen in $S$): $\overline{SA}$, $\overline{SA'}$, $\overline{SB}$, $\overline{SB'}$</li>
+          <li><b>Abschnitte zwischen den Parallelen</b>: $\overline{AA'}$, $\overline{BB'}$</li>
+          <li><b>Parallelenabschnitte</b>: $\overline{AB}$ und $\overline{A'B'}$</li>
+        </ul>
+      </div>
+      <div class="box lesen"><span class="instr lesen">Nur lesen</span>
+        <h4>Warum funktioniert das? – Du kennst es schon!</h4>
+        <p>Die Dreiecke $SAB$ und $SA'B'$ sind <b>ähnlich</b> (ww): Der Winkel bei $S$ gehört zu beiden, und die Winkel bei $A$ und $A'$ sind Stufenwinkel an Parallelen.</p>
+        <p>Noch besser: $\triangle SA'B'$ ist das Bild von $\triangle SAB$ bei einer <b>zentrischen Streckung mit Zentrum $S$</b>. Deshalb gilt überall derselbe Faktor $k = \dfrac{\overline{SA'}}{\overline{SA}}$.</p>
+      </div>
+    </div>
+    <div class="card"><div class="fig center" id="figIntro"></div>
+      <p class="small muted center">Scheitel $S$ = Streckungszentrum $Z$. &nbsp; $AB \parallel A'B'$</p></div>
+  </div>
+  <div class="checkoff" data-sec="m3-figur"></div>
+</section>
+
+<section class="section" id="labor">
+  <div class="section-title"><span class="num-badge">3.2</span><h2>Strahlensatz-Labor</h2><span class="instr diskutieren">Diskutieren</span></div>
+  <p>Ziehe die Punkte <b>S</b>, <b class="c-orig">A</b>, <b class="c-img">A'</b> und <b class="c-orig">B</b> (verändert die Richtung der Parallelen) und den Punkt <b>R</b> (dreht den zweiten Strahl). $B'$ wird automatisch so gesetzt, dass $A'B' \parallel AB$.</p>
+  <div class="applet">
+    <div class="applet-head"><h3>Strahlensatz-Labor</h3>
+      <div class="presets"><button class="btn small" id="modeV">V-Figur</button><button class="btn small ghost" id="modeX">X-Figur</button></div>
+    </div>
+    <div class="applet-body">
+      <div class="stage" id="stsStage"></div>
+      <div class="panel">
+        <table class="data" id="stsTable"></table>
+        <div class="feedback show info small" id="stsNote"></div>
+      </div>
+    </div>
+  </div>
+  <div class="box diskutieren"><span class="instr diskutieren">Diskutieren</span>
+    <p><b>D7:</b> Welche Verhältnisse in der Tabelle sind <b>immer gleich</b>, egal wie ihr zieht? Welches ist meistens anders?</p>
+    <p><b>D8:</b> Formuliert in eigenen Worten eine Regel, mit der man $\overline{A'B'}$ berechnen kann, wenn man $\overline{AB}$, $\overline{SA}$ und $\overline{SA'}$ kennt.</p>
+  </div>
+  <div class="checkoff" data-sec="m3-labor"></div>
+</section>
+
+<section class="section" id="sts1">
+  <div class="section-title"><span class="num-badge">3.3</span><h2>Der 1. Strahlensatz</h2><span class="tag tool">Werkzeug</span><span class="lvl soll">SOLL</span></div>
+  <div class="two-col">
+    <div class="box abschreiben"><span class="instr abschreiben">Abschreiben</span>
+      <h4><span class="merk-id">M8</span> 1. Strahlensatz</h4>
+      <p>Werden zwei Strahlen mit gemeinsamem Anfangspunkt $S$ von zwei Parallelen geschnitten, dann verhalten sich die Abschnitte auf dem einen Strahl wie die <b>entsprechenden Abschnitte auf dem anderen Strahl</b>:</p>
+      <p class="formula-big center">$\dfrac{\overline{SA'}}{\overline{SA}} = \dfrac{\overline{SB'}}{\overline{SB}}$</p>
+      <p>Das gilt auch für die Abschnitte zwischen den Parallelen, z. B.</p>
+      <p class="center">$\dfrac{\overline{AA'}}{\overline{SA}} = \dfrac{\overline{BB'}}{\overline{SB}}$ &nbsp; oder &nbsp; $\dfrac{\overline{SA'}}{\overline{AA'}} = \dfrac{\overline{SB'}}{\overline{BB'}}$</p>
+      <p class="small"><b>Merkhilfe:</b> Beim 1. Strahlensatz kommen <b>nur Stücke auf den Strahlen</b> vor – keine Parallelenstücke.</p>
+    </div>
+    <div class="card"><div class="fig center" id="fig1STS"></div></div>
+  </div>
+  <div class="grid g2">
+    <div class="box beispiel"><span class="instr beispiel">Beispiel ins Heft</span>
+      <h4>Beispiel 1</h4>
+      <div class="fig center" id="figB1"></div>
+      <p>Gegeben: $\overline{SA} = 3\,\text{cm}$, $\overline{SA'} = 7{,}5\,\text{cm}$, $\overline{SB} = 4\,\text{cm}$. Gesucht: $\overline{SB'}$.</p>
+      <ol class="step-list" data-reveal>
+        <li>Figur prüfen: Scheitel $S$, $AB \parallel A'B'$ ✓. Gesucht ist ein Stück auf einem Strahl → <b>1. Strahlensatz</b>.</li>
+        <li>Gleichung mit der Unbekannten oben links: $\dfrac{\overline{SB'}}{\overline{SB}} = \dfrac{\overline{SA'}}{\overline{SA}}$</li>
+        <li>Einsetzen: $\dfrac{x}{4} = \dfrac{7{,}5}{3}$</li>
+        <li>Mit 4 multiplizieren: $x = \dfrac{7{,}5 \cdot 4}{3} = 10$, also $\overline{SB'} = 10\,\text{cm}$.</li>
+        <li>Probe: $10 : 4 = 2{,}5$ und $7{,}5 : 3 = 2{,}5$ ✓</li>
+      </ol>
+    </div>
+    <div class="box beispiel"><span class="instr beispiel">Beispiel ins Heft</span>
+      <h4>Beispiel 2: Mit Abschnitten zwischen den Parallelen</h4>
+      <div class="fig center" id="figB2"></div>
+      <p>Gegeben: $\overline{SA} = 4\,\text{cm}$, $\overline{AA'} = 2\,\text{cm}$, $\overline{SB} = 5\,\text{cm}$. Gesucht: $\overline{BB'}$.</p>
+      <ol class="step-list" data-reveal>
+        <li>Alle Angaben sind Stücke auf den Strahlen → 1. Strahlensatz.</li>
+        <li>$\dfrac{\overline{BB'}}{\overline{SB}} = \dfrac{\overline{AA'}}{\overline{SA}}$ &nbsp;→&nbsp; $\dfrac{x}{5} = \dfrac{2}{4}$</li>
+        <li>$x = \dfrac{2 \cdot 5}{4} = 2{,}5$, also $\overline{BB'} = 2{,}5\,\text{cm}$.</li>
+        <li>Anderer Weg: $k = \frac{6}{4} = 1{,}5$ ($\overline{SA'} = 4 + 2 = 6$), $\overline{SB'} = 1{,}5 \cdot 5 = 7{,}5$, $\overline{BB'} = 7{,}5 - 5 = 2{,}5$ ✓</li>
+      </ol>
+    </div>
+  </div>
+  <div class="checkoff" data-sec="m3-sts1"></div>
+</section>
+
+<section class="section" id="sts2">
+  <div class="section-title"><span class="num-badge">3.4</span><h2>Der 2. Strahlensatz</h2><span class="tag tool">Werkzeug</span><span class="lvl soll">SOLL</span></div>
+  <div class="two-col">
+    <div class="box abschreiben"><span class="instr abschreiben">Abschreiben</span>
+      <h4><span class="merk-id">M9</span> 2. Strahlensatz</h4>
+      <p>Die <b>Parallelenabschnitte</b> verhalten sich wie die zugehörigen <b>Scheitelabschnitte</b> (vom Scheitel $S$ aus gemessen):</p>
+      <p class="formula-big center">$\dfrac{\overline{A'B'}}{\overline{AB}} = \dfrac{\overline{SA'}}{\overline{SA}} = \dfrac{\overline{SB'}}{\overline{SB}}$</p>
+      <p><b>Wichtig:</b> Hier dürfen <b>nur Strecken ab $S$</b> verwendet werden – <b>nicht</b> $\overline{AA'}$ oder $\overline{BB'}$!</p>
+    </div>
+    <div class="card"><div class="fig center" id="fig2STS"></div></div>
+  </div>
+  <div class="grid g2">
+    <div class="box beispiel"><span class="instr beispiel">Beispiel ins Heft</span>
+      <h4>Beispiel 3</h4>
+      <div class="fig center" id="figB3"></div>
+      <p>Gegeben: $\overline{SA} = 5\,\text{cm}$, $\overline{AA'} = 3\,\text{cm}$, $\overline{AB} = 3\,\text{cm}$. Gesucht: $\overline{A'B'}$.</p>
+      <ol class="step-list" data-reveal>
+        <li>Gesucht ist ein Parallelenstück → <b>2. Strahlensatz</b>. Dafür brauche ich Scheitelabschnitte!</li>
+        <li>Scheitelabschnitt berechnen: $\overline{SA'} = \overline{SA} + \overline{AA'} = 5 + 3 = 8\,\text{cm}$</li>
+        <li>$\dfrac{\overline{A'B'}}{\overline{AB}} = \dfrac{\overline{SA'}}{\overline{SA}}$ &nbsp;→&nbsp; $\dfrac{x}{3} = \dfrac{8}{5}$</li>
+        <li>$x = \dfrac{8 \cdot 3}{5} = 4{,}8$, also $\overline{A'B'} = 4{,}8\,\text{cm}$.</li>
+      </ol>
+    </div>
+    <div class="pitfall"><h4>Die größte Falle beim 2. Strahlensatz</h4>
+      <p>Im Beispiel 3 würde der falsche Ansatz $\dfrac{x}{3} = \dfrac{\overline{AA'}}{\overline{SA}} = \dfrac{3}{5}$ ergeben: $x = 1{,}8\,\text{cm}$ – das ist sogar <b>kürzer</b> als $\overline{AB}$, obwohl $A'B'$ weiter außen liegt. Unmöglich!</p>
+      <p><b>Grund:</b> Die Dreiecke $SAB$ und $SA'B'$ sind ähnlich – aber es gibt kein Dreieck mit der Seite $\overline{AA'}$, das zu ihnen ähnlich wäre.</p>
+      <p><b>Kontrollfrage:</b> Kommt ein Parallelenstück vor? → Dann nur Strecken ab $S$ benutzen.</p>
+      <div class="box diskutieren" style="background:#fff"><span class="instr diskutieren">Diskutieren</span><p style="margin-bottom:0"><b>D9:</b> Stellt im Labor (oben) die Figur so ein, dass $\overline{AA'} = \overline{SA}$ ist. Stimmt dann „$A'B' : AB = AA' : SA$“? Und wenn ihr $A'$ weiterzieht?</p></div>
+    </div>
+  </div>
+  <div class="checkoff" data-sec="m3-sts2"></div>
+</section>
+
+<section class="section" id="xfigur">
+  <div class="section-title"><span class="num-badge">3.5</span><h2>Die X-Figur</h2><span class="tag tool">Werkzeug</span><span class="lvl soll">SOLL</span></div>
+  <div class="two-col">
+    <div>
+      <div class="box lesen"><span class="instr lesen">Nur lesen</span>
+        <p>Schneiden sich die beiden Geraden <b>zwischen</b> den Parallelen, entsteht eine <b>X-Figur</b> (auch „Schmetterling“ oder „Sanduhr“). Der Scheitel $S$ liegt dann zwischen $A$ und $A'$ bzw. $B$ und $B'$.</p>
+        <p>Die beiden Dreiecke $SAB$ und $SA'B'$ sind wieder ähnlich (Scheitelwinkel bei $S$ und Wechselwinkel an Parallelen). Deshalb gelten <b>beide Strahlensätze genauso</b> – mit Strecken ab $S$:</p>
+        <p class="center">$\dfrac{\overline{SA'}}{\overline{SA}} = \dfrac{\overline{SB'}}{\overline{SB}} = \dfrac{\overline{A'B'}}{\overline{AB}}$</p>
+        <p class="small">(Das ist eine zentrische Streckung am Zentrum $S$ mit anschließender Drehung um $180^\circ$ – oder, wie manche Bücher sagen, mit negativem Faktor. Rechnen kannst du einfach mit positiven Längen.)</p>
+      </div>
+    </div>
+    <div class="card"><div class="fig center" id="figX"></div></div>
+  </div>
+  <div class="box beispiel"><span class="instr beispiel">Beispiel ins Heft</span>
+    <h4>Beispiel 4: X-Figur</h4>
+    <p>$AB \parallel A'B'$, $\overline{SA} = 3\,\text{cm}$, $\overline{SA'} = 4{,}5\,\text{cm}$, $\overline{AB} = 4\,\text{cm}$, $\overline{SB} = 2{,}4\,\text{cm}$. Berechne $\overline{A'B'}$ und $\overline{SB'}$.</p>
+    <ol class="step-list" data-reveal>
+      <li>Faktor: $k = \dfrac{\overline{SA'}}{\overline{SA}} = \dfrac{4{,}5}{3} = 1{,}5$</li>
+      <li>2. Strahlensatz: $\overline{A'B'} = 1{,}5 \cdot 4\,\text{cm} = 6\,\text{cm}$</li>
+      <li>1. Strahlensatz: $\overline{SB'} = 1{,}5 \cdot 2{,}4\,\text{cm} = 3{,}6\,\text{cm}$</li>
+      <li>Merke: Mit dem Faktor $k$ geht es oft am schnellsten – das ist derselbe Faktor wie bei der zentrischen Streckung.</li>
+    </ol>
+  </div>
+  <div class="checkoff" data-sec="m3-xfigur"></div>
+</section>
+
+<section class="section" id="rezept">
+  <div class="section-title"><span class="num-badge">3.6</span><h2>Rezept und typische Fehler</h2></div>
+  <div class="grid g2">
+    <div class="goodway"><h4>Rezept für jede Strahlensatz-Aufgabe</h4>
+      <ol>
+        <li><b>Figur erkennen:</b> Wo ist der Scheitel $S$? Welche Strecken sind parallel? (Evtl. Skizze anfertigen und Parallelen farbig markieren.)</li>
+        <li><b>Beschriften:</b> Gegebene Längen eintragen, Gesuchtes mit $x$ markieren.</li>
+        <li><b>Satz wählen:</b> Kommt ein Parallelenstück vor? → 2. Strahlensatz (nur Strecken ab $S$). Sonst → 1. Strahlensatz.</li>
+        <li><b>Gleichung aufstellen:</b> Die Unbekannte oben links, dann „gleich aufgebaut“ auf der rechten Seite.</li>
+        <li><b>Lösen</b>, <b>Probe</b> (passt die Größe?), <b>Antwortsatz</b> mit Einheit.</li>
+      </ol>
+    </div>
+    <div class="pitfall"><h4>Fehler-Hitliste</h4>
+      <ol>
+        <li>$\overline{AA'}$ im 2. Strahlensatz verwenden.</li>
+        <li>Verhältnisse nicht „gleich aufgebaut“: links außen/innen, rechts innen/außen.</li>
+        <li>Nicht prüfen, ob die Geraden wirklich parallel sind (ohne Parallelen gilt kein Strahlensatz!).</li>
+        <li>Die gesuchte Strecke ist $\overline{BB'}$, berechnet wurde aber $\overline{SB'}$ (oder umgekehrt).</li>
+        <li>Einheiten gemischt (m und cm).</li>
+      </ol>
+    </div>
+  </div>
+  <details><summary>KANN: Umkehrung des 1. Strahlensatzes</summary>
+    <p>Wenn $\dfrac{\overline{SA'}}{\overline{SA}} = \dfrac{\overline{SB'}}{\overline{SB}}$ gilt, dann sind die Geraden $AB$ und $A'B'$ <b>parallel</b>. So kann man Parallelität nachweisen.</p>
+    <p>Für den 2. Strahlensatz gilt die Umkehrung <b>nicht</b>: Aus $\dfrac{\overline{A'B'}}{\overline{AB}} = \dfrac{\overline{SA'}}{\overline{SA}}$ folgt nicht unbedingt, dass $AB \parallel A'B'$ ist (man kann $A'B'$ „kippen“, sodass die Länge gleich bleibt).</p>
+  </details>
+  <div class="checkoff" data-sec="m3-rezept"></div>
+</section>
+
+<section class="section" id="training">
+  <div class="section-title"><span class="num-badge">3.7</span><h2>Training (unbegrenzt)</h2></div>
+  <div class="grid g2">
+    <div><h3>1. Strahlensatz <span class="lvl soll">SOLL</span></h3><div id="genS1"></div></div>
+    <div><h3>2. Strahlensatz <span class="lvl soll">SOLL</span></h3><div id="genS2"></div></div>
+  </div>
+  <h3>X-Figur <span class="lvl soll">SOLL</span></h3><div id="genSX" style="max-width:720px"></div>
+</section>
+
+<section class="section" id="aufgaben">
+  <div class="section-title"><span class="num-badge">3.8</span><h2>Aufgaben</h2><span class="instr schriftlich">Schriftlich</span></div>
+  <div id="tasks" class="tasks-grid"></div>
+</section>
+<div class="pager"><a class="btn ghost" href="modul2-aehnliche-dreiecke.html">← Modul 2</a><a class="btn" href="modul4-flaeche-volumen.html">Modul 4: Fläche &amp; Volumen →</a></div>
+
+</main>
+<script src="js/gen.js"></script>
+<script src="js/modul3.js"></script>
+</body>
+</html>

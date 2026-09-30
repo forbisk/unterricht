@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modul 0 – Wiederholung · Ähnlichkeit Klasse 10</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/print.css">
+<script src="vendor/katex/katex.min.js"></script>
+<script src="vendor/katex/auto-render.min.js"></script>
+<script src="js/geom.js"></script>
+<script src="js/app.js"></script>
+<script src="js/progress-catalog.js"></script>
+<script src="js/progress.js"></script>
+</head>
+<body data-page="m0" data-module="m0">
+<main id="main">
+<section class="hero m0">
+  <span class="kicker">Modul 0 · Wiederholung · ca. 10–15 min</span>
+  <h1>Was du schon kannst</h1>
+  <p>Maßstab, Streckenverhältnis, ähnliche Figuren, Hauptähnlichkeitssatz <b>ww</b> und Ähnlichkeitsfaktor <b>k</b> – kurz auffrischen, dann im Schnellcheck zeigen, dass du es draufhast.</p>
+</section>
+<nav class="toc"><a href="#r1">Maßstab</a><a href="#r2">Streckenverhältnis</a><a href="#r3">Ähnliche Figuren</a><a href="#r4">ww</a><a href="#r5">Faktor k</a><a href="#spiel">Rechteck-Applet</a><a href="#schnellcheck">Schnellcheck</a></nav>
+
+<div class="box lesen"><span class="instr lesen">Nur lesen</span>
+<p>Alles auf dieser Seite hattet ihr schon im Unterricht. Lies die Kästen <b>kurz</b> durch. Wenn du sicher bist, spring direkt zum <a href="#schnellcheck">Schnellcheck</a>. Bei Fehlern im Schnellcheck: zurück zum passenden Kasten.</p>
+</div>
+
+<div class="grid g2">
+  <div class="card" id="r1">
+    <span class="tag recap">R1</span>
+    <h3>Maßstab</h3>
+    <p>Der Maßstab gibt an, wie Zeichnung und Wirklichkeit zusammenhängen: <b>Zeichnung : Wirklichkeit</b>.</p>
+    <ul>
+      <li>$1 : 100$ → <b>Verkleinerung</b>: 1 cm in der Zeichnung sind 100 cm = 1 m in echt.</li>
+      <li>$5 : 1$ → <b>Vergrößerung</b>: 5 cm in der Zeichnung sind 1 cm in echt.</li>
+      <li>$1 : 1$ → Originalgröße.</li>
+    </ul>
+    <p class="small muted">Beispiel aus dem Unterricht: $8\,\text{cm} : 400\,\text{cm} = 1 : 50$ · $2{,}0\,\text{cm} : 0{,}4\,\text{cm} = 5 : 1$</p>
+  </div>
+  <div class="card" id="r2">
+    <span class="tag recap">R2</span>
+    <h3>Streckenverhältnis</h3>
+    <p>Zwei Strecken vergleicht man mit ihrem Verhältnis $a : b$ bzw. $\frac{a}{b}$.</p>
+    <ul>
+      <li>Beide Längen in <b>derselben Einheit</b>!</li>
+      <li>So weit wie möglich kürzen: $8 : 12 = 2 : 3$.</li>
+      <li>Gleiche Verhältnisse: $8 : 12 = 5 : 7{,}5 = 2 : 3$.</li>
+    </ul>
+  </div>
+  <div class="card" id="r3">
+    <span class="tag recap">R3</span>
+    <h3>Ähnliche Figuren</h3>
+    <p>Zwei Figuren sind <b>ähnlich</b> (Zeichen $\sim$), wenn sie die gleiche Form haben:</p>
+    <ul>
+      <li>entsprechende <b>Winkel</b> sind gleich groß und</li>
+      <li>entsprechende <b>Seiten</b> stehen im gleichen Verhältnis.</li>
+    </ul>
+    <p>Die <b>Eckenreihenfolge</b> zeigt, was zusammengehört: $\triangle ABC \sim \triangle A'B'C'$ heißt $A \leftrightarrow A'$, $B \leftrightarrow B'$, $C \leftrightarrow C'$.</p>
+  </div>
+  <div class="card" id="r4">
+    <span class="tag recap">R4</span>
+    <h3>Hauptähnlichkeitssatz „ww“</h3>
+    <p>Zwei Dreiecke sind ähnlich, wenn sie in <b>zwei Winkeln</b> übereinstimmen. Der dritte Winkel ist dann automatisch gleich (Winkelsumme $180^\circ$).</p>
+    <div class="pitfall" style="margin:.5rem 0"><h4>Typischer Fehler</h4>
+    <p style="margin:0">Nur die zwei gegebenen Winkel vergleichen! $42^\circ, 68^\circ$ und $70^\circ, 42^\circ$ sehen verschieden aus – aber der dritte Winkel im ersten Dreieck ist $180^\circ-42^\circ-68^\circ = 70^\circ$. Also <b>ähnlich</b>.</p></div>
+  </div>
+  <div class="card" id="r5">
+    <span class="tag recap">R5</span>
+    <h3>Ähnlichkeitsfaktor k</h3>
+    <p class="formula-big center">$k = \dfrac{\text{Bild}}{\text{Urbild}} = \dfrac{A'B'}{AB} = \dfrac{B'C'}{BC} = \dfrac{A'C'}{AC}$</p>
+    <ul>
+      <li>$k&gt;1$: Vergrößerung, $0&lt;k&lt;1$: Verkleinerung, $k=1$: gleich groß (kongruent).</li>
+      <li>Fehlende Seite: $\text{Bild} = k \cdot \text{Urbild}$, $\;\text{Urbild} = \text{Bild} : k$.</li>
+    </ul>
+    <p><b>Richtung nicht mischen:</b> einmal „Bild durch Urbild“ festlegen und durchhalten.</p>
+  </div>
+  <div class="card" id="r6">
+    <span class="tag recap">R6</span>
+    <h3>Spiegeln, Drehen, Verschieben</h3>
+    <p>Gespiegelte (gedrehte, verschobene) Dreiecke sind ähnlich zum Original. Sind sie gleich groß, gilt $k = 1$: Sie sind <b>ähnlich und kongruent</b>.</p>
+    <p class="small muted">Merke: Kongruent ist ein Spezialfall von ähnlich.</p>
+  </div>
+</div>
+<div class="checkoff" data-sec="m0-recap" data-label="Wiederholung gelesen"></div>
+
+<section class="section" id="spiel">
+  <div class="section-title"><span class="num-badge">▦</span><h2>Mini-Applet: Wann sind Rechtecke ähnlich?</h2></div>
+  <div class="applet">
+    <div class="applet-head"><h3>Ziehe die orange Ecke</h3><span class="small muted">Das blaue Rechteck ist 4 × 6 Kästchen groß.</span></div>
+    <div class="applet-body">
+      <div class="stage" id="rectStage"></div>
+      <div class="panel">
+        <table class="data"><thead><tr><th></th><th>Breite</th><th>Höhe</th></tr></thead>
+        <tbody><tr><td class="c-orig">Original</td><td>4</td><td>6</td></tr><tr><td class="c-img">Neu</td><td id="rw">–</td><td id="rh">–</td></tr>
+        <tr><td>Verhältnis Neu : Original</td><td id="rkw">–</td><td id="rkh">–</td></tr></tbody></table>
+        <div class="feedback show info" id="rectMsg">Ziehe die orange Ecke.</div>
+        <div class="box diskutieren" style="margin-top:1rem"><span class="instr diskutieren">Diskutieren</span>
+        <p><b>D0:</b> Findet drei verschiedene orange Rechtecke, die ähnlich zum blauen sind. Was fällt euch an der Diagonalen auf?</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="schnellcheck">
+  <div class="section-title"><span class="num-badge">✓</span><h2>Schnellcheck</h2><span class="instr schriftlich">Schriftlich</span></div>
+  <p class="muted">Rechne im Heft, gib das Ergebnis ein und klicke auf „Prüfen“. Dezimalzahlen mit Komma (z. B. <code>4,5</code>). Ziel: alle Aufgaben grün.</p>
+  <div id="tasks" class="tasks-grid"></div>
+</section>
+<div class="checkoff" data-sec="m0-done" data-label="Schnellcheck abgeschlossen"></div>
+<div class="pager"><a class="btn ghost" href="index.html">← Start</a><a class="btn" href="modul1-zentrische-streckung.html">Modul 1: Zentrische Streckung →</a></div>
+
+</main>
+<script src="js/modul0.js"></script>
+</body>
+</html>

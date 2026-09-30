@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modul 5 – Anwendungen · Ähnlichkeit Klasse 10</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/print.css">
+<script src="vendor/katex/katex.min.js"></script>
+<script src="vendor/katex/auto-render.min.js"></script>
+<script src="js/geom.js"></script>
+<script src="js/app.js"></script>
+<script src="js/progress-catalog.js"></script>
+<script src="js/progress.js"></script>
+</head>
+<body data-page="m5" data-module="m5">
+<main id="main">
+<section class="hero m5">
+  <span class="kicker">Modul 5 · Neu · Stunde 3 (Gruppen) + Zuhause</span>
+  <h1>Anwendungen</h1>
+  <p>Wie hoch ist der Baum? Wie breit ist der Fluss? Wie groß wird das Modell? Mit ähnlichen Dreiecken misst du, was man nicht direkt messen kann.</p>
+  <svg class="deco" viewBox="0 0 420 300" aria-hidden="true"><line x1="0" y1="260" x2="420" y2="260" stroke="#fff" stroke-width="3"/><rect x="286" y="120" width="12" height="140" fill="#fff"/><circle cx="292" cy="100" r="46" fill="rgba(255,255,255,.55)"/><line x1="120" y1="260" x2="292" y2="60" stroke="#ffe066" stroke-width="3" stroke-dasharray="7 6"/><rect x="190" y="210" width="6" height="50" fill="#fff"/><circle cx="380" cy="40" r="20" fill="#ffe066"/></svg>
+</section>
+<nav class="toc"><a href="#rezept">5.1 Rezept</a><a href="#schatten">5.2 Schatten</a><a href="#beispiele">5.3 Musterbeispiele</a><a href="#training">5.4 Training</a><a href="#aufgaben">5.5 Sachaufgaben</a></nav>
+
+<section class="section" id="rezept">
+  <div class="section-title"><span class="num-badge">5.1</span><h2>Rezept für Sachaufgaben</h2><span class="lvl muss">MUSS</span></div>
+  <div class="grid g2">
+    <div class="goodway"><h4>In 5 Schritten zur Lösung</h4>
+      <ol>
+        <li><b>Skizze</b> zeichnen – auch wenn eine Abbildung da ist. Gegebenes eintragen, Gesuchtes mit $x$.</li>
+        <li><b>Ähnliche Dreiecke finden</b>: Wo sind gleiche Winkel? (rechter Winkel, parallele Sonnenstrahlen, gemeinsamer Winkel, Scheitelwinkel)</li>
+        <li><b>Entsprechende Seiten</b> zuordnen (gegenüber gleicher Winkel).</li>
+        <li><b>Verhältnisgleichung</b> aufstellen (Unbekannte oben links) oder mit $k$ rechnen – <b>gleiche Einheiten</b>!</li>
+        <li><b>Lösen, prüfen, Antwortsatz.</b> Ist das Ergebnis realistisch?</li>
+      </ol>
+    </div>
+    <div class="box lesen"><span class="instr lesen">Nur lesen</span>
+      <h4>Typische Situationen</h4>
+      <table class="nice small"><thead><tr><th>Situation</th><th>Warum ähnlich?</th></tr></thead><tbody>
+        <tr><td>🌳 Schatten</td><td>Sonnenstrahlen parallel + rechter Winkel → ww</td></tr>
+        <tr><td>📐 Försterdreieck, Peilung</td><td>gleiche Peilrichtung + rechter Winkel → ww</td></tr>
+        <tr><td>👍 Daumensprung</td><td>X-Figur, Scheitelwinkel am Daumen</td></tr>
+        <tr><td>🌊 Flussbreite</td><td>X- oder V-Figur mit parallelen Linien</td></tr>
+        <tr><td>📷 Lochkamera, Beamer</td><td>zentrische Streckung (Zentrum = Loch/Linse)</td></tr>
+        <tr><td>🗺 Karte, Modell</td><td>Maßstab = Ähnlichkeitsfaktor</td></tr></tbody></table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="schatten">
+  <div class="section-title"><span class="num-badge">5.2</span><h2>Schatten-Applet</h2><span class="instr diskutieren">Diskutieren</span></div>
+  <div class="applet">
+    <div class="applet-head"><h3>Baum und Stab in der Sonne</h3></div>
+    <div class="applet-body">
+      <div class="stage" id="sunStage"></div>
+      <div class="panel">
+        <label>Sonnenhöhe: <b id="sunOut">40°</b></label>
+        <input type="range" id="sunSlider" min="20" max="70" step="1" value="40" aria-label="Sonnenhöhe">
+        <label>Baumhöhe: <b id="treeOut">9 m</b></label>
+        <input type="range" id="treeSlider" min="4" max="15" step="0.5" value="9" aria-label="Baumhöhe">
+        <table class="data" id="sunTable"></table>
+        <div class="box diskutieren"><span class="instr diskutieren">Diskutieren</span><p style="margin-bottom:0"><b>D11:</b> Verändert die Sonnenhöhe. Was bleibt in der Tabelle immer gleich? Warum reicht es daher, den Schatten des Stabs zu messen?</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="checkoff" data-sec="m5-schatten"></div>
+</section>
+
+<section class="section" id="beispiele">
+  <div class="section-title"><span class="num-badge">5.3</span><h2>Musterbeispiele</h2><span class="instr beispiel">Beispiel ins Heft</span></div>
+  <div class="grid g2">
+    <div class="box beispiel"><span class="instr beispiel">Beispiel ins Heft</span>
+      <h4>🌳 Baumhöhe über den Schatten</h4>
+      <p>Ein Baum wirft einen $12\,\text{m}$ langen Schatten, ein $1{,}5\,\text{m}$ langer Stab zur gleichen Zeit einen $2\,\text{m}$ langen. Wie hoch ist der Baum?</p>
+      <div class="fig center" id="figTree"></div>
+      <ol class="step-list" data-reveal>
+        <li>Ähnlich (ww): beide Dreiecke haben einen rechten Winkel und denselben Sonnenwinkel.</li>
+        <li>$\dfrac{h}{12} = \dfrac{1{,}5}{2}$</li>
+        <li>$h = \dfrac{1{,}5 \cdot 12}{2} = 9$</li>
+        <li>Antwort: Der Baum ist $9\,\text{m}$ hoch.</li>
+      </ol>
+    </div>
+    <div class="box beispiel"><span class="instr beispiel">Beispiel ins Heft</span>
+      <h4>🌊 Flussbreite</h4>
+      <p>Gegenüber von $A$ steht ein Baum $T$. Man geht am Ufer $20\,\text{m}$ bis $S$ und weitere $5\,\text{m}$ bis $C$. Von $C$ geht man im rechten Winkel vom Fluss weg, bis man $S$ und $T$ in einer Linie sieht: $\overline{CD} = 8\,\text{m}$.</p>
+      <div class="fig center" id="figRiver"></div>
+      <ol class="step-list" data-reveal>
+        <li>X-Figur mit Scheitel $S$: $AT \parallel CD$ (beide senkrecht zum Ufer). $\triangle SAT \sim \triangle SCD$.</li>
+        <li>$\dfrac{x}{8} = \dfrac{20}{5}$</li>
+        <li>$x = \dfrac{20 \cdot 8}{5} = 32$</li>
+        <li>Antwort: Der Fluss ist etwa $32\,\text{m}$ breit.</li>
+      </ol>
+    </div>
+    <div class="box beispiel"><span class="instr beispiel">Beispiel ins Heft</span>
+      <h4>📐 Försterdreieck</h4>
+      <p>Eine Försterin hält ein gleichschenklig-rechtwinkliges Dreieck vor das Auge und peilt über die Schräge die Baumspitze an. Sie steht $18\,\text{m}$ vom Baum entfernt, Augenhöhe $1{,}6\,\text{m}$.</p>
+      <ol class="step-list" data-reveal>
+        <li>Das Peildreieck hat zwei gleich lange Katheten ($45^\circ$). Das große Dreieck (Auge – Stamm – Spitze) ist ähnlich.</li>
+        <li>Also ist auch im großen Dreieck: Höhe über Augenhöhe = Abstand $= 18\,\text{m}$.</li>
+        <li>Baumhöhe $= 18\,\text{m} + 1{,}6\,\text{m} = 19{,}6\,\text{m}$ – die Augenhöhe nicht vergessen!</li>
+      </ol>
+    </div>
+    <div class="box beispiel"><span class="instr beispiel">Beispiel ins Heft</span>
+      <h4>📽 Beamer = zentrische Streckung</h4>
+      <p>Ein Beamer steht $3\,\text{m}$ von der Wand entfernt, das Bild ist $1{,}6\,\text{m}$ breit. Wie breit wird es bei $4{,}5\,\text{m}$ Abstand?</p>
+      <ol class="step-list" data-reveal>
+        <li>Die Linse ist das Zentrum $Z$. Das neue Bild entsteht durch zentrische Streckung mit $k = \dfrac{4{,}5}{3} = 1{,}5$.</li>
+        <li>Breite: $1{,}5 \cdot 1{,}6\,\text{m} = 2{,}4\,\text{m}$</li>
+        <li>Bonus (KANN): Die Bildfläche wird $k^2 = 2{,}25$-mal so groß – das Bild wird dunkler!</li>
+      </ol>
+    </div>
+  </div>
+  <div class="checkoff" data-sec="m5-beispiele"></div>
+</section>
+
+<section class="section" id="training">
+  <div class="section-title"><span class="num-badge">5.4</span><h2>Training</h2></div>
+  <div class="grid g2"><div><h3>Schatten <span class="lvl soll">SOLL</span></h3><div id="genSch"></div></div><div><h3>Maßstab <span class="lvl muss">MUSS</span></h3><div id="genMas"></div></div></div>
+  <h3>Försterdreieck &amp; Daumensprung <span class="lvl kann">KANN</span></h3><div id="genFoe" style="max-width:760px"></div>
+</section>
+
+<section class="section" id="aufgaben">
+  <div class="section-title"><span class="num-badge">5.5</span><h2>Sachaufgaben mit Schritt-für-Schritt-Hilfen</h2><span class="instr schriftlich">Schriftlich</span></div>
+  <div id="tasks" class="tasks-grid"></div>
+</section>
+<div class="pager"><a class="btn ghost" href="modul4-flaeche-volumen.html">← Modul 4</a><a class="btn" href="gruppenarbeit.html">Gruppenarbeit →</a></div>
+
+</main>
+<script src="js/gen.js"></script>
+<script src="js/modul5.js"></script>
+</body>
+</html>

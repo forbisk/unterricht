@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tasten erklärt – Taschenrechner-Anleitung</title>
+<meta name="description" content="Interaktive Anleitung für die Taschenrechner Casio fx-82MS und fx-87DE X – Theodor Fontane Gemeinschaftsschule (Arendsee, Sachsen-Anhalt), Lehrer P. Kurlavičius">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='5' y='1' width='22' height='30' rx='4' fill='%23364fc7'/%3E%3Crect x='8' y='4' width='16' height='8' rx='1' fill='%23c3e6cb'/%3E%3Ccircle cx='11' cy='17' r='2' fill='%23fff'/%3E%3Ccircle cx='16' cy='17' r='2' fill='%23fff'/%3E%3Ccircle cx='21' cy='17' r='2' fill='%23fff'/%3E%3Ccircle cx='11' cy='23' r='2' fill='%23fff'/%3E%3Ccircle cx='16' cy='23' r='2' fill='%23fff'/%3E%3Ccircle cx='21' cy='23' r='2' fill='%23ffd43b'/%3E%3C/svg%3E">
+
+</head>
+<body data-page="rechner">
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="site-head">
+  <div class="head-in">
+    <a class="brand" href="index.html">
+      <span class="brand-ico" aria-hidden="true"><svg viewBox="0 0 32 32" width="34" height="34"><rect x="5" y="1" width="22" height="30" rx="4" fill="#fff" opacity=".95"/><rect x="8" y="4" width="16" height="8" rx="1.5" fill="#b8e0c2"/><g fill="#364fc7"><circle cx="11" cy="17" r="2"/><circle cx="16" cy="17" r="2"/><circle cx="21" cy="17" r="2"/><circle cx="11" cy="23" r="2"/><circle cx="16" cy="23" r="2"/></g><circle cx="21" cy="23" r="2" fill="#f59f00"/></svg></span>
+      <span class="brand-txt"><b>Taschenrechner-Anleitung</b><small>Theodor Fontane Gemeinschaftsschule (Arendsee, Sachsen-Anhalt) · Lehrer P. Kurlavičius</small></span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav">☰ <span>Menü</span></button>
+    <nav id="mainnav" class="mainnav" aria-label="Hauptmenü"><a href="index.html"><span aria-hidden="true">🏠</span> Start</a><a href="rechner.html" aria-current="page"><span aria-hidden="true">🔍</span> Tasten erklärt</a><a href="anleitungen.html"><span aria-hidden="true">👣</span> So geht's</a><a href="fehler.html"><span aria-hidden="true">⚠️</span> Typische Fehler</a><a href="quiz.html"><span aria-hidden="true">🎯</span> Probier's aus</a><a href="spickzettel.html"><span aria-hidden="true">📄</span> Spickzettel</a></nav>
+    <button class="beamer-btn" type="button" title="Beamer-Modus: größere Schrift und mehr Kontrast" aria-pressed="false">📽️ <span>Beamer</span></button>
+  </div>
+</header>
+<main id="main">
+
+<div class="page-head">
+  <div><h1>Tasten erklärt</h1><p class="sub">Tippe auf eine Taste – rechts (am Handy: darunter) steht, was sie macht.</p></div>
+  <div class="model-switch" role="radiogroup" aria-label="Taschenrechner wählen">
+  <button type="button" role="radio" data-model="ms" aria-checked="false"><span class="ms-dot"></span>fx-82MS</button>
+  <button type="button" role="radio" data-model="dex" aria-checked="false"><span class="dex-dot"></span>fx-87DE X</button>
+</div>
+</div>
+<div class="search-box">
+  <label for="keysearch">🔎 Welche Taste brauche ich für …?</label>
+  <div class="search-row"><input id="keysearch" type="search" placeholder="z. B. Bruch, Wurzel, Prozent, Kreis, negativ, löschen …" autocomplete="off"><button type="button" class="btn ghost" id="impbtn" aria-pressed="false">⭐ Wichtige Tasten zeigen</button></div>
+  <div id="searchres" class="search-res" aria-live="polite"></div>
+</div>
+<div class="explore">
+  <div class="calc-col"><div id="calc" class="calc-wrap"></div>
+    <p class="calc-legend"><span class="lg y">gelb = mit SHIFT</span> <span class="lg r">rot = mit ALPHA</span> <span class="lg b">blau = nur in bestimmten Modi</span></p></div>
+  <div class="panel-col"><div id="info" class="info-panel" tabindex="-1" aria-live="polite"></div></div>
+</div>
+
+</main>
+<footer class="site-foot">
+  <div class="foot-in">
+    <p><b>Theodor Fontane Gemeinschaftsschule (Arendsee, Sachsen-Anhalt)</b> · Lehrer P. Kurlavičius · Mathematik Klassen 7–10</p>
+    <p class="legal">Casio ist eine Marke der Casio Computer Co., Ltd.; diese Seite ist eine unabhängige Unterrichtshilfe. Alle Rechner-Abbildungen sind eigene Zeichnungen (keine Casio-Fotos). Angaben nach den offiziellen Bedienungsanleitungen, ohne Gewähr.</p>
+    <p class="small"> · Version 1.0 (30.09.2026) · funktioniert auch offline</p>
+  </div>
+</footer>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/calc.js"></script>
+<script src="assets/js/pages.js"></script>
+</body>
+</html>

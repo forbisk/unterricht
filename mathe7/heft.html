@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8"><title>Heft-Übersicht – Rationale Zahlen & Koordinatensystem (Kl. 7)</title>
+<link rel="stylesheet" href="assets/css/fonts.css"><link rel="stylesheet" href="assets/css/print.css"></head>
+<body class="heftpage">
+<div class="bar"><span>Heft-Übersicht: alle 8 Heft-Einträge (A4)</span><button onclick="window.print()">🖨 Drucken</button><a href="index.html">▶ Präsentation</a><a href="arbeitsblatt.html">📝 Arbeitsblatt</a></div>
+<div class="page">
+  <header><div><h1>Rationale Zahlen &amp; Koordinatensystem – meine Heft-Einträge</h1><div class="hsub">Mathematik · Klasse 7 · Theodor Fontane Gemeinschaftsschule · Lehrer P. Kurlavičius</div></div><div class="nm">Name: ____________________<br>Datum: ___________</div></header>
+  <div class="hgrid" id="grid"></div>
+  <footer>Merksätze und Beispiele wie in der Präsentation (Heft-Einträge 1–8). Alle Beispiele automatisch nachgerechnet.</footer>
+</div>
+<script src="assets/js/heft-content.js"></script><script>window.HEFT_SLIDES={"1": 14, "2": 25, "3": 32, "4": 48, "5": 57, "6": 72, "7": 89, "8": 93};</script>
+<script>
+  var g=document.getElementById('grid');
+  HEFT.forEach(function(h){ var d=document.createElement('section'); d.className='entry';
+    d.innerHTML='<h2><span class="n">'+h.n+'</span>'+h.title+' <small>Folie '+(window.HEFT_SLIDES[h.n]||'')+'</small></h2>'+renderHeft(h,false); g.appendChild(d); });
+</script>
+</body></html>

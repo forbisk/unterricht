@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modul 4 – Fläche und Volumen · Ähnlichkeit Klasse 10</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/print.css">
+<script src="vendor/katex/katex.min.js"></script>
+<script src="vendor/katex/auto-render.min.js"></script>
+<script src="js/geom.js"></script>
+<script src="js/app.js"></script>
+<script src="js/progress-catalog.js"></script>
+<script src="js/progress.js"></script>
+</head>
+<body data-page="m4" data-module="m4">
+<main id="main">
+<section class="hero m4">
+  <span class="kicker">Modul 4 · Erweiterung / Werkzeug für Prüfungsaufgaben (KANN) · HA 3</span>
+  <h1>Fläche und Volumen</h1>
+  <p>Eine doppelt so große Pizza – doppelt so viel zu essen? Nein, viermal so viel! Hier entdeckst du, warum Flächen mit $k^2$ und Volumen mit $k^3$ wachsen.</p>
+  <svg class="deco" viewBox="0 0 420 300" aria-hidden="true"><rect x="40" y="200" width="50" height="50" fill="rgba(255,255,255,.4)" stroke="#fff" stroke-width="3"/><g fill="rgba(255,255,255,.2)" stroke="#fff" stroke-width="2"><rect x="150" y="150" width="50" height="50"/><rect x="200" y="150" width="50" height="50"/><rect x="150" y="200" width="50" height="50"/><rect x="200" y="200" width="50" height="50"/></g><text x="300" y="215" fill="#fff" font-size="48" font-weight="900" font-family="Nunito">k²</text></svg>
+</section>
+<div class="lp-note"><h4>🧰 Erweiterung / Werkzeug für Prüfungsaufgaben</h4>
+  <p style="margin:0">$k^2$ und $k^3$ stehen <b>nicht wörtlich im Lehrplan</b> (<span class="lvl kann">KANN</span>). In echten Prüfungen wurde das Flächenverhältnis aber schon gefragt: <a href="pruefung.html#LSA-2018-PA2">2018 PA 2c (Seitenmitten, 4 : 1)</a>, <a href="pruefung.html#LSA-2021-WPA2">2021 WPA 2b (Viereck : Dreieck = 3 : 1, nur 45 % gelöst)</a> und <a href="pruefung.html#LSA-BLF-2026-5">BLF 2026 (DIN-Formate)</a>. Auch bei „Beurteilen Sie“-Aufgaben („Wird der Radius verdoppelt …“) hilft dieses Modul.</p>
+</div>
+<nav class="toc"><a href="#flaeche">4.1 Flächen</a><a href="#volumen">4.2 Volumen</a><a href="#merk">4.3 Merksatz</a><a href="#beispiele">4.4 Beispiele</a><a href="#training">4.5 Training</a><a href="#aufgaben">4.6 Aufgaben</a></nav>
+
+<section class="section" id="flaeche">
+  <div class="section-title"><span class="num-badge">4.1</span><h2>Flächen: Warum $k^2$?</h2></div>
+  <div class="applet">
+    <div class="applet-head"><h3>Kachel-Applet</h3>
+      <div class="presets" id="shapeBtns"><button class="btn small" data-s="tri">Dreieck</button><button class="btn small ghost" data-s="rect">Rechteck</button></div>
+    </div>
+    <div class="applet-body">
+      <div class="stage" id="tileStage"></div>
+      <div class="panel">
+        <div class="row"><span>Streckungsfaktor</span><span class="kval" id="tileK">k = 2</span></div>
+        <input type="range" id="tileSlider" min="1" max="5" step="1" value="2" aria-label="Streckungsfaktor k">
+        <table class="data"><tbody>
+          <tr><td>Seiten</td><td id="tSides">× 2</td></tr>
+          <tr><td>Umfang</td><td id="tPer">× 2</td></tr>
+          <tr><td>Anzahl Original-Kacheln im Bild</td><td id="tCount"><b>4</b></td></tr>
+          <tr><td>Fläche</td><td id="tArea"><b>× 4 = 2²</b></td></tr></tbody></table>
+        <div class="box diskutieren"><span class="instr diskutieren">Diskutieren</span><p style="margin-bottom:0"><b>D10:</b> Zählt die Kacheln für $k = 2, 3, 4$. Welche Zahlenfolge entsteht? Wie viele Kacheln wären es bei $k = 10$?</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="box lesen"><span class="instr lesen">Nur lesen</span>
+    <p><b>Begründung am Rechteck:</b> Ein Rechteck mit den Seiten $a$ und $b$ hat die Fläche $A = a \cdot b$. Nach der Streckung sind die Seiten $k \cdot a$ und $k \cdot b$. Also</p>
+    <p class="center">$A' = (k \cdot a) \cdot (k \cdot b) = k^2 \cdot a \cdot b = k^2 \cdot A$</p>
+    <p>Weil bei einer Fläche <b>zwei Längen</b> multipliziert werden, steckt der Faktor $k$ <b>zweimal</b> drin. Das gilt für jede Figur (Dreieck: $\frac12 \cdot g \cdot h$, Kreis: $\pi r^2$ …).</p>
+  </div>
+  <div class="checkoff" data-sec="m4-flaeche"></div>
+</section>
+
+<section class="section" id="volumen">
+  <div class="section-title"><span class="num-badge">4.2</span><h2>Volumen: Warum $k^3$?</h2></div>
+  <div class="applet">
+    <div class="applet-head"><h3>Würfel-Applet</h3></div>
+    <div class="applet-body">
+      <div class="stage" id="cubeStage"></div>
+      <div class="panel">
+        <div class="row"><span>Kantenlänge</span><span class="kval" id="cubeK">k = 2</span></div>
+        <input type="range" id="cubeSlider" min="1" max="4" step="1" value="2" aria-label="Streckungsfaktor k">
+        <table class="data"><tbody>
+          <tr><td>Kante</td><td id="cEdge">× 2</td></tr>
+          <tr><td>Oberfläche (6 Quadrate)</td><td id="cSurf">× 4 = 2²</td></tr>
+          <tr><td>Anzahl kleiner Würfel</td><td id="cCount"><b>8</b></td></tr>
+          <tr><td>Volumen</td><td id="cVol"><b>× 8 = 2³</b></td></tr></tbody></table>
+        <p class="small muted">Volumen = Länge · Breite · Höhe – drei Längen, also dreimal der Faktor $k$.</p>
+      </div>
+    </div>
+  </div>
+  <div class="checkoff" data-sec="m4-volumen"></div>
+</section>
+
+<section class="section" id="merk">
+  <div class="section-title"><span class="num-badge">4.3</span><h2>Merksatz</h2></div>
+  <div class="box abschreiben"><span class="instr abschreiben">Abschreiben</span>
+    <h4><span class="merk-id">M10</span> Längen, Flächen, Volumen bei ähnlichen Figuren</h4>
+    <p>Werden alle Längen mit dem Faktor $k$ multipliziert (Ähnlichkeit mit Faktor $k$), dann gilt:</p>
+    <table class="nice"><thead><tr><th>Größe</th><th>Faktor</th><th>Beispiel $k = 3$</th></tr></thead><tbody>
+      <tr><td>Längen (Seiten, Umfang, Höhen, Radien)</td><td>$k$</td><td>$\times 3$</td></tr>
+      <tr><td>Flächen (Flächeninhalt, Oberfläche)</td><td>$k^2$</td><td>$\times 9$</td></tr>
+      <tr><td>Volumen (Rauminhalt, auch Masse bei gleichem Material)</td><td>$k^3$</td><td>$\times 27$</td></tr>
+      <tr><td>Winkel</td><td>bleiben gleich</td><td>$\times 1$</td></tr></tbody></table>
+  </div>
+  <div class="pitfall"><h4>Typischer Fehler</h4><p style="margin:0">„Die Seiten werden verdoppelt, also verdoppelt sich die Fläche.“ – Falsch! Die Fläche wird ver<b>vier</b>facht ($2^2 = 4$), das Volumen ver<b>acht</b>facht ($2^3 = 8$).</p></div>
+</section>
+
+<section class="section" id="beispiele">
+  <div class="section-title"><span class="num-badge">4.4</span><h2>Musterbeispiele</h2><span class="instr beispiel">Beispiel ins Heft</span></div>
+  <div class="grid g3">
+    <div class="box beispiel"><span class="instr beispiel">Beispiel ins Heft</span>
+      <h4>Pizza 🍕</h4>
+      <p>Eine kleine Pizza hat $20\,\text{cm}$ Durchmesser, eine große $30\,\text{cm}$. Wie viel Mal so viel Pizza bekommt man?</p>
+      <ol class="step-list" data-reveal>
+        <li>Kreise sind immer ähnlich. $k = \dfrac{30}{20} = 1{,}5$</li>
+        <li>Fläche: $k^2 = 1{,}5^2 = 2{,}25$</li>
+        <li>Man bekommt $2{,}25$-mal so viel Pizza (nicht nur $1{,}5$-mal)!</li>
+      </ol>
+    </div>
+    <div class="box beispiel"><span class="instr beispiel">Beispiel ins Heft</span>
+      <h4>Grundriss 1 : 50</h4>
+      <p>Ein Zimmer ist auf dem Plan ($1 : 50$) $48\,\text{cm}^2$ groß. Wie groß ist es in Wirklichkeit?</p>
+      <ol class="step-list" data-reveal>
+        <li>$k = 50$ (von Plan zur Wirklichkeit)</li>
+        <li>$A = k^2 \cdot 48\,\text{cm}^2 = 2500 \cdot 48\,\text{cm}^2 = 120\,000\,\text{cm}^2$</li>
+        <li>$120\,000\,\text{cm}^2 = 12\,\text{m}^2$ (denn $1\,\text{m}^2 = 10\,000\,\text{cm}^2$)</li>
+      </ol>
+    </div>
+    <div class="box beispiel"><span class="instr beispiel">Beispiel ins Heft</span>
+      <h4>Schokowürfel 🍫</h4>
+      <p>Ein Schokowürfel mit $2\,\text{cm}$ Kante wiegt $8\,\text{g}$. Wie schwer ist ein Würfel aus derselben Schokolade mit $6\,\text{cm}$ Kante?</p>
+      <ol class="step-list" data-reveal>
+        <li>$k = 6 : 2 = 3$</li>
+        <li>Masse wie Volumen: $k^3 = 27$</li>
+        <li>$27 \cdot 8\,\text{g} = 216\,\text{g}$</li>
+      </ol>
+    </div>
+  </div>
+  <div class="checkoff" data-sec="m4-beispiele"></div>
+</section>
+
+<section class="section" id="training">
+  <div class="section-title"><span class="num-badge">4.5</span><h2>Training</h2></div>
+  <div class="grid g2"><div><h3>Flächen ($k^2$)</h3><div id="genA"></div></div><div><h3>Volumen ($k^3$)</h3><div id="genV"></div></div></div>
+</section>
+
+<section class="section" id="aufgaben">
+  <div class="section-title"><span class="num-badge">4.6</span><h2>Aufgaben</h2><span class="instr schriftlich">Schriftlich</span></div>
+  <div id="tasks" class="tasks-grid"></div>
+</section>
+<div class="pager"><a class="btn ghost" href="modul3-strahlensaetze.html">← Modul 3</a><a class="btn" href="modul5-anwendungen.html">Modul 5: Anwendungen →</a></div>
+
+</main>
+<script src="js/gen.js"></script>
+<script src="js/modul4.js"></script>
+</body>
+</html>

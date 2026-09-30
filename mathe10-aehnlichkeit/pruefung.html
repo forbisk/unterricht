@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prüfungsteil – echte Abschlussprüfungen · Ähnlichkeit Klasse 10</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/print.css">
+<script src="vendor/katex/katex.min.js"></script>
+<script src="vendor/katex/auto-render.min.js"></script>
+<script src="js/geom.js"></script>
+<script src="js/app.js"></script>
+<script src="js/progress-catalog.js"></script>
+<script src="js/progress.js"></script>
+</head>
+<body data-page="pruefung" data-module="pruefung">
+<main id="main">
+<section class="hero pr">
+  <span class="kicker">Prüfungsvorbereitung · Realschulabschluss Sachsen-Anhalt</span>
+  <h1>Prüfungsteil: echte Aufgaben</h1>
+  <p>Alle Aufgaben zur Ähnlichkeit aus den Abschlussprüfungen Sachsen-Anhalt 2016–2026 – im Originalwortlaut, mit Skizze, gestuften Tipps und Lösungsweg. Dazu passende Aufgaben aus Brandenburg und Schleswig-Holstein.</p>
+  <svg class="deco" viewBox="0 0 420 300" aria-hidden="true"><rect x="120" y="40" width="190" height="240" rx="12" fill="rgba(255,255,255,.18)" stroke="#fff" stroke-width="3"/><line x1="150" y1="90" x2="280" y2="90" stroke="#fff" stroke-width="6"/><line x1="150" y1="130" x2="260" y2="130" stroke="#fff" stroke-width="4" opacity=".7"/><line x1="150" y1="160" x2="270" y2="160" stroke="#fff" stroke-width="4" opacity=".7"/><polygon points="150,250 230,250 230,195" fill="none" stroke="#ffe066" stroke-width="4"/><polygon points="150,250 190,250 190,222" fill="rgba(255,224,102,.5)"/></svg>
+</section>
+
+<section class="section">
+  <div class="grid g2">
+    <div class="box lesen"><span class="instr lesen">Nur lesen</span>
+      <h4>So ist dieser Teil aufgebaut</h4>
+      <ul>
+        <li><b>Originaltext:</b> Der Aufgabentext ist wörtlich aus dem offiziellen PDF übernommen (Link bei jeder Aufgabe).</li>
+        <li><b>Skizze:</b> Für Sachsen-Anhalt und Brandenburg nach den Maßen im Text neu gezeichnet (nicht maßstäblich).</li>
+        <li><b>Tipps:</b> erst probieren, dann Tipp 1, Tipp 2, … – der Lösungsweg kommt zum Schluss.</li>
+        <li><b>„Eigene Lösung“:</b> Sachsen-Anhalt veröffentlicht keine Musterlösungen. Die Lösungen hier sind selbst erstellt und per Skript nachgerechnet.</li>
+        <li><b>Erfolgsquote:</b> So viel Prozent der möglichen Punkte wurden landesweit erreicht (aus den offiziellen Auswertungsberichten).</li>
+      </ul>
+    </div>
+    <div class="goodway"><h4>Operatoren – was wird verlangt?</h4>
+      <table class="nice small"><tbody>
+        <tr><td><b>Geben Sie an</b></td><td>Ergebnis ohne Rechenweg genügt</td></tr>
+        <tr><td><b>Berechnen / Ermitteln</b></td><td>Rechenweg aufschreiben, Ergebnis mit Einheit</td></tr>
+        <tr><td><b>Begründen</b></td><td>mit Fachbegriffen erklären, <i>warum</i> (z. B. „ww: rechter Winkel und gemeinsamer Winkel“)</td></tr>
+        <tr><td><b>Entscheiden</b></td><td>klare Antwort (ja/nein) + Begründung</td></tr>
+        <tr><td><b>Zeigen / Weisen Sie nach</b></td><td>das Ergebnis ist bekannt – der Weg zählt</td></tr>
+        <tr><td><b>Zeichnen / Konstruieren</b></td><td>sauber mit Lineal/Zirkel, Punkte beschriften</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="filter">
+  <div class="filterbar">
+    <div class="fgroup" id="fThema" role="group" aria-label="Thema"></div>
+    <div class="fgroup" id="fStufe" role="group" aria-label="Schwierigkeit"></div>
+    <div class="fgroup" id="fLand" role="group" aria-label="Bundesland"></div>
+    <label class="fsort">Sortieren:
+      <select id="fSort"><option value="thema">nach Thema und Schwierigkeit</option><option value="jahr">nach Jahr (neueste zuerst)</option><option value="quote">nach Erfolgsquote (schwerste zuerst)</option></select>
+    </label>
+  </div>
+  <p class="muted small" id="fInfo"></p>
+</section>
+
+<div id="examList"></div>
+
+<section class="section">
+  <div class="box lesen"><span class="instr lesen">Nur lesen</span>
+    <h4>Quellen und Lizenzen</h4>
+    <p class="small">Sachsen-Anhalt: Landesinstitut für Schulqualität und Lehrerbildung (LISA), Realschulabschluss und Besondere Leistungsfeststellung (qualifizierter Hauptschulabschluss). Brandenburg: Prüfungen am Ende der Jahrgangsstufe 10 (Bildungsserver Berlin-Brandenburg). Schleswig-Holstein: MBWK über das Transparenzportal, <a href="https://creativecommons.org/licenses/by-nd/4.0/deed.de" target="_blank" rel="noopener">CC BY-ND 4.0</a> – diese Aufgaben sind unverändert übernommen, ihre Abbildungen werden nicht nachgezeichnet. <span id="skipInfo"></span></p>
+    <p class="small">Für Lehrkräfte: Die Daten stehen in <code>js/pruefung-data.js</code>. Format und Ergänzung: .</p>
+  </div>
+</section>
+<div class="pager"><a class="btn ghost" href="training.html">← Training</a><a class="btn" href="selbsttest.html">Selbsttest →</a></div>
+
+</main>
+<script src="js/pruefung-data.js"></script>
+<script src="js/pruefung.js"></script>
+</body>
+</html>

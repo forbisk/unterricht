@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selbsttest & Checkliste · Ähnlichkeit Klasse 10</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/print.css">
+<script src="vendor/katex/katex.min.js"></script>
+<script src="vendor/katex/auto-render.min.js"></script>
+<script src="js/geom.js"></script>
+<script src="js/app.js"></script>
+<script src="js/progress-catalog.js"></script>
+<script src="js/progress.js"></script>
+</head>
+<body data-page="selbsttest" data-module="selbsttest">
+<main id="main">
+<section class="hero st">
+  <span class="kicker">Wo stehe ich? · ++ / + / ○</span>
+  <h1>Selbsttest &amp; Checkliste</h1>
+  <p>Schätze dich zuerst selbst ein, dann mach den Test. Am Ende siehst du, was du schon kannst und wo du weiterüben solltest.</p>
+  <svg class="deco" viewBox="0 0 420 300" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><path d="M120 160 L180 220 L310 80"/></g></svg>
+</section>
+<nav class="toc"><a href="#reflexion">1 Selbsteinschätzung</a><a href="#test">2 Test</a><a href="#auswertung">3 Auswertung</a></nav>
+
+<section class="section" id="reflexion">
+  <div class="section-title"><span class="num-badge">1</span><h2>Selbsteinschätzung</h2><span class="instr schriftlich">Schriftlich</span></div>
+  <div class="box lesen"><span class="instr lesen">Nur lesen</span>
+    <p style="margin:0"><b>++</b> = kann ich sicher, auch ohne Hilfe &nbsp;·&nbsp; <b>+</b> = kann ich meistens / mit kleiner Hilfe &nbsp;·&nbsp; <b>○</b> = kann ich noch nicht. Deine Auswahl wird auf diesem Gerät gespeichert.</p>
+  </div>
+  <div id="reflTable"></div>
+  <div class="btn-row noprint"><button class="btn ghost" onclick="window.print()">🖨 Checkliste drucken</button></div>
+</section>
+
+<section class="section" id="test">
+  <div class="section-title"><span class="num-badge">2</span><h2>Test: 10 Aufgaben</h2><span class="instr schriftlich">Schriftlich</span></div>
+  <p>Jede Runde enthält neue Zahlen. Rechne im Heft. Gezählt wird nur, was im <b>ersten Versuch ohne Tipp</b> richtig ist.</p>
+  <div class="applet"><div class="applet-body" style="display:block;padding:1rem">
+    <div class="btn-row"><button class="btn" id="testStart">Test starten</button><span class="score-pill" id="testScore"></span></div>
+    <div class="progress-line" aria-hidden="true"><div id="testBar"></div></div>
+    <div id="testHolder"></div>
+    <div class="btn-row"><button class="btn ghost" id="testNext" style="display:none">Weiter ▸</button></div>
+  </div></div>
+</section>
+
+<section class="section" id="auswertung">
+  <div class="section-title"><span class="num-badge">3</span><h2>Auswertung</h2></div>
+  <div id="evalBox"><p class="muted">Fülle die Selbsteinschätzung aus und mache den Test – dann erscheint hier deine Auswertung.</p></div>
+</section>
+<div class="pager"><a class="btn ghost" href="pruefung.html">← Prüfung</a><a class="btn" href="merksaetze.html">Merksätze →</a></div>
+
+</main>
+<script src="js/gen.js"></script>
+<script src="js/selbsttest.js"></script>
+</body>
+</html>

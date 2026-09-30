@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modul 2 – Ähnliche Dreiecke · Ähnlichkeit Klasse 10</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/print.css">
+<script src="vendor/katex/katex.min.js"></script>
+<script src="vendor/katex/auto-render.min.js"></script>
+<script src="js/geom.js"></script>
+<script src="js/app.js"></script>
+<script src="js/progress-catalog.js"></script>
+<script src="js/progress.js"></script>
+</head>
+<body data-page="m2" data-module="m2">
+<main id="main">
+<section class="hero m2">
+  <span class="kicker">Modul 2 · teils Wiederholung, teils neu · Stunde 2</span>
+  <h1>Ähnliche Dreiecke</h1>
+  <p>Wann sind zwei Dreiecke ähnlich? Mit dem Hauptähnlichkeitssatz <b>ww</b> weißt du es schon. Neu: Wie findest du entsprechende Seiten sicher – und was sagen die Sätze <b>sss</b>, <b>sws</b> und <b>SsW</b>?</p>
+  <svg class="deco" viewBox="0 0 420 300" aria-hidden="true"><polygon points="60,250 170,250 90,170" fill="rgba(255,255,255,.3)" stroke="#fff" stroke-width="3"/><polygon points="230,260 395,260 275,140" fill="rgba(255,255,255,.18)" stroke="#fff" stroke-width="3.5"/><path d="M85,250 A25,25 0 0 0 78,232" stroke="#ffe066" stroke-width="4" fill="none"/><path d="M267,260 A37,37 0 0 0 256,233" stroke="#ffe066" stroke-width="4" fill="none"/></svg>
+</section>
+<nav class="toc"><a href="#ww">2.1 ww-Check</a><a href="#bewegen">2.2 Ähnlich = Bewegen + Strecken</a><a href="#entsprechend">2.3 Entsprechende Seiten</a><a href="#berechnen">2.4 Seiten berechnen</a><a href="#saetze">2.5 sss · sws · SsW</a><a href="#generator">2.6 Ähnlich oder nicht?</a><a href="#aufgaben">2.7 Aufgaben</a></nav>
+
+<section class="section" id="ww">
+  <div class="section-title"><span class="num-badge">2.1</span><h2>Kurz wiederholt: Hauptähnlichkeitssatz ww</h2><span class="tag recap">Wiederholung</span></div>
+  <div class="grid g2">
+    <div class="box abschreiben"><span class="instr abschreiben">Abschreiben</span>
+      <h4><span class="merk-id">M5</span> Hauptähnlichkeitssatz (ww)</h4>
+      <p>Zwei Dreiecke sind zueinander ähnlich, wenn sie in <b>zwei Winkeln</b> übereinstimmen.</p>
+      <p class="small">Der dritte Winkel stimmt dann automatisch auch überein, weil die Winkelsumme im Dreieck immer $180^\circ$ beträgt.</p>
+    </div>
+    <div class="goodway"><h4>So gehst du vor</h4>
+      <ol><li>In beiden Dreiecken <b>alle drei Winkel</b> aufschreiben (fehlenden mit $180^\circ - \ldots$ berechnen).</li>
+      <li>Vergleichen: Kommen zwei Winkel in beiden Dreiecken vor? → ähnlich.</li>
+      <li>Antwortsatz mit Begründung: „… sind ähnlich, weil sie in den Winkeln … und … übereinstimmen (ww).“</li></ol>
+    </div>
+  </div>
+  <h3>Training ww <span class="lvl muss">MUSS</span></h3>
+  <div id="genWW"></div>
+</section>
+
+<section class="section" id="bewegen">
+  <div class="section-title"><span class="num-badge">2.2</span><h2>Ähnlich = Bewegen + Strecken</h2><span class="instr lesen">Nur lesen</span></div>
+  <p>Ähnliche Dreiecke liegen oft verdreht oder verschoben. Man kann aber immer das eine Dreieck durch <b>Verschieben</b>, <b>Drehen</b> (evtl. <b>Spiegeln</b>) und eine <b>zentrische Streckung</b> genau auf das andere legen. Schau zu:</p>
+  <div class="applet">
+    <div class="applet-head"><h3>Von △ABC zu △DEF</h3><label class="chk" style="margin-left:auto"><input type="checkbox" id="mirror"> mit Spiegelung</label></div>
+    <div class="applet-body">
+      <div class="stage" id="moveStage"></div>
+      <div class="panel">
+        <input type="range" id="moveT" min="0" max="3" step="0.01" value="0" aria-label="Animationsfortschritt">
+        <div class="step-text" id="moveText"></div>
+        <div class="btn-row"><button class="btn" id="movePlay">▶ Abspielen</button><button class="btn ghost" id="moveReset">↺ Zurück</button></div>
+        <p class="small muted">Verschieben, Drehen und Spiegeln ändern weder Längen noch Winkel. Erst die Streckung verändert die Größe – mit dem Faktor $k = 1{,}5$.</p>
+      </div>
+    </div>
+  </div>
+  <div class="checkoff" data-sec="m2-bewegen"></div>
+</section>
+
+<section class="section" id="entsprechend">
+  <div class="section-title"><span class="num-badge">2.3</span><h2>Entsprechende Seiten sicher finden</h2><span class="lvl muss">MUSS</span></div>
+  <div class="two-col">
+    <div>
+      <div class="box abschreiben"><span class="instr abschreiben">Abschreiben</span>
+        <h4><span class="merk-id">M6</span> Entsprechende Seiten</h4>
+        <p>In ähnlichen Dreiecken liegen <b>entsprechende Seiten gegenüber von gleich großen Winkeln</b>.</p>
+        <p>Die Schreibweise $\triangle ABC \sim \triangle DEF$ verrät die Zuordnung: $A \leftrightarrow D$, $B \leftrightarrow E$, $C \leftrightarrow F$ und damit $\overline{AB} \leftrightarrow \overline{DE}$, $\overline{BC} \leftrightarrow \overline{EF}$, $\overline{AC} \leftrightarrow \overline{DF}$.</p>
+      </div>
+      <div class="pitfall"><h4>Typischer Fehler: nach Lage zuordnen</h4><p style="margin:0">„Unten ist unten“ stimmt nicht, wenn ein Dreieck gedreht oder gespiegelt ist. Ordne immer über die <b>Winkel</b> zu!</p></div>
+      <div class="goodway"><h4>Profi-Trick: Tabelle</h4><p>Schreibe die Seiten, die gegenüber vom gleichen Winkel liegen, untereinander:</p>
+        <div class="table-scroll"><table class="nice small"><thead><tr><th></th><th>gegenüber ●</th><th>gegenüber ●●</th><th>gegenüber ○</th></tr></thead><tbody><tr><td class="c-orig">△1</td><td>6 cm</td><td>8 cm</td><td>9 cm</td></tr><tr><td class="c-img">△2</td><td>9 cm</td><td>12 cm</td><td>?</td></tr></tbody></table></div>
+        <p class="small" style="margin-bottom:0">Dann: $k = 9 : 6 = 1{,}5$ und $? = 1{,}5 \cdot 9\,\text{cm} = 13{,}5\,\text{cm}$.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:.2em">Beispiel: gedrehtes Dreieck</h4>
+      <div class="fig center" id="figTurned"></div>
+      <p class="small">Der grüne Winkel liegt bei $A$ und bei $E$, der violette bei $B$ und bei $F$. Also: $A \leftrightarrow E$, $B \leftrightarrow F$, $C \leftrightarrow D$ und $\triangle ABC \sim \triangle EFD$.</p>
+      <div id="corrTasks"></div>
+    </div>
+  </div>
+  <div class="checkoff" data-sec="m2-entsprechend"></div>
+</section>
+
+<section class="section" id="berechnen">
+  <div class="section-title"><span class="num-badge">2.4</span><h2>Fehlende Seiten berechnen</h2><span class="instr beispiel">Beispiel ins Heft</span></div>
+  <div class="grid g2">
+    <div class="box beispiel"><span class="instr beispiel">Beispiel ins Heft</span>
+      <h4>Beispiel 1: Mit dem Ähnlichkeitsfaktor</h4>
+      <p>$\triangle ABC \sim \triangle DEF$ mit $\overline{AB} = 4\,\text{cm}$, $\overline{BC} = 5\,\text{cm}$, $\overline{AC} = 6\,\text{cm}$ und $\overline{DE} = 6\,\text{cm}$. Berechne $\overline{EF}$ und $\overline{DF}$.</p>
+      <ol class="step-list" data-reveal>
+        <li>Zuordnung: $\overline{DE} \leftrightarrow \overline{AB}$, $\overline{EF} \leftrightarrow \overline{BC}$, $\overline{DF} \leftrightarrow \overline{AC}$</li>
+        <li>$k = \dfrac{\text{Bild}}{\text{Urbild}} = \dfrac{\overline{DE}}{\overline{AB}} = \dfrac{6\,\text{cm}}{4\,\text{cm}} = 1{,}5$</li>
+        <li>$\overline{EF} = k \cdot \overline{BC} = 1{,}5 \cdot 5\,\text{cm} = 7{,}5\,\text{cm}$</li>
+        <li>$\overline{DF} = k \cdot \overline{AC} = 1{,}5 \cdot 6\,\text{cm} = 9\,\text{cm}$</li>
+      </ol>
+    </div>
+    <div class="box beispiel"><span class="instr beispiel">Beispiel ins Heft</span>
+      <h4>Beispiel 2: Dreieck im Dreieck <span class="lvl soll">SOLL</span></h4>
+      <div class="fig center" id="figNested"></div>
+      <p>$DE \parallel BC$, $\overline{AD} = 3\,\text{cm}$, $\overline{AB} = 7{,}5\,\text{cm}$, $\overline{DE} = 2{,}4\,\text{cm}$. Wie lang ist $\overline{BC}$?</p>
+      <ol class="step-list" data-reveal>
+        <li>Warum ähnlich? $\alpha$ gehört zu beiden Dreiecken. Die Winkel bei $D$ und $B$ sind <b>Stufenwinkel</b> an Parallelen, also gleich. → ww ✓ $\;\triangle ADE \sim \triangle ABC$</li>
+        <li>$k = \dfrac{\overline{AB}}{\overline{AD}} = \dfrac{7{,}5}{3} = 2{,}5$</li>
+        <li>$\overline{BC} = k \cdot \overline{DE} = 2{,}5 \cdot 2{,}4\,\text{cm} = 6\,\text{cm}$</li>
+        <li>Das ist schon fast ein <b>Strahlensatz</b> – mehr dazu in Modul 3!</li>
+      </ol>
+    </div>
+  </div>
+  <h3>Training: Seiten berechnen</h3>
+  <div class="btn-row" id="seitenLv"><button class="btn small" data-lv="muss">MUSS: gleich ausgerichtet</button><button class="btn small ghost" data-lv="soll">SOLL: gedreht/gespiegelt</button></div>
+  <div id="genSeiten"></div>
+  <div class="checkoff" data-sec="m2-berechnen"></div>
+</section>
+
+<section class="section" id="saetze">
+  <div class="section-title"><span class="num-badge">2.5</span><h2>Kurz-Erweiterung: Weitere Ähnlichkeitssätze</h2><span class="tag tool">Erweiterung</span><span class="lvl kann">KANN</span></div>
+  <div class="box lesen"><span class="instr lesen">Nur lesen</span>
+    <p><b>Nur für Schnelle (KANN):</b> sss, sws und SsW stehen nicht im Lehrplan. Im Lehrplan und in der Prüfung reicht der Hauptähnlichkeitssatz (ww) – z. B. die Prüfungsaufgabe 2022 unten löst man am einfachsten mit „Winkel bleiben beim Strecken gleich“.</p>
+    <p>Manchmal kennst du keine Winkel, sondern nur Seiten. Dann helfen drei weitere Sätze. Sie funktionieren wie die <b>Kongruenzsätze</b> aus Klasse 7 – nur dass statt „gleich lang“ jetzt „<b>gleiches Verhältnis</b>“ gilt.</p>
+  </div>
+  <div class="grid g3">
+    <div class="card">
+      <h3 style="margin-top:.2em">sss</h3>
+      <div class="fig center" id="figSSS"></div>
+      <p>Zwei Dreiecke sind ähnlich, wenn <b>alle drei Seitenverhältnisse gleich</b> sind:</p>
+      <p class="center">$\dfrac{a'}{a} = \dfrac{b'}{b} = \dfrac{c'}{c}$</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:.2em">sws</h3>
+      <div class="fig center" id="figSWS"></div>
+      <p>… wenn <b>zwei Seitenverhältnisse gleich</b> sind <b>und</b> der <b>eingeschlossene Winkel</b> (zwischen den Seiten) gleich groß ist.</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:.2em">SsW <span class="lvl kann">KANN</span></h3>
+      <div class="fig center" id="figSSW"></div>
+      <p>… wenn zwei Seitenverhältnisse gleich sind und der Winkel <b>gegenüber der längeren</b> der beiden Seiten gleich groß ist.</p>
+    </div>
+  </div>
+  <div class="box abschreiben"><span class="instr abschreiben">Abschreiben</span>
+    <h4><span class="merk-id">M7</span> Ähnlichkeitssätze für Dreiecke</h4>
+    <p>Zwei Dreiecke sind ähnlich, wenn sie übereinstimmen in</p>
+    <ul>
+      <li><b>ww</b>: zwei Winkeln (Hauptähnlichkeitssatz) – oder</li>
+      <li><b>sss</b>: allen drei Seitenverhältnissen – oder</li>
+      <li><b>sws</b>: zwei Seitenverhältnissen und dem eingeschlossenen Winkel – oder</li>
+      <li><b>SsW</b>: zwei Seitenverhältnissen und dem Winkel, der der längeren Seite gegenüberliegt.</li>
+    </ul>
+  </div>
+  <div class="grid g2">
+    <div class="box beispiel"><span class="instr beispiel">Beispiel ins Heft</span>
+      <h4>Beispiel 3: sss</h4>
+      <p>Dreieck 1: $4\,\text{cm}$, $6\,\text{cm}$, $7\,\text{cm}$. Dreieck 2: $10{,}5\,\text{cm}$, $6\,\text{cm}$, $9\,\text{cm}$. Ähnlich?</p>
+      <ol class="step-list" data-reveal>
+        <li>Beide der Größe nach sortieren: $4 &lt; 6 &lt; 7$ und $6 &lt; 9 &lt; 10{,}5$.</li>
+        <li>Kürzeste zu kürzester usw.: $\dfrac{6}{4} = 1{,}5$; &nbsp; $\dfrac{9}{6} = 1{,}5$; &nbsp; $\dfrac{10{,}5}{7} = 1{,}5$</li>
+        <li>Alle drei Verhältnisse gleich → <b>ähnlich (sss)</b> mit $k = 1{,}5$.</li>
+      </ol>
+    </div>
+    <div class="box beispiel"><span class="instr beispiel">Beispiel ins Heft</span>
+      <h4>Beispiel 4: sws – wie in der Prüfung</h4>
+      <p>$\triangle ABC$: $\overline{AB} = 6{,}4\,\text{cm}$, $\overline{BC} = 4{,}0\,\text{cm}$, $\sphericalangle CBA = 58^\circ$. <br>$\triangle DEF$: $\overline{DE} = 3{,}2\,\text{cm}$, $\overline{EF} = 2{,}0\,\text{cm}$, $\sphericalangle FED = 29^\circ$. Ähnlich?</p>
+      <ol class="step-list" data-reveal>
+        <li>Seitenverhältnisse: $\dfrac{\overline{DE}}{\overline{AB}} = \dfrac{3{,}2}{6{,}4} = 0{,}5$ und $\dfrac{\overline{EF}}{\overline{BC}} = \dfrac{2{,}0}{4{,}0} = 0{,}5$ ✓</li>
+        <li>Eingeschlossene Winkel: bei $B$ sind es $58^\circ$, bei $E$ nur $29^\circ$. ✗</li>
+        <li>Antwort: Die Dreiecke sind <b>nicht ähnlich</b>. Die Seitenverhältnisse stimmen zwar, aber der eingeschlossene Winkel ist verschieden (ein ähnliches Dreieck müsste ebenfalls $58^\circ$ haben).</li>
+      </ol>
+      <p class="small muted">Vorsicht Falle: Nicht den Winkel halbieren, nur weil die Seiten halbiert werden. Winkel bleiben bei Ähnlichkeit gleich!</p>
+    </div>
+  </div>
+  <div class="box diskutieren"><span class="instr diskutieren">Diskutieren</span>
+    <p><b>D5:</b> Warum reicht es bei sss nicht, nur <i>zwei</i> Seitenverhältnisse zu prüfen? Findet ein Gegenbeispiel (Tipp: Dreieck 1: 3, 4, 5; Dreieck 2: 6, 8, 12).</p>
+    <p><b>D6:</b> Warum ist bei sws gerade der <i>eingeschlossene</i> Winkel wichtig?</p>
+  </div>
+  <div class="checkoff" data-sec="m2-saetze"></div>
+</section>
+
+<section class="section" id="generator">
+  <div class="section-title"><span class="num-badge">2.6</span><h2>Ähnlich oder nicht? – Generator</h2><span class="lvl kann">KANN</span></div>
+  <p class="muted">Unendlich viele Paare. Entscheide und begründe im Kopf mit dem passenden Satz.</p>
+  <div id="genSaetze"></div>
+</section>
+
+<section class="section" id="aufgaben">
+  <div class="section-title"><span class="num-badge">2.7</span><h2>Aufgaben</h2><span class="instr schriftlich">Schriftlich</span></div>
+  <div id="tasks"></div>
+</section>
+<div class="pager"><a class="btn ghost" href="modul1-zentrische-streckung.html">← Modul 1</a><a class="btn" href="modul3-strahlensaetze.html">Modul 3: Strahlensätze →</a></div>
+
+</main>
+<script src="js/gen.js"></script>
+<script src="js/modul2.js"></script>
+</body>
+</html>
