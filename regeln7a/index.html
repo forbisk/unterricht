@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script src="gate.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unser Neustart in Mathe – Klasse 7a · Theodor Fontane Gemeinschaftsschule</title>
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/deck.css">
+<link rel="stylesheet" href="assets/css/slides.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+ <defs>
+  <!-- Figuren & Hände (eigene Zeichnungen) -->
+  <symbol id="kid" viewBox="0 0 120 170">
+   <path d="M10 170c0-44 21-68 50-68s50 24 50 68z" fill="currentColor"/>
+   <path d="M44 104q16 14 32 0" fill="none" stroke="#fff" stroke-width="5" opacity=".55" stroke-linecap="round"/>
+   <circle cx="60" cy="58" r="36" fill="var(--skin,#f5c9a0)"/>
+   <path d="M23 56c0-27 16-43 37-43s37 16 37 43c-7-13-21-20-37-20s-30 7-37 20z" fill="var(--hair,#5a3a22)"/>
+   <circle cx="47" cy="62" r="4.6" fill="#1b2536"/><circle cx="73" cy="62" r="4.6" fill="#1b2536"/>
+   <path d="M47 77q13 10 26 0" stroke="#9b4a2c" stroke-width="4.6" fill="none" stroke-linecap="round"/>
+   <circle cx="37" cy="74" r="6" fill="#f28b8b" opacity=".45"/><circle cx="83" cy="74" r="6" fill="#f28b8b" opacity=".45"/>
+  </symbol>
+  <symbol id="hand" viewBox="0 0 100 140">
+   <g fill="#f5c9a0" stroke="#c98b5e" stroke-width="3" stroke-linejoin="round">
+    <rect x="3" y="58" width="15" height="40" rx="7.5" transform="rotate(-30 10 78)"/>
+    <rect x="21" y="24" width="15" height="54" rx="7.5"/>
+    <rect x="37" y="8" width="15" height="66" rx="7.5"/>
+    <rect x="53" y="10" width="15" height="64" rx="7.5"/>
+    <rect x="69" y="24" width="14" height="52" rx="7"/>
+    <path d="M19 62h65v20c0 22-13 36-32.5 36S19 104 19 82z"/>
+   </g>
+   <rect x="30" y="112" width="44" height="28" rx="6" fill="currentColor"/>
+  </symbol>
+
+  <!-- kleine Icons 64×64 -->
+  <symbol id="i-eye" viewBox="0 0 64 64"><path d="M4 32c8-14 18-21 28-21s20 7 28 21c-8 14-18 21-28 21S12 46 4 32z" fill="#fff" stroke="currentColor" stroke-width="5"/><circle cx="32" cy="32" r="10" fill="currentColor"/><circle cx="35.5" cy="28.5" r="3" fill="#fff"/></symbol>
+  <symbol id="i-name" viewBox="0 0 64 64"><path d="M8 8h48a6 6 0 0 1 6 6v26a6 6 0 0 1-6 6H28L15 57V46H8a6 6 0 0 1-6-6V14a6 6 0 0 1 6-6z" fill="currentColor"/><circle cx="20" cy="27" r="4" fill="#fff"/><circle cx="32" cy="27" r="4" fill="#fff"/><circle cx="44" cy="27" r="4" fill="#fff"/></symbol>
+  <symbol id="i-move" viewBox="0 0 64 64"><g fill="currentColor"><rect x="8" y="10" width="7" height="34" rx="3"/><rect x="8" y="34" width="28" height="7" rx="3"/><rect x="8" y="38" width="6" height="20" rx="3"/><rect x="30" y="38" width="6" height="20" rx="3"/></g><path d="M42 20h16M51 12l8 8-8 8" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-parents" viewBox="0 0 64 64"><g fill="currentColor"><circle cx="21" cy="17" r="9"/><path d="M4 56c0-15 7-24 17-24s17 9 17 24z"/><circle cx="45" cy="21" r="8"/><path d="M30 58c0-13 6-21 15-21s15 8 15 21z" opacity=".75"/></g></symbol>
+  <symbol id="i-bell" viewBox="0 0 64 64"><path d="M32 4a4 4 0 0 1 4 4v3c10 2 16 10 16 22v11l6 6v4H6v-4l6-6V33c0-12 6-20 16-22V8a4 4 0 0 1 4-4z" fill="currentColor"/><circle cx="32" cy="58" r="5" fill="currentColor"/></symbol>
+  <symbol id="i-door" viewBox="0 0 64 64"><rect x="10" y="4" width="36" height="56" rx="3" fill="none" stroke="currentColor" stroke-width="5"/><path d="M12 6l24 7v44l-24 3z" fill="currentColor"/><circle cx="31" cy="35" r="3" fill="#fff"/><path d="M52 18q6 4 0 10M56 12q10 9 0 22" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="i-seat" viewBox="0 0 64 64"><g fill="currentColor"><rect x="16" y="6" width="8" height="34" rx="3"/><rect x="16" y="32" width="32" height="8" rx="3"/><rect x="16" y="36" width="7" height="22" rx="3"/><rect x="41" y="36" width="7" height="22" rx="3"/></g></symbol>
+  <symbol id="i-book" viewBox="0 0 64 64"><path d="M4 12c9-5 19-5 27 2v42c-8-6-18-7-27-2z" fill="currentColor"/><path d="M60 12c-9-5-19-5-27 2v42c8-6 18-7 27-2z" fill="currentColor" opacity=".7"/><path d="M50 2l8 8-26 26-10 2 2-10z" fill="#f7c948" stroke="#1b2536" stroke-width="2"/></symbol>
+  <symbol id="i-board" viewBox="0 0 64 64"><rect x="3" y="6" width="58" height="40" rx="4" fill="currentColor"/><path d="M13 19h20M13 30h30" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="M48 15v12M42 21h12" stroke="#ffd166" stroke-width="4" stroke-linecap="round"/><path d="M20 46l-6 14M44 46l6 14" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></symbol>
+  <symbol id="i-calm" viewBox="0 0 64 64"><path d="M6 24h12l15-13v42L18 40H6z" fill="currentColor"/><path d="M42 25q6 7 0 14" stroke="currentColor" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M50 20q11 12 0 24" stroke="currentColor" stroke-width="5" fill="none" stroke-linecap="round" opacity=".3"/></symbol>
+  <symbol id="i-fair" viewBox="0 0 64 64"><path d="M32 8v44M16 58h32M8 16h48" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M8 16L1 34h14zM56 16l-7 18h14z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M1 34a7 6 0 0 0 14 0zM49 34a7 6 0 0 0 14 0z" fill="currentColor"/><circle cx="32" cy="9" r="5" fill="currentColor"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 64 64"><path d="M32 4a20 20 0 0 0-12 36c3 3 4 6 4 9h16c0-3 1-6 4-9A20 20 0 0 0 32 4z" fill="currentColor"/><rect x="24" y="51" width="16" height="5" rx="2" fill="currentColor" opacity=".6"/><rect x="26" y="57" width="12" height="4" rx="2" fill="currentColor" opacity=".6"/><path d="M26 22q6-8 12 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="i-group" viewBox="0 0 64 64"><g fill="currentColor"><circle cx="32" cy="16" r="9"/><path d="M17 50c0-13 6-21 15-21s15 8 15 21z"/><circle cx="12" cy="26" r="7" opacity=".7"/><path d="M0 56c0-11 5-17 12-17s12 6 12 17z" opacity=".7"/><circle cx="52" cy="26" r="7" opacity=".7"/><path d="M40 56c0-11 5-17 12-17s12 6 12 17z" opacity=".7"/></g></symbol>
+  <symbol id="i-trophy" viewBox="0 0 64 64"><path d="M18 6h28v14c0 10-6 18-14 18s-14-8-14-18z" fill="currentColor"/><path d="M18 11H8c0 10 4 15 10 15M46 11h10c0 10-4 15-10 15" stroke="currentColor" stroke-width="4" fill="none"/><rect x="28" y="37" width="8" height="11" fill="currentColor"/><rect x="17" y="48" width="30" height="9" rx="3" fill="currentColor"/><path d="M32 13l2.4 5 5.4.6-4 3.7 1.1 5.3-4.9-2.7-4.9 2.7 1.1-5.3-4-3.7 5.4-.6z" fill="#fff"/></symbol>
+  <symbol id="i-game" viewBox="0 0 64 64"><rect x="3" y="17" width="58" height="32" rx="16" fill="currentColor"/><path d="M14 33h13M20.5 26.5v13" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/><circle cx="43" cy="29" r="4" fill="#fff"/><circle cx="51" cy="36" r="4" fill="#fff"/></symbol>
+  <symbol id="i-kahoot" viewBox="0 0 64 64"><path d="M15 4l12 21H3z" fill="#e2455b"/><path d="M49 3l12 12-12 12-12-12z" fill="#2f7fe0"/><circle cx="15" cy="47" r="12" fill="#e0a614"/><rect x="37" y="35" width="24" height="24" rx="3" fill="#22a45d"/></symbol>
+  <symbol id="i-quiz" viewBox="0 0 64 64"><circle cx="32" cy="32" r="29" fill="currentColor"/><path d="M23 24a9 9 0 1 1 13 8c-3 2-4 3-4 7" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="32" cy="49" r="4" fill="#fff"/></symbol>
+  <symbol id="i-star" viewBox="0 0 64 64"><path d="M32 4l8.5 17.5 19.3 2.8-14 13.6 3.3 19.2L32 48l-17.2 9.1 3.3-19.2-14-13.6 19.3-2.8z" fill="currentColor"/></symbol>
+  <symbol id="i-check" viewBox="0 0 64 64"><circle cx="32" cy="32" r="29" fill="currentColor"/><path d="M18 33l9 9 19-20" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 64 64"><path d="M32 57S4 40 4 21A14 14 0 0 1 32 14a14 14 0 0 1 28 7c0 19-28 36-28 36z" fill="currentColor"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" fill="#fff" stroke="currentColor" stroke-width="6"/><path d="M32 16v17l11 7" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round"/></symbol>
+
+  <!-- Szenen zu den 4 Regeln (600×520) -->
+  <symbol id="sc-r1" viewBox="0 0 600 520">
+   <circle cx="300" cy="300" r="225" fill="#e6efff"/>
+   <use href="#kid" x="40" y="262" width="136" height="193" color="#22a45d"/>
+   <use href="#kid" x="424" y="262" width="136" height="193" color="#e8772e" style="--hair:#2b2b35"/>
+   <path d="M353 384L398 228" stroke="#2f6fe0" stroke-width="34" stroke-linecap="round"/>
+   <use href="#hand" x="352" y="112" width="84" height="118" color="#2f6fe0"/>
+   <use href="#kid" x="215" y="220" width="170" height="241" color="#2f6fe0" style="--hair:#c9822b"/>
+   <g fill="none" stroke="#2f6fe0" stroke-width="7" stroke-linecap="round" opacity=".55">
+    <path d="M182 306q12 22 0 44"/><path d="M198 296q18 32 0 64"/>
+    <path d="M418 306q-12 22 0 44"/><path d="M402 296q-18 32 0 64"/>
+   </g>
+   <g><rect x="14" y="60" width="330" height="104" rx="34" fill="#fff" stroke="#2f6fe0" stroke-width="5"/><path d="M230 160l40 48-6-48z" fill="#fff" stroke="#2f6fe0" stroke-width="5" stroke-linejoin="round"/><rect x="226" y="150" width="46" height="12" fill="#fff"/>
+   <text x="179" y="125" text-anchor="middle" font-family="Fredoka,Nunito,sans-serif" font-weight="600" font-size="38" fill="#1b2536">Ich melde mich!</text></g>
+  </symbol>
+  <symbol id="sc-r2" viewBox="0 0 600 520">
+   <rect x="22" y="70" width="556" height="410" rx="34" fill="#efcf9c" stroke="#c99a5b" stroke-width="7"/>
+   <path d="M60 140q120 18 230 0t250 6M60 420q140-16 260 0t220-6" stroke="#dcb47a" stroke-width="5" fill="none"/>
+   <g transform="rotate(-7 160 245)"><rect x="70" y="120" width="180" height="240" rx="12" fill="#3f7fe8"/><rect x="70" y="120" width="22" height="240" rx="8" fill="#2a5fc0"/><rect x="110" y="150" width="120" height="44" rx="8" fill="#fff"/><text x="170" y="182" text-anchor="middle" font-family="Fredoka,Nunito,sans-serif" font-weight="600" font-size="30" fill="#2a5fc0">Heft</text></g>
+   <g transform="rotate(5 345 230)"><rect x="255" y="105" width="185" height="245" rx="12" fill="#e2455b"/><rect x="255" y="105" width="26" height="245" rx="8" fill="#b8263b"/><text x="360" y="200" text-anchor="middle" font-family="Fredoka,Nunito,sans-serif" font-weight="600" font-size="44" fill="#fff">Mathe</text><text x="360" y="262" text-anchor="middle" font-family="Fredoka,Nunito,sans-serif" font-weight="700" font-size="64" fill="#ffd166">7</text></g>
+   <g transform="rotate(8 490 340)"><rect x="425" y="240" width="135" height="200" rx="18" fill="#3b4658"/><rect x="442" y="258" width="101" height="42" rx="7" fill="#cfe8c9"/><text x="532" y="290" text-anchor="end" font-family="Nunito,sans-serif" font-weight="800" font-size="28" fill="#1b2536">7a</text>
+    <g fill="#8a95a8"><rect x="444" y="314" width="26" height="22" rx="5"/><rect x="480" y="314" width="26" height="22" rx="5"/><rect x="516" y="314" width="26" height="22" rx="5" fill="#f7a14a"/><rect x="444" y="346" width="26" height="22" rx="5"/><rect x="480" y="346" width="26" height="22" rx="5"/><rect x="516" y="346" width="26" height="22" rx="5" fill="#f7a14a"/><rect x="444" y="378" width="26" height="22" rx="5"/><rect x="480" y="378" width="26" height="22" rx="5"/><rect x="516" y="378" width="26" height="54" rx="5" fill="#22a45d"/><rect x="444" y="410" width="62" height="22" rx="5"/></g></g>
+   <g transform="rotate(-14 230 420)"><rect x="80" y="400" width="250" height="22" rx="4" fill="#f7c948"/><path d="M330 400l34 11-34 11z" fill="#f5d7b0"/><path d="M354 408l10 3-10 3z" fill="#1b2536"/><rect x="72" y="400" width="14" height="22" rx="4" fill="#f28b8b"/></g>
+   <g transform="rotate(-6 230 450)"><rect x="100" y="440" width="230" height="20" rx="4" fill="#2f6fe0"/><path d="M330 440l30 10-30 10z" fill="#f5d7b0"/><path d="M352 447l8 3-8 3z" fill="#2f6fe0"/></g>
+  </symbol>
+  <symbol id="sc-r3" viewBox="0 0 600 520">
+   <circle cx="300" cy="290" r="225" fill="#e3f6ea"/>
+   <g transform="rotate(-4 300 290)"><rect x="150" y="80" width="300" height="400" rx="20" fill="#fff" stroke="#cfd8e3" stroke-width="5"/>
+    <text x="300" y="140" text-anchor="middle" font-family="Fredoka,Nunito,sans-serif" font-weight="600" font-size="38" fill="#1b2536">Aufgaben</text>
+    <g><use href="#i-check" x="180" y="170" width="44" height="44" color="#22a45d"/><rect x="238" y="186" width="170" height="12" rx="6" fill="#d7dee8"/>
+    <use href="#i-check" x="180" y="240" width="44" height="44" color="#22a45d"/><rect x="238" y="256" width="150" height="12" rx="6" fill="#d7dee8"/>
+    <use href="#i-check" x="180" y="310" width="44" height="44" color="#22a45d"/><rect x="238" y="326" width="175" height="12" rx="6" fill="#d7dee8"/>
+    <circle cx="202" cy="402" r="20" fill="none" stroke="#9aa6b8" stroke-width="5"/><rect x="238" y="396" width="90" height="12" rx="6" fill="#1b9a64" class="write-line"/></g></g>
+   <g transform="rotate(40 360 390)"><rect x="330" y="300" width="24" height="120" rx="4" fill="#f7c948"/><path d="M330 420h24l-12 34z" fill="#f5d7b0"/><path d="M337 440h10l-5 14z" fill="#1b2536"/><rect x="330" y="290" width="24" height="16" rx="4" fill="#f28b8b"/></g>
+   <g transform="translate(470 40)"><circle cx="50" cy="50" r="56" fill="#fff" stroke="#1b9a64" stroke-width="5"/><path d="M18 38h16l18-15v54L34 62H18z" fill="#1b9a64"/><path d="M62 40q8 10 0 20" stroke="#1b9a64" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M72 32q14 18 0 36" stroke="#1b9a64" stroke-width="6" fill="none" stroke-linecap="round" opacity=".25"/></g>
+  </symbol>
+  <symbol id="sc-r4" viewBox="0 0 600 520">
+   <circle cx="300" cy="300" r="225" fill="#f1e8fd"/>
+   <use href="#kid" x="40" y="226" width="170" height="241" color="#8e4fd8"/>
+   <use href="#kid" x="390" y="226" width="170" height="241" color="#0d8f9c" style="--hair:#d4a04a"/>
+   <g class="beat" style="transform-origin:300px 340px"><use href="#i-heart" x="250" y="290" width="100" height="100" color="#e2455b"/></g>
+   <g><rect x="30" y="58" width="250" height="96" rx="32" fill="#fff" stroke="#8e4fd8" stroke-width="5"/><path d="M110 150l-6 50 46-50z" fill="#fff" stroke="#8e4fd8" stroke-width="5" stroke-linejoin="round"/><rect x="104" y="140" width="50" height="12" fill="#fff"/><text x="155" y="120" text-anchor="middle" font-family="Fredoka,Nunito,sans-serif" font-weight="600" font-size="40" fill="#1b2536">Du zuerst!</text></g>
+   <g><rect x="345" y="58" width="225" height="96" rx="32" fill="#fff" stroke="#0d8f9c" stroke-width="5"/><path d="M490 150l6 50-46-50z" fill="#fff" stroke="#0d8f9c" stroke-width="5" stroke-linejoin="round"/><rect x="446" y="140" width="50" height="12" fill="#fff"/><text x="457" y="120" text-anchor="middle" font-family="Fredoka,Nunito,sans-serif" font-weight="600" font-size="40" fill="#1b2536">Danke!</text></g>
+  </symbol>
+ </defs>
+</svg>
+
+<div id="viewport"><div id="stage">
+
+<!-- 1 TITEL -->
+<section class="slide title" data-chapter="1" data-id="titel" data-title="Titel: Unser Neustart in Mathe">
+  <div class="kicker pill">Mathematik · Klasse 7a</div>
+  <h1>Unser <span class="hl">Neustart</span><br>in Mathe</h1>
+  <p class="sub">So lernen wir gut zusammen.</p>
+  <div class="school-card"><b>Theodor Fontane Gemeinschaftsschule</b><span>Lehrer P. Kurlavičius</span></div>
+  <svg class="art" viewBox="0 0 760 860" aria-hidden="true">
+    <rect x="40" y="40" width="680" height="380" rx="26" fill="#2e6b4f" stroke="#a8743f" stroke-width="18"/>
+    <rect x="200" y="420" width="360" height="16" rx="6" fill="#8e5a2b"/>
+    <text x="380" y="150" text-anchor="middle" font-family="Fredoka,Nunito,sans-serif" font-weight="600" font-size="66" fill="#f4f7f2">Klasse 7a</text>
+    <text x="380" y="275" text-anchor="middle" font-family="Fredoka,Nunito,sans-serif" font-weight="700" font-size="104" fill="#ffd166" class="chalk">Neustart!</text>
+    <g fill="none" stroke="#f4f7f2" stroke-width="6" stroke-linecap="round" opacity=".75"><path d="M110 360h40M130 340v40"/><path d="M610 360h40"/><path d="M200 372l26-26M226 372l-26-26"/><path d="M530 360h30"/></g>
+    <path d="M330 352l26 24 50-50" fill="none" stroke="#7fe0a8" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" class="drawcheck"/>
+    <g class="twinkle" style="transform-origin:695px 55px"><use href="#i-star" x="660" y="20" width="70" height="70" color="#f7c948"/></g>
+    <g class="twinkle d2" style="transform-origin:35px 425px"><use href="#i-star" x="10" y="400" width="50" height="50" color="#2f6fe0"/></g>
+    <use href="#kid" x="80" y="590" width="170" height="241" color="#22a45d"/>
+    <path d="M452 765L522 598" stroke="#e8772e" stroke-width="32" stroke-linecap="round"/>
+    <g class="wave" style="transform-origin:522px 600px"><use href="#hand" x="478" y="486" width="84" height="118" color="#e8772e"/></g>
+    <use href="#kid" x="300" y="560" width="190" height="270" color="#e8772e" style="--hair:#2b2b35"/>
+    <use href="#kid" x="545" y="600" width="165" height="234" color="#8e4fd8" style="--hair:#c9822b"/>
+  </svg>
+  <div class="title-foot"><span class="kbd">→</span> weiter &nbsp; <span class="kbd">F</span> Vollbild &nbsp; <span class="kbd">O</span> Übersicht &nbsp; <span class="kbd">H</span> Hilfe</div>
+  <aside class="notes"><p><b>Start:</b> Vollbild mit <b>F</b>, weiter mit Pfeiltasten, Leertaste oder Klick. Übersicht mit <b>O</b>, Notizen mit <b>N</b>, Timer mit <b>T</b>.</p><p>Ruhig und freundlich beginnen: „Heute starten wir neu – und zwar gemeinsam.“</p></aside>
+</section>
+
+<!-- 2 WARUM -->
+<section class="slide" data-chapter="1" data-id="warum" data-title="Warum ein Neustart?">
+  <h2>Warum ein <span class="hl">Neustart</span>?</h2>
+  <p class="lead">Zuletzt war es oft laut und unruhig. Das ist schade – für <b>alle</b>.<br>Wir wollen Mathe-Stunden, in denen <b>jeder</b> gut lernen kann.</p>
+  <div class="grid g3 why">
+    <div class="icard step" style="--ic:#2f6fe0"><svg><use href="#i-calm"/></svg><b>Ruhig</b><span>Du kannst dich konzentrieren.</span></div>
+    <div class="icard step" style="--ic:#8e4fd8"><svg><use href="#i-fair"/></svg><b>Fair</b><span>Gleiche Regeln für alle.</span></div>
+    <div class="icard step" style="--ic:#e0a614"><svg><use href="#i-bulb"/></svg><b>Lernen</b><span>Jeder kommt in Mathe weiter.</span></div>
+  </div>
+  <p class="banner step">Ihr könnt das. Heute fangen wir neu an! <span class="emoji">💪</span></p>
+  <aside class="notes"><p>Kurz halten (1–2 Minuten). Nicht einzelne Schüler nennen. Betonen: Es geht nicht um Strafe, sondern darum, dass alle gut lernen können.</p></aside>
+</section>
+
+<!-- 3 SITZORDNUNG -->
+<section class="slide" data-chapter="2" data-id="sitzordnung" data-title="Neue Sitzordnung: U-Form">
+  <h2>Unsere neue <span class="hl">Sitzordnung</span></h2>
+  <div class="seat-layout">
+    <div class="plan-wrap interactive"><svg class="plan" id="plan" viewBox="0 0 1000 690" aria-label="Sitzplan U-Form"></svg></div>
+    <div class="seat-side">
+      <div class="seg interactive" id="planseg"><button class="on" data-mode="u">U-Form</button><button data-mode="g">Gruppenphase</button></div>
+      <ul class="checks">
+        <li><svg><use href="#i-eye"/></svg><span>In der U-Form sehen <b>alle</b> die Tafel.</span></li>
+        <li><svg><use href="#i-seat"/></svg><span>Ich lege die <b>Plätze</b> fest.</span></li>
+        <li><svg><use href="#i-group"/></svg><span>Gruppenarbeit: Wir drehen die <b>Stühle zusammen</b> – leise und schnell.</span></li>
+      </ul>
+      <p class="modehint" id="modehint">Normal: U-Form. Alle schauen nach vorn.</p>
+    </div>
+  </div>
+  <aside class="notes"><p>Mit den Knöpfen <b>U-Form / Gruppenphase</b> zeigen, wie die Plätze sich verändern. Danach den Sitzplan austeilen bzw. vorlesen (sitzplan.html, Nummern 1–26).</p><p>Gruppenwechsel ggf. kurz üben: „In 30 Sekunden leise zusammendrehen.“</p></aside>
+</section>
+
+<!-- 4 TESTPHASE -->
+<section class="slide" data-chapter="2" data-id="testphase" data-title="Testphase: 2 Wochen">
+  <h2>Wir probieren das <span class="hl">2 Wochen</span>.</h2>
+  <div class="trial">
+    <div class="cal">
+      <div class="wk"><b>Woche 1</b><i>Mo</i><i>Di</i><i>Mi</i><i>Do</i><i>Fr</i></div>
+      <div class="wk"><b>Woche 2</b><i>Mo</i><i>Di</i><i>Mi</i><i>Do</i><i>Fr</i></div>
+    </div>
+    <svg class="arrow-big" viewBox="0 0 160 100" aria-hidden="true"><path d="M10 50h110" stroke="currentColor" stroke-width="16" stroke-linecap="round"/><path d="M100 18l40 32-40 32" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="card reward-card step"><svg><use href="#i-group"/></svg><b>Läuft es gut?</b><span>Dann gibt es wieder <mark>mehr Gruppenarbeit</mark>.</span></div>
+  </div>
+  <p class="lead center">Es liegt an euch – gemeinsam schaffen wir das!</p>
+  <aside class="notes"><p>Zeitraum konkret nennen (z.&nbsp;B. „bis zu den Herbstferien“ / Datum an die Tafel). Nach 2 Wochen gemeinsam auswerten.</p></aside>
+</section>
+
+<!-- 5–8 REGELN -->
+<section class="slide rule" data-chapter="3" data-id="regel1" data-title="Regel 1: Einer spricht – alle hören zu" style="--accent:#2f6fe0">
+  <div class="rule-grid">
+    <svg class="scene"><use href="#sc-r1"/></svg>
+    <div>
+      <div class="rnum">Regel 1</div>
+      <h2>Einer spricht – <span class="hl">alle hören zu.</span></h2>
+      <ul class="checks big">
+        <li class="step"><svg><use href="#i-check"/></svg><span>Ich <b>melde</b> mich und warte, bis ich dran bin.</span></li>
+        <li class="step"><svg><use href="#i-check"/></svg><span>Wenn jemand spricht, <b>höre ich zu</b>.</span></li>
+        <li class="step"><svg><use href="#i-check"/></svg><span>Kein Reinrufen – so kommt <b>jeder</b> zu Wort.</span></li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes"><p>Kurz vormachen: Hand heben, warten, drangenommen werden. Frage an die Klasse: „Warum ist Reinrufen unfair?“</p></aside>
+</section>
+
+<section class="slide rule" data-chapter="3" data-id="regel2" data-title="Regel 2: Material liegt bereit" style="--accent:#e8772e">
+  <div class="rule-grid">
+    <svg class="scene"><use href="#sc-r2"/></svg>
+    <div>
+      <div class="rnum">Regel 2</div>
+      <h2>Mein Material liegt <span class="hl">zu Stundenbeginn</span> bereit.</h2>
+      <div class="kit">
+        <span class="step"><svg><use href="#i-book"/></svg>Heft</span>
+        <span class="step"><svg><use href="#i-book"/></svg>Buch</span>
+        <span class="step"><svg viewBox="0 0 64 64"><g transform="rotate(45 32 32)"><rect x="26" y="4" width="12" height="42" rx="3" fill="currentColor"/><path d="M26 46h12l-6 14z" fill="currentColor" opacity=".6"/></g></svg>Stifte</span>
+        <span class="step"><svg viewBox="0 0 64 64"><rect x="12" y="4" width="40" height="56" rx="7" fill="currentColor"/><rect x="18" y="10" width="28" height="12" rx="3" fill="#fff"/><g fill="#fff" opacity=".8"><rect x="18" y="28" width="7" height="6" rx="2"/><rect x="28.5" y="28" width="7" height="6" rx="2"/><rect x="39" y="28" width="7" height="6" rx="2"/><rect x="18" y="38" width="7" height="6" rx="2"/><rect x="28.5" y="38" width="7" height="6" rx="2"/><rect x="39" y="38" width="7" height="6" rx="2"/><rect x="18" y="48" width="7" height="6" rx="2"/><rect x="28.5" y="48" width="7" height="6" rx="2"/><rect x="39" y="48" width="7" height="6" rx="2"/></g></svg>Taschen&shy;rechner</span>
+      </div>
+      <p class="tip step">Tipp: Am Abend vorher die Tasche packen. <span class="emoji">🎒</span></p>
+    </div>
+  </div>
+  <aside class="notes"><p>Material liegt <b>beim Gong</b> auf dem Tisch. Wer etwas vergessen hat, sagt es mir vor der Stunde – nicht mitten im Unterricht.</p></aside>
+</section>
+
+<section class="slide rule" data-chapter="3" data-id="regel3" data-title="Regel 3: Leise arbeiten, bei der Aufgabe bleiben" style="--accent:#1b9a64">
+  <div class="rule-grid">
+    <svg class="scene"><use href="#sc-r3"/></svg>
+    <div>
+      <div class="rnum">Regel 3</div>
+      <h2>Wir arbeiten <span class="hl">leise</span> und bleiben bei der Aufgabe.</h2>
+      <ul class="checks big">
+        <li class="step"><svg><use href="#i-check"/></svg><span>Allein-Arbeit: <b>still</b>. Partner-Arbeit: <b>Flüster-Stimme</b>.</span></li>
+        <li class="step"><svg><use href="#i-check"/></svg><span>Fertig? Ich mache die <b>Zusatzaufgabe</b> oder kontrolliere.</span></li>
+        <li class="step"><svg><use href="#i-check"/></svg><span>Frage? Ich <b>melde</b> mich – ich helfe dir gern.</span></li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes"><p>Flüster-Stimme kurz vormachen (nur der Nachbar hört es). Zusatzaufgaben gibt es immer auf der Folie / im Buch.</p></aside>
+</section>
+
+<section class="slide rule" data-chapter="3" data-id="regel4" data-title="Regel 4: Respektvoll miteinander" style="--accent:#8e4fd8">
+  <div class="rule-grid">
+    <svg class="scene"><use href="#sc-r4"/></svg>
+    <div>
+      <div class="rnum">Regel 4</div>
+      <h2>Wir gehen <span class="hl">respektvoll</span> miteinander um.</h2>
+      <ul class="checks big">
+        <li class="step"><svg><use href="#i-check"/></svg><span>Ich lasse andere <b>ausreden</b>.</span></li>
+        <li class="step"><svg><use href="#i-check"/></svg><span>Ich spreche <b>freundlich</b> – keine Beleidigungen.</span></li>
+        <li class="step"><svg><use href="#i-check"/></svg><span>Fehler sind okay. <b>Niemand</b> wird ausgelacht.</span></li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes"><p>Das gilt für alle – auch für mich als Lehrer. Frage: „Woran merkst du, dass jemand respektvoll ist?“</p></aside>
+</section>
+
+<!-- 9 ÜBERSICHT -->
+<section class="slide" data-chapter="3" data-id="regeln" data-title="Unsere 4 Regeln (Übersicht)">
+  <h2>Unsere <span class="hl">4 Regeln</span></h2>
+  <div class="rules4">
+    <div class="r4" style="--rc:#2f6fe0"><svg><use href="#sc-r1"/></svg><i>1</i><b>Einer spricht – alle hören zu.</b><small>Melden · zuhören · nicht reinrufen</small></div>
+    <div class="r4" style="--rc:#e8772e"><svg><use href="#sc-r2"/></svg><i>2</i><b>Material liegt bereit.</b><small>Heft · Buch · Stifte · Taschenrechner</small></div>
+    <div class="r4" style="--rc:#1b9a64"><svg><use href="#sc-r3"/></svg><i>3</i><b>Leise arbeiten, dranbleiben.</b><small>still oder flüstern · Zusatzaufgabe</small></div>
+    <div class="r4" style="--rc:#8e4fd8"><svg><use href="#sc-r4"/></svg><i>4</i><b>Respektvoll miteinander.</b><small>ausreden lassen · keine Beleidigungen</small></div>
+  </div>
+  <aside class="notes"><p>Gemeinsam laut vorlesen lassen (jede Reihe eine Regel). Der Aushang (aushang.html) kommt an die Wand.</p></aside>
+</section>
+
+<!-- 10 RUHESIGNAL -->
+<section class="slide" data-chapter="4" data-id="ruhesignal" data-title="Das Ruhesignal (üben)">
+  <h2>Das <span class="hl">Ruhesignal</span></h2>
+  <div class="calm-grid">
+    <ol class="flow-v">
+      <li><svg class="hd"><use href="#hand" color="#0d8f9c"/></svg><div><b>Ich hebe die Hand.</b><span>Das ist das Zeichen.</span></div></li>
+      <li><svg class="hd"><use href="#hand" color="#e8772e"/></svg><div><b>Ihr hebt auch die Hand.</b><span>So sehen es alle.</span></div></li>
+      <li><svg><use href="#i-eye" color="#2f6fe0"/></svg><div><b>Mund zu – Blick nach vorn.</b><span>In 5 Sekunden ist es still.</span></div></li>
+    </ol>
+    <div class="calm-box interactive" id="calm">
+      <button class="calm-btn" id="calmBtn" aria-label="Ruhesignal üben"><svg class="ring" viewBox="0 0 200 200"><circle cx="100" cy="100" r="90" class="bg"/><circle cx="100" cy="100" r="90" class="fg"/></svg>
+        <span class="cnt" id="calmCnt"><svg class="bell"><use href="#i-bell"/></svg><em>Üben!</em></span></button>
+      <p class="calm-msg" id="calmMsg">Klick: Gong + Countdown 5 … 1</p>
+    </div>
+  </div>
+  <aside class="notes"><p>2–3 Mal üben: Klasse kurz reden lassen („Erzähl deinem Nachbarn von deinem Wochenende“), dann Knopf drücken und selbst die Hand heben. Loben, wenn es klappt!</p></aside>
+</section>
+
+<!-- 11 STUNDENBEGINN -->
+<section class="slide" data-chapter="4" data-id="stundenbeginn" data-title="So beginnt jede Mathe-Stunde">
+  <h2>So beginnt <span class="hl">jede</span> Mathe-Stunde</h2>
+  <div class="flow-h">
+    <div class="fs step" style="--fc:#0d8f9c"><i>1</i><svg><use href="#i-door"/></svg><b>Begrüßung an der Tür</b><span>Wir sagen „Hallo“.</span></div>
+    <div class="fs step" style="--fc:#2f6fe0"><i>2</i><svg><use href="#i-seat"/></svg><b>Auf den Platz</b><span>Ruhig hinsetzen.</span></div>
+    <div class="fs step" style="--fc:#e8772e"><i>3</i><svg><use href="#i-book"/></svg><b>Material raus</b><span>Heft, Buch, Stifte, Rechner.</span></div>
+    <div class="fs step" style="--fc:#1b9a64"><i>4</i><svg><use href="#i-board"/></svg><b>Startaufgabe</b><span>Steht an der Tafel. Sofort loslegen!</span></div>
+  </div>
+  <p class="banner step"><svg class="ico"><use href="#i-clock"/></svg> Ziel: Nach <b>&nbsp;3 Minuten&nbsp;</b> arbeiten alle leise an der Startaufgabe.</p>
+  <aside class="notes"><p>Die Startaufgabe ist kurz (Wiederholung, 3–5 Minuten). Währenddessen: Anwesenheit, Material-Check.</p></aside>
+</section>
+
+<!-- 12 KONSEQUENZEN -->
+<section class="slide" data-chapter="5" data-id="regelbruch" data-title="Wenn eine Regel gebrochen wird">
+  <h2>Wenn eine Regel <span class="hl">gebrochen</span> wird</h2>
+  <p class="lead">Stufe für Stufe – immer in dieser Reihenfolge.</p>
+  <div class="ladder-wrap">
+    <div class="ladder">
+      <div class="lst step" style="--lc:#22a45d;--h:300px"><i>1</i><svg><use href="#i-eye"/></svg><b>Hinweis</b><span>Blick oder Zeichen</span></div>
+      <div class="lst step" style="--lc:#e0a614;--h:390px"><i>2</i><svg><use href="#i-name"/></svg><b>Ermahnung</b><span>mit deinem Namen</span></div>
+      <div class="lst step" style="--lc:#e8772e;--h:480px"><i>3</i><svg><use href="#i-move"/></svg><b>Umsetzen</b><span>an einen anderen Platz</span></div>
+      <div class="lst step" style="--lc:#d9483b;--h:570px"><i>4</i><svg><use href="#i-parents"/></svg><b>Eintrag</b><span>und Gespräch mit den Eltern</span></div>
+    </div>
+    <div class="fair-card step"><svg><use href="#i-fair"/></svg><b>Gleich für alle.</b><span>Ruhig und fair.</span><span class="sm">Meistens reicht schon <b>Stufe 1</b>. <span class="emoji">🙂</span></span></div>
+  </div>
+  <aside class="notes"><p>Ruhig erklären: Die Stufen gelten für jeden gleich. Ich sage immer, auf welcher Stufe jemand ist. Ziel ist, dass wir fast nie über Stufe 1 hinauskommen.</p></aside>
+</section>
+
+<!-- 13 PUNKTEKONTO -->
+<section class="slide" data-chapter="5" data-id="punkte" data-title="Unser Klassen-Punktekonto">
+  <h2>Unser <span class="hl">Klassen-Punktekonto</span></h2>
+  <p class="lead">Ruhige, gute Stunde = <b>1 Punkt</b> für die ganze Klasse. Ziel erreicht? Dann gibt es eine <b>Belohnung</b>!</p>
+  <div class="points interactive" id="points">
+    <div class="pbar-wrap">
+      <div class="pbar" id="pbar"></div>
+      <div class="pgoal"><svg><use href="#i-trophy"/></svg><b>Ziel: <span id="pgoalTxt">10</span></b></div>
+    </div>
+    <div class="pctrl">
+      <button class="btn pminus" id="pMinus" title="Punkt abziehen">− 1</button>
+      <div class="pval"><span id="pVal">0</span><small> / <span id="pGoalVal">10</span> Punkte</small></div>
+      <button class="btn primary pplus" id="pPlus" title="Punkt dazu">+ 1 Punkt</button>
+      <span class="gap"></span>
+      <span class="pgoalset">Ziel <button class="btn sm" id="gMinus" title="Ziel kleiner">◀</button><button class="btn sm" id="gPlus" title="Ziel größer">▶</button></span>
+      <button class="btn sm danger" id="pReset" title="Zurücksetzen">↺ Zurücksetzen</button>
+    </div>
+    <div class="pdone" id="pDone">Ziel erreicht! Super, 7a! <span class="emoji">🎉</span></div>
+  </div>
+  <div class="rewards">
+    <div class="rw"><svg><use href="#i-kahoot"/></svg><b>Kahoot</b></div>
+    <div class="rw" style="--ic:#2f6fe0"><svg><use href="#i-game"/></svg><b>Mathe-Spiel</b></div>
+    <div class="rw" style="--ic:#8e4fd8"><svg><use href="#i-quiz"/></svg><b>Quiz-Stunde</b></div>
+  </div>
+  <aside class="notes"><p>Der Punktestand wird im Browser gespeichert (localStorage) und ist beim nächsten Öffnen wieder da – solange derselbe Rechner/Browser genutzt wird. Am Stundenende gemeinsam entscheiden: Gab es einen Punkt? <b>Zurücksetzen</b> braucht einen zweiten Klick zur Bestätigung.</p></aside>
+</section>
+
+<!-- 14 ABSCHLUSS -->
+<section class="slide finale" data-chapter="6" data-id="abschluss" data-title="Wir schaffen das zusammen!">
+  <h2>Wir schaffen das <span class="hl">zusammen!</span></h2>
+  <div class="finale-grid">
+    <ul class="promise">
+      <li class="step"><svg><use href="#i-check"/></svg>Ich höre zu.</li>
+      <li class="step"><svg><use href="#i-check"/></svg>Ich habe mein Material.</li>
+      <li class="step"><svg><use href="#i-check"/></svg>Ich arbeite leise mit.</li>
+      <li class="step"><svg><use href="#i-check"/></svg>Ich bin respektvoll.</li>
+    </ul>
+    <div class="crew interactive" id="crew">
+      <svg class="kids" viewBox="0 0 900 470" aria-hidden="true">
+        <g class="k k1"><path class="arm" d="M150 330L178 200" stroke="#22a45d" stroke-width="28" stroke-linecap="round"/><use class="hnd" href="#hand" x="140" y="96" width="72" height="101" color="#22a45d"/><use href="#kid" x="40" y="230" width="150" height="213" color="#22a45d"/></g>
+        <g class="k k2"><path class="arm" d="M330 300L358 170" stroke="#2f6fe0" stroke-width="28" stroke-linecap="round"/><use class="hnd" href="#hand" x="320" y="66" width="72" height="101" color="#2f6fe0"/><use href="#kid" x="220" y="200" width="150" height="213" color="#2f6fe0" style="--hair:#c9822b"/></g>
+        <g class="k k3"><path class="arm" d="M510 320L538 190" stroke="#e8772e" stroke-width="28" stroke-linecap="round"/><use class="hnd" href="#hand" x="500" y="86" width="72" height="101" color="#e8772e"/><use href="#kid" x="400" y="220" width="150" height="213" color="#e8772e" style="--hair:#2b2b35"/></g>
+        <g class="k k4"><path class="arm" d="M690 300L718 170" stroke="#8e4fd8" stroke-width="28" stroke-linecap="round"/><use class="hnd" href="#hand" x="680" y="66" width="72" height="101" color="#8e4fd8"/><use href="#kid" x="580" y="200" width="150" height="213" color="#8e4fd8" style="--hair:#d4a04a"/></g>
+        <g class="k k5"><use href="#kid" x="740" y="240" width="140" height="199" color="#0d8f9c" style="--hair:#7a3b1c"/></g>
+      </svg>
+      <button class="btn primary join" id="joinBtn"><svg class="ico"><use href="#hand" color="#fff"/></svg> Ich mache mit!</button>
+    </div>
+  </div>
+  <aside class="notes"><p>Zum Schluss: Alle, die mitmachen, heben die Hand – dann den Knopf „Ich mache mit!“ klicken. Danke sagen und direkt mit der Startaufgabe beginnen.</p></aside>
+</section>
+
+</div></div>
+<script>
+window.CHAPTERS = [
+  {name:'Start', lesson:'Teil 1'},
+  {name:'Sitzordnung', lesson:'Teil 2'},
+  {name:'Unsere 4 Regeln', lesson:'Teil 3'},
+  {name:'Ruhesignal & Stundenbeginn', lesson:'Teil 4'},
+  {name:'Fair & belohnt', lesson:'Teil 5'},
+  {name:'Abschluss', lesson:'Teil 6'}
+];
+window.SCHOOL = 'Theodor Fontane Gemeinschaftsschule';
+window.TEACHER = 'Lehrer P. Kurlavičius';
+</script>
+<script src="assets/js/seatplan.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/deck.js"></script>
+</body>
+</html>

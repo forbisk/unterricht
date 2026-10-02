@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script src="gate.js"></script>
+<meta charset="utf-8">
+<title>Aushang: Unsere Regeln in Mathe – Klasse 7a</title>
+<link rel="stylesheet" href="assets/css/fonts.css">
+<style>
+@page{size:A4 portrait;margin:0}
+*{box-sizing:border-box}
+html,body{margin:0;background:#e9edf3;font-family:"Nunito","Segoe UI",Arial,sans-serif;color:#1b2536;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.bar{max-width:210mm;margin:14px auto 0;display:flex;gap:10px;justify-content:flex-end}
+.bar button{font:800 16px "Nunito",sans-serif;border:0;border-radius:999px;padding:10px 22px;background:#8e4fd8;color:#fff;cursor:pointer}
+.page{width:210mm;height:297mm;margin:14px auto;background:#fff;padding:9mm 12mm 7mm;display:flex;flex-direction:column;gap:3.5mm;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,.15);position:relative}
+h1,h2,b.t{font-family:"Fredoka","Nunito",sans-serif;font-weight:600;margin:0}
+header{display:flex;align-items:center;gap:5mm}
+header .badge{flex:none;width:20mm;height:20mm;border-radius:50%;background:#8e4fd8;color:#fff;display:grid;place-items:center;font:700 11mm/1 "Fredoka",sans-serif}
+header h1{font-size:11.5mm;line-height:1}
+header p{margin:1.5mm 0 0;font-size:5mm;font-weight:700;color:#3b4658}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:4.5mm}
+.r{border:1.2mm solid var(--c);border-radius:6mm;padding:3mm 4mm 4mm;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;background:color-mix(in srgb,var(--c) 6%,white)}
+.r svg{width:100%;height:31mm}
+.r i{position:absolute;left:3mm;top:3mm;width:12mm;height:12mm;border-radius:50%;background:var(--c);color:#fff;font:700 7.5mm/12mm "Fredoka",sans-serif;font-style:normal}
+.r b.t{font-size:6.4mm;line-height:1.1;margin-top:1mm}
+.r span{font-size:4.2mm;font-weight:700;color:#3b4658;margin-top:1.5mm}
+.box{border-radius:6mm;padding:3mm 5mm;display:flex;align-items:center;gap:5mm}
+.calm{background:#e3f6f7;border:1.2mm solid #0d8f9c}
+.calm svg{width:17mm;height:23mm;flex:none}
+.calm h2{font-size:8mm;color:#0b6f79}
+.calm p{margin:1mm 0 0;font-size:4.6mm;font-weight:700}
+.ladder-h{font-size:7mm;margin:0 0 -2mm}
+.ladder{display:flex;align-items:flex-end;gap:3mm}
+.st{flex:1;height:var(--h);overflow:hidden;border:1mm solid var(--c);border-radius:4mm 4mm 2mm 2mm;background:color-mix(in srgb,var(--c) 12%,white);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding:2.5mm 1.5mm;gap:.8mm}
+.st i{font-style:normal;width:9mm;height:9mm;border-radius:50%;background:var(--c);color:#fff;font:700 5.5mm/9mm "Fredoka",sans-serif}
+.st b{font:600 5.4mm/1.05 "Fredoka",sans-serif}
+.st span{font-size:3.7mm;font-weight:700;color:#3b4658;line-height:1.15}
+.fair{background:#1b2536;color:#fff;border-radius:4mm;padding:3mm 4mm;font-size:4.6mm;font-weight:800;text-align:center;flex:none;width:44mm;align-self:stretch;display:flex;flex-direction:column;justify-content:center;gap:1mm}
+.fair b{font:600 6mm "Fredoka",sans-serif;color:#ffd166}
+.reward{background:#fff4dc;border:1.2mm solid #e0a614}
+.reward svg{width:15mm;height:15mm;color:#e0a614;flex:none}
+.reward p{margin:0;font-size:4.8mm;font-weight:700}
+footer{margin-top:auto;display:flex;justify-content:space-between;font-size:4mm;font-weight:800;color:#6b7688;border-top:.4mm solid #e5dccb;padding-top:2mm}
+@media print{ html,body{background:#fff} .bar{display:none} .page{margin:0;box-shadow:none} }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+ <defs>
+  <!-- Figuren & Hände (eigene Zeichnungen) -->
+  <symbol id="kid" viewBox="0 0 120 170">
+   <path d="M10 170c0-44 21-68 50-68s50 24 50 68z" fill="currentColor"/>
+   <path d="M44 104q16 14 32 0" fill="none" stroke="#fff" stroke-width="5" opacity=".55" stroke-linecap="round"/>
+   <circle cx="60" cy="58" r="36" fill="var(--skin,#f5c9a0)"/>
+   <path d="M23 56c0-27 16-43 37-43s37 16 37 43c-7-13-21-20-37-20s-30 7-37 20z" fill="var(--hair,#5a3a22)"/>
+   <circle cx="47" cy="62" r="4.6" fill="#1b2536"/><circle cx="73" cy="62" r="4.6" fill="#1b2536"/>
+   <path d="M47 77q13 10 26 0" stroke="#9b4a2c" stroke-width="4.6" fill="none" stroke-linecap="round"/>
+   <circle cx="37" cy="74" r="6" fill="#f28b8b" opacity=".45"/><circle cx="83" cy="74" r="6" fill="#f28b8b" opacity=".45"/>
+  </symbol>
+  <symbol id="hand" viewBox="0 0 100 140">
+   <g fill="#f5c9a0" stroke="#c98b5e" stroke-width="3" stroke-linejoin="round">
+    <rect x="3" y="58" width="15" height="40" rx="7.5" transform="rotate(-30 10 78)"/>
+    <rect x="21" y="24" width="15" height="54" rx="7.5"/>
+    <rect x="37" y="8" width="15" height="66" rx="7.5"/>
+    <rect x="53" y="10" width="15" height="64" rx="7.5"/>
+    <rect x="69" y="24" width="14" height="52" rx="7"/>
+    <path d="M19 62h65v20c0 22-13 36-32.5 36S19 104 19 82z"/>
+   </g>
+   <rect x="30" y="112" width="44" height="28" rx="6" fill="currentColor"/>
+  </symbol>
+
+  <!-- kleine Icons 64×64 -->
+  <symbol id="i-eye" viewBox="0 0 64 64"><path d="M4 32c8-14 18-21 28-21s20 7 28 21c-8 14-18 21-28 21S12 46 4 32z" fill="#fff" stroke="currentColor" stroke-width="5"/><circle cx="32" cy="32" r="10" fill="currentColor"/><circle cx="35.5" cy="28.5" r="3" fill="#fff"/></symbol>
+  <symbol id="i-name" viewBox="0 0 64 64"><path d="M8 8h48a6 6 0 0 1 6 6v26a6 6 0 0 1-6 6H28L15 57V46H8a6 6 0 0 1-6-6V14a6 6 0 0 1 6-6z" fill="currentColor"/><circle cx="20" cy="27" r="4" fill="#fff"/><circle cx="32" cy="27" r="4" fill="#fff"/><circle cx="44" cy="27" r="4" fill="#fff"/></symbol>
+  <symbol id="i-move" viewBox="0 0 64 64"><g fill="currentColor"><rect x="8" y="10" width="7" height="34" rx="3"/><rect x="8" y="34" width="28" height="7" rx="3"/><rect x="8" y="38" width="6" height="20" rx="3"/><rect x="30" y="38" width="6" height="20" rx="3"/></g><path d="M42 20h16M51 12l8 8-8 8" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-parents" viewBox="0 0 64 64"><g fill="currentColor"><circle cx="21" cy="17" r="9"/><path d="M4 56c0-15 7-24 17-24s17 9 17 24z"/><circle cx="45" cy="21" r="8"/><path d="M30 58c0-13 6-21 15-21s15 8 15 21z" opacity=".75"/></g></symbol>
+  <symbol id="i-bell" viewBox="0 0 64 64"><path d="M32 4a4 4 0 0 1 4 4v3c10 2 16 10 16 22v11l6 6v4H6v-4l6-6V33c0-12 6-20 16-22V8a4 4 0 0 1 4-4z" fill="currentColor"/><circle cx="32" cy="58" r="5" fill="currentColor"/></symbol>
+  <symbol id="i-door" viewBox="0 0 64 64"><rect x="10" y="4" width="36" height="56" rx="3" fill="none" stroke="currentColor" stroke-width="5"/><path d="M12 6l24 7v44l-24 3z" fill="currentColor"/><circle cx="31" cy="35" r="3" fill="#fff"/><path d="M52 18q6 4 0 10M56 12q10 9 0 22" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="i-seat" viewBox="0 0 64 64"><g fill="currentColor"><rect x="16" y="6" width="8" height="34" rx="3"/><rect x="16" y="32" width="32" height="8" rx="3"/><rect x="16" y="36" width="7" height="22" rx="3"/><rect x="41" y="36" width="7" height="22" rx="3"/></g></symbol>
+  <symbol id="i-book" viewBox="0 0 64 64"><path d="M4 12c9-5 19-5 27 2v42c-8-6-18-7-27-2z" fill="currentColor"/><path d="M60 12c-9-5-19-5-27 2v42c8-6 18-7 27-2z" fill="currentColor" opacity=".7"/><path d="M50 2l8 8-26 26-10 2 2-10z" fill="#f7c948" stroke="#1b2536" stroke-width="2"/></symbol>
+  <symbol id="i-board" viewBox="0 0 64 64"><rect x="3" y="6" width="58" height="40" rx="4" fill="currentColor"/><path d="M13 19h20M13 30h30" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="M48 15v12M42 21h12" stroke="#ffd166" stroke-width="4" stroke-linecap="round"/><path d="M20 46l-6 14M44 46l6 14" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></symbol>
+  <symbol id="i-calm" viewBox="0 0 64 64"><path d="M6 24h12l15-13v42L18 40H6z" fill="currentColor"/><path d="M42 25q6 7 0 14" stroke="currentColor" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M50 20q11 12 0 24" stroke="currentColor" stroke-width="5" fill="none" stroke-linecap="round" opacity=".3"/></symbol>
+  <symbol id="i-fair" viewBox="0 0 64 64"><path d="M32 8v44M16 58h32M8 16h48" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M8 16L1 34h14zM56 16l-7 18h14z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M1 34a7 6 0 0 0 14 0zM49 34a7 6 0 0 0 14 0z" fill="currentColor"/><circle cx="32" cy="9" r="5" fill="currentColor"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 64 64"><path d="M32 4a20 20 0 0 0-12 36c3 3 4 6 4 9h16c0-3 1-6 4-9A20 20 0 0 0 32 4z" fill="currentColor"/><rect x="24" y="51" width="16" height="5" rx="2" fill="currentColor" opacity=".6"/><rect x="26" y="57" width="12" height="4" rx="2" fill="currentColor" opacity=".6"/><path d="M26 22q6-8 12 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="i-group" viewBox="0 0 64 64"><g fill="currentColor"><circle cx="32" cy="16" r="9"/><path d="M17 50c0-13 6-21 15-21s15 8 15 21z"/><circle cx="12" cy="26" r="7" opacity=".7"/><path d="M0 56c0-11 5-17 12-17s12 6 12 17z" opacity=".7"/><circle cx="52" cy="26" r="7" opacity=".7"/><path d="M40 56c0-11 5-17 12-17s12 6 12 17z" opacity=".7"/></g></symbol>
+  <symbol id="i-trophy" viewBox="0 0 64 64"><path d="M18 6h28v14c0 10-6 18-14 18s-14-8-14-18z" fill="currentColor"/><path d="M18 11H8c0 10 4 15 10 15M46 11h10c0 10-4 15-10 15" stroke="currentColor" stroke-width="4" fill="none"/><rect x="28" y="37" width="8" height="11" fill="currentColor"/><rect x="17" y="48" width="30" height="9" rx="3" fill="currentColor"/><path d="M32 13l2.4 5 5.4.6-4 3.7 1.1 5.3-4.9-2.7-4.9 2.7 1.1-5.3-4-3.7 5.4-.6z" fill="#fff"/></symbol>
+  <symbol id="i-game" viewBox="0 0 64 64"><rect x="3" y="17" width="58" height="32" rx="16" fill="currentColor"/><path d="M14 33h13M20.5 26.5v13" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/><circle cx="43" cy="29" r="4" fill="#fff"/><circle cx="51" cy="36" r="4" fill="#fff"/></symbol>
+  <symbol id="i-kahoot" viewBox="0 0 64 64"><path d="M15 4l12 21H3z" fill="#e2455b"/><path d="M49 3l12 12-12 12-12-12z" fill="#2f7fe0"/><circle cx="15" cy="47" r="12" fill="#e0a614"/><rect x="37" y="35" width="24" height="24" rx="3" fill="#22a45d"/></symbol>
+  <symbol id="i-quiz" viewBox="0 0 64 64"><circle cx="32" cy="32" r="29" fill="currentColor"/><path d="M23 24a9 9 0 1 1 13 8c-3 2-4 3-4 7" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="32" cy="49" r="4" fill="#fff"/></symbol>
+  <symbol id="i-star" viewBox="0 0 64 64"><path d="M32 4l8.5 17.5 19.3 2.8-14 13.6 3.3 19.2L32 48l-17.2 9.1 3.3-19.2-14-13.6 19.3-2.8z" fill="currentColor"/></symbol>
+  <symbol id="i-check" viewBox="0 0 64 64"><circle cx="32" cy="32" r="29" fill="currentColor"/><path d="M18 33l9 9 19-20" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 64 64"><path d="M32 57S4 40 4 21A14 14 0 0 1 32 14a14 14 0 0 1 28 7c0 19-28 36-28 36z" fill="currentColor"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" fill="#fff" stroke="currentColor" stroke-width="6"/><path d="M32 16v17l11 7" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round"/></symbol>
+
+  <!-- Szenen zu den 4 Regeln (600×520) -->
+  <symbol id="sc-r1" viewBox="0 0 600 520">
+   <circle cx="300" cy="300" r="225" fill="#e6efff"/>
+   <use href="#kid" x="40" y="262" width="136" height="193" color="#22a45d"/>
+   <use href="#kid" x="424" y="262" width="136" height="193" color="#e8772e" style="--hair:#2b2b35"/>
+   <path d="M353 384L398 228" stroke="#2f6fe0" stroke-width="34" stroke-linecap="round"/>
+   <use href="#hand" x="352" y="112" width="84" height="118" color="#2f6fe0"/>
+   <use href="#kid" x="215" y="220" width="170" height="241" color="#2f6fe0" style="--hair:#c9822b"/>
+   <g fill="none" stroke="#2f6fe0" stroke-width="7" stroke-linecap="round" opacity=".55">
+    <path d="M182 306q12 22 0 44"/><path d="M198 296q18 32 0 64"/>
+    <path d="M418 306q-12 22 0 44"/><path d="M402 296q-18 32 0 64"/>
+   </g>
+   <g><rect x="14" y="60" width="330" height="104" rx="34" fill="#fff" stroke="#2f6fe0" stroke-width="5"/><path d="M230 160l40 48-6-48z" fill="#fff" stroke="#2f6fe0" stroke-width="5" stroke-linejoin="round"/><rect x="226" y="150" width="46" height="12" fill="#fff"/>
+   <text x="179" y="125" text-anchor="middle" font-family="Fredoka,Nunito,sans-serif" font-weight="600" font-size="38" fill="#1b2536">Ich melde mich!</text></g>
+  </symbol>
+  <symbol id="sc-r2" viewBox="0 0 600 520">
+   <rect x="22" y="70" width="556" height="410" rx="34" fill="#efcf9c" stroke="#c99a5b" stroke-width="7"/>
+   <path d="M60 140q120 18 230 0t250 6M60 420q140-16 260 0t220-6" stroke="#dcb47a" stroke-width="5" fill="none"/>
+   <g transform="rotate(-7 160 245)"><rect x="70" y="120" width="180" height="240" rx="12" fill="#3f7fe8"/><rect x="70" y="120" width="22" height="240" rx="8" fill="#2a5fc0"/><rect x="110" y="150" width="120" height="44" rx="8" fill="#fff"/><text x="170" y="182" text-anchor="middle" font-family="Fredoka,Nunito,sans-serif" font-weight="600" font-size="30" fill="#2a5fc0">Heft</text></g>
+   <g transform="rotate(5 345 230)"><rect x="255" y="105" width="185" height="245" rx="12" fill="#e2455b"/><rect x="255" y="105" width="26" height="245" rx="8" fill="#b8263b"/><text x="360" y="200" text-anchor="middle" font-family="Fredoka,Nunito,sans-serif" font-weight="600" font-size="44" fill="#fff">Mathe</text><text x="360" y="262" text-anchor="middle" font-family="Fredoka,Nunito,sans-serif" font-weight="700" font-size="64" fill="#ffd166">7</text></g>
+   <g transform="rotate(8 490 340)"><rect x="425" y="240" width="135" height="200" rx="18" fill="#3b4658"/><rect x="442" y="258" width="101" height="42" rx="7" fill="#cfe8c9"/><text x="532" y="290" text-anchor="end" font-family="Nunito,sans-serif" font-weight="800" font-size="28" fill="#1b2536">7a</text>
+    <g fill="#8a95a8"><rect x="444" y="314" width="26" height="22" rx="5"/><rect x="480" y="314" width="26" height="22" rx="5"/><rect x="516" y="314" width="26" height="22" rx="5" fill="#f7a14a"/><rect x="444" y="346" width="26" height="22" rx="5"/><rect x="480" y="346" width="26" height="22" rx="5"/><rect x="516" y="346" width="26" height="22" rx="5" fill="#f7a14a"/><rect x="444" y="378" width="26" height="22" rx="5"/><rect x="480" y="378" width="26" height="22" rx="5"/><rect x="516" y="378" width="26" height="54" rx="5" fill="#22a45d"/><rect x="444" y="410" width="62" height="22" rx="5"/></g></g>
+   <g transform="rotate(-14 230 420)"><rect x="80" y="400" width="250" height="22" rx="4" fill="#f7c948"/><path d="M330 400l34 11-34 11z" fill="#f5d7b0"/><path d="M354 408l10 3-10 3z" fill="#1b2536"/><rect x="72" y="400" width="14" height="22" rx="4" fill="#f28b8b"/></g>
+   <g transform="rotate(-6 230 450)"><rect x="100" y="440" width="230" height="20" rx="4" fill="#2f6fe0"/><path d="M330 440l30 10-30 10z" fill="#f5d7b0"/><path d="M352 447l8 3-8 3z" fill="#2f6fe0"/></g>
+  </symbol>
+  <symbol id="sc-r3" viewBox="0 0 600 520">
+   <circle cx="300" cy="290" r="225" fill="#e3f6ea"/>
+   <g transform="rotate(-4 300 290)"><rect x="150" y="80" width="300" height="400" rx="20" fill="#fff" stroke="#cfd8e3" stroke-width="5"/>
+    <text x="300" y="140" text-anchor="middle" font-family="Fredoka,Nunito,sans-serif" font-weight="600" font-size="38" fill="#1b2536">Aufgaben</text>
+    <g><use href="#i-check" x="180" y="170" width="44" height="44" color="#22a45d"/><rect x="238" y="186" width="170" height="12" rx="6" fill="#d7dee8"/>
+    <use href="#i-check" x="180" y="240" width="44" height="44" color="#22a45d"/><rect x="238" y="256" width="150" height="12" rx="6" fill="#d7dee8"/>
+    <use href="#i-check" x="180" y="310" width="44" height="44" color="#22a45d"/><rect x="238" y="326" width="175" height="12" rx="6" fill="#d7dee8"/>
+    <circle cx="202" cy="402" r="20" fill="none" stroke="#9aa6b8" stroke-width="5"/><rect x="238" y="396" width="90" height="12" rx="6" fill="#1b9a64" class="write-line"/></g></g>
+   <g transform="rotate(40 360 390)"><rect x="330" y="300" width="24" height="120" rx="4" fill="#f7c948"/><path d="M330 420h24l-12 34z" fill="#f5d7b0"/><path d="M337 440h10l-5 14z" fill="#1b2536"/><rect x="330" y="290" width="24" height="16" rx="4" fill="#f28b8b"/></g>
+   <g transform="translate(470 40)"><circle cx="50" cy="50" r="56" fill="#fff" stroke="#1b9a64" stroke-width="5"/><path d="M18 38h16l18-15v54L34 62H18z" fill="#1b9a64"/><path d="M62 40q8 10 0 20" stroke="#1b9a64" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M72 32q14 18 0 36" stroke="#1b9a64" stroke-width="6" fill="none" stroke-linecap="round" opacity=".25"/></g>
+  </symbol>
+  <symbol id="sc-r4" viewBox="0 0 600 520">
+   <circle cx="300" cy="300" r="225" fill="#f1e8fd"/>
+   <use href="#kid" x="40" y="226" width="170" height="241" color="#8e4fd8"/>
+   <use href="#kid" x="390" y="226" width="170" height="241" color="#0d8f9c" style="--hair:#d4a04a"/>
+   <g class="beat" style="transform-origin:300px 340px"><use href="#i-heart" x="250" y="290" width="100" height="100" color="#e2455b"/></g>
+   <g><rect x="30" y="58" width="250" height="96" rx="32" fill="#fff" stroke="#8e4fd8" stroke-width="5"/><path d="M110 150l-6 50 46-50z" fill="#fff" stroke="#8e4fd8" stroke-width="5" stroke-linejoin="round"/><rect x="104" y="140" width="50" height="12" fill="#fff"/><text x="155" y="120" text-anchor="middle" font-family="Fredoka,Nunito,sans-serif" font-weight="600" font-size="40" fill="#1b2536">Du zuerst!</text></g>
+   <g><rect x="345" y="58" width="225" height="96" rx="32" fill="#fff" stroke="#0d8f9c" stroke-width="5"/><path d="M490 150l6 50-46-50z" fill="#fff" stroke="#0d8f9c" stroke-width="5" stroke-linejoin="round"/><rect x="446" y="140" width="50" height="12" fill="#fff"/><text x="457" y="120" text-anchor="middle" font-family="Fredoka,Nunito,sans-serif" font-weight="600" font-size="40" fill="#1b2536">Danke!</text></g>
+  </symbol>
+ </defs>
+</svg>
+
+<div class="bar"><button onclick="window.print()">🖨 Drucken (A4 hoch)</button></div>
+<div class="page">
+  <header><div class="badge">7a</div><div><h1>Unsere Regeln in Mathe</h1><p>So lernen wir gut zusammen – ruhig, fair, respektvoll.</p></div></header>
+  <div class="rules">
+    <div class="r" style="--c:#2f6fe0"><i>1</i><svg><use href="#sc-r1"/></svg><b class="t">Einer spricht – alle hören zu.</b><span>Ich melde mich und warte. Kein Reinrufen.</span></div>
+    <div class="r" style="--c:#e8772e"><i>2</i><svg><use href="#sc-r2"/></svg><b class="t">Material liegt bereit.</b><span>Heft, Buch, Stifte, Taschenrechner – beim Gong.</span></div>
+    <div class="r" style="--c:#1b9a64"><i>3</i><svg><use href="#sc-r3"/></svg><b class="t">Leise arbeiten, dranbleiben.</b><span>Still oder Flüster-Stimme. Fertig? Zusatzaufgabe.</span></div>
+    <div class="r" style="--c:#8e4fd8"><i>4</i><svg><use href="#sc-r4"/></svg><b class="t">Respektvoll miteinander.</b><span>Ausreden lassen. Keine Beleidigungen. Niemand wird ausgelacht.</span></div>
+  </div>
+  <div class="box calm"><svg><use href="#hand" color="#0d8f9c"/></svg><div><h2>Ruhesignal: Hand hoch!</h2><p>Herr Kurlavičius hebt die Hand → alle heben die Hand → Mund zu, Blick nach vorn.</p></div></div>
+  <h2 class="ladder-h">Wenn eine Regel gebrochen wird</h2>
+  <div class="ladder">
+    <div class="st" style="--c:#22a45d;--h:27mm"><i>1</i><b>Hinweis</b><span>Blick / Zeichen</span></div>
+    <div class="st" style="--c:#e0a614;--h:29mm"><i>2</i><b>Ermahnung</b><span>mit Namen</span></div>
+    <div class="st" style="--c:#e8772e;--h:31mm"><i>3</i><b>Umsetzen</b><span>anderer Platz</span></div>
+    <div class="st" style="--c:#d9483b;--h:33mm"><i>4</i><b>Eintrag</b><span>+ Gespräch mit den Eltern</span></div>
+    <div class="fair"><b>Gleich für alle.</b>Ruhig und fair.</div>
+  </div>
+  <div class="box reward"><svg><use href="#i-trophy"/></svg><p><b>Klassen-Punktekonto:</b> Ruhige, gute Stunde = 1 Punkt. Ziel erreicht → Kahoot, Mathe-Spiel oder Quiz-Stunde!</p></div>
+  <footer><span>Theodor Fontane Gemeinschaftsschule</span><span>Mathematik · Klasse 7a</span><span>Lehrer P. Kurlavičius</span></footer>
+</div>
+</body>
+</html>
