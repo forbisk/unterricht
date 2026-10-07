@@ -2,25 +2,181 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Unterrichtsmaterialien · Theodor Fontane Gemeinschaftsschule</title>
-<style>
-:root{--ink:#17233b;--muted:#5d6b82;--paper:#f5f8fc;--card:#fff;--blue:#2f6fe0;--violet:#7048e8;--green:#18a06a;--orange:#e07b25;--pink:#d44778}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}header{padding:clamp(2.5rem,7vw,5.5rem) max(1.25rem,5vw) 3.25rem;background:linear-gradient(135deg,#172b4d,#2f6fe0);color:#fff}header .wrap,main{max-width:1120px;margin:auto}header p{margin:.45rem 0 0;font-size:1.12rem;opacity:.86}h1{margin:0;font-size:clamp(2rem,5vw,4.25rem);line-height:1.08;letter-spacing:-.03em}main{padding:clamp(2rem,5vw,4.5rem) max(1.25rem,5vw)}.intro{max-width:700px;margin:0 0 2rem;color:var(--muted);font-size:1.08rem}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1.15rem}.card{display:flex;flex-direction:column;min-height:190px;padding:1.5rem;border-radius:1.25rem;background:var(--card);box-shadow:0 10px 28px #17233b12;border-top:6px solid var(--accent);text-decoration:none;color:inherit;transition:transform .18s,box-shadow .18s}.card:hover,.card:focus-visible{transform:translateY(-4px);box-shadow:0 16px 32px #17233b20;outline:none}.num{color:var(--accent);font-weight:800;font-size:.86rem;letter-spacing:.08em}.card h2{margin:.35rem 0 .4rem;font-size:1.3rem}.card p{margin:0;color:var(--muted)}.arrow{margin-top:auto;padding-top:1rem;color:var(--accent);font-weight:800}footer{max-width:1120px;margin:auto;padding:0 max(1.25rem,5vw) 2rem;color:var(--muted);font-size:.9rem}@media(prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>P. Kurlavičius · Unterricht &amp; Computer Science</title>
+<meta name="description" content="Unterrichtsmaterialien der Theodor Fontane Gemeinschaftsschule (Lehrer P. Kurlavičius) und Computer-Science-Projekte.">
+<meta name="theme-color" content="#050b16">
+<link rel="icon" href="fp/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="fp/style.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-<header><div class="wrap"><h1>Theodor Fontane Gemeinschaftsschule</h1><p>Lehrer P. Kurlavičius</p></div></header>
-<main><p class="intro">Interaktive, offline nutzbare Unterrichtsseiten auf Deutsch – direkt im Browser und ohne externe Dienste.</p>
-<section class="cards" aria-label="Unterrichtsangebote">
-<a class="card" style="--accent:#2f6fe0" href="mathe7/"><span class="num">MATHEMATIK · KLASSE 7</span><h2>Rationale Zahlen &amp; Koordinatensystem</h2><p>Präsentation mit Übungen, Heftübersicht und Arbeitsblatt.</p><span class="arrow">Öffnen&nbsp;→</span></a>
-<a class="card" style="--accent:#7048e8" href="mathe8/"><span class="num">MATHEMATIK · KLASSE 8</span><h2>Terme und Gleichungen</h2><p>Interaktive Präsentation zum Entdecken, Üben und Wiederholen.</p><span class="arrow">Öffnen&nbsp;→</span></a>
-<a class="card" style="--accent:#d44778" href="mathe10-aehnlichkeit/"><span class="num">MATHEMATIK · KLASSE 10</span><h2>Ähnlichkeit</h2><p>Selbstlernseite mit Modulen, Trainingsaufgaben und Selbsttest.</p><span class="arrow">Öffnen&nbsp;→</span></a>
-<a class="card" style="--accent:#0f766e" href="mathe10-diagnose/"><span class="num">MATHEMATIK · KLASSE 10a</span><h2>Diagnosetest Realschulabschluss</h2><p>12 echte Prüfungsaufgaben (ohne und mit Taschenrechner) – zeigt, welche Themen wir noch üben.</p><span class="arrow">Öffnen&nbsp;→</span></a>
-<a class="card" style="--accent:#18a06a" href="informatik6-medien/"><span class="num">INFORMATIK · KLASSE 6</span><h2>Informationen und Medien im Alltag</h2><p>Präsentation mit Heftmaterial und interaktiven Beispielen.</p><span class="arrow">Öffnen&nbsp;→</span></a>
-<a class="card" style="--accent:#c2410c" href="informatik6-ordner/"><span class="num">INFORMATIK · KLASSE 6</span><h2>Ordner und Dateien</h2><p>Ordnung auf dem Computer: Explorer-Simulator mit Missionen, Hefter-Stopps und Übungen im Austauschverzeichnis.</p><span class="arrow">Öffnen&nbsp;→</span></a>
-<a class="card" style="--accent:#0d8f9c" href="regeln7a/"><span class="num">MATHEMATIK · KLASSE 7a</span><h2>Klassenregeln 7a</h2><p>Präsentation „Unser Neustart in Mathe“ mit Regel-Aushang und Sitzplan.</p><span class="arrow">Öffnen&nbsp;→</span></a>
-<a class="card" style="--accent:#e07b25" href="taschenrechner/"><span class="num">MATHEMATIK · WERKZEUG</span><h2>Taschenrechner-Anleitung</h2><p>Schritt-für-Schritt-Hilfe für Casio fx-82MS und fx-87DE X.</p><span class="arrow">Öffnen&nbsp;→</span></a>
-</section></main>
-<footer>Offline-Unterrichtsmaterialien · Theodor Fontane Gemeinschaftsschule</footer>
+<canvas id="net" aria-hidden="true"></canvas>
+
+<div class="shell">
+  <header class="brand">
+    <p class="kicker"><span class="dot" aria-hidden="true"></span>forbisk.github.io</p>
+    <h1 class="title">P.&nbsp;Kurlavičius</h1>
+    <p class="subtitle">Unterricht <span aria-hidden="true">·</span> Computer Science</p>
+  </header>
+
+  <!-- Interactive menu (rendered by fp/app.js from #menu-data) -->
+  <main id="menu" class="glass" hidden>
+    <nav class="crumbs" aria-label="Brotkrumen / Breadcrumb"><ol id="crumbs"></ol></nav>
+    <div class="level-head">
+      <button type="button" id="back" class="back" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span id="back-label">Zurück</span></button>
+      <h2 id="level-title" tabindex="-1"></h2>
+      <p id="level-sub" class="level-sub"></p>
+    </div>
+    <div class="viewport"><ul id="items" class="items"></ul></div>
+    <p id="level-note" class="note"></p>
+  </main>
+
+  <!-- Fallback: plain link list. Shown without JS and if the app fails to start.
+       Generated from #menu-data by tools/sync_fallback.py – edit the JSON, then re-run the script. -->
+  <nav id="fallback" class="fallback glass" aria-label="Übersicht">
+<!-- FALLBACK:BEGIN -->
+<ul>
+<li lang="de"><strong>Unterricht</strong> – Theodor Fontane Gemeinschaftsschule · Lehrer P. Kurlavičius
+<ul>
+<li lang="de"><strong>Mathematik</strong>
+<ul>
+<li lang="de"><strong>Klasse 7</strong>
+<ul>
+<li lang="de"><a href="mathe7/">Rationale Zahlen &amp; Koordinatensystem</a> 🔒</li>
+<li lang="de"><a href="regeln7a/">Klassenregeln 7a</a> 🔒</li>
+</ul></li>
+<li lang="de"><strong>Klasse 8</strong>
+<ul>
+<li lang="de"><a href="mathe8/">Terme und Gleichungen</a> 🔒</li>
+</ul></li>
+<li lang="de"><strong>Klasse 10</strong>
+<ul>
+<li lang="de"><a href="mathe10-aehnlichkeit/">Ähnlichkeit</a> 🔒</li>
+<li lang="de"><a href="mathe10-diagnose/">Diagnosetest Realschulabschluss</a> 🔒</li>
+</ul></li>
+</ul></li>
+<li lang="de"><strong>Informatik</strong>
+<ul>
+<li lang="de"><strong>Klasse 6</strong>
+<ul>
+<li lang="de"><a href="informatik6-medien/">Informationen und Medien im Alltag</a> 🔒</li>
+<li lang="de"><a href="informatik6-ordner/">Ordner und Dateien</a> 🔒</li>
+</ul></li>
+</ul></li>
+<li lang="de"><strong>Werkzeuge</strong>
+<ul>
+<li lang="de"><a href="taschenrechner/">Taschenrechner-Anleitung</a> 🔒</li>
+</ul></li>
+</ul></li>
+<li lang="en"><strong>Computer Science</strong> – Projects &amp; presentations
+<ul>
+<li lang="en"><strong>Programming</strong>
+<ul>
+<li lang="en"><a href="https://forbisk.github.io/beleg17-praesentation/">Quote manager – Java</a> 🔒</li>
+</ul></li>
+</ul></li>
+</ul>
+<!-- FALLBACK:END -->
+  </nav>
+
+  <footer class="foot">
+    <p id="foot-text">Ohne Tracking · ohne externe Dienste</p>
+    <button type="button" id="sound" class="sound" aria-pressed="false" hidden>
+      <svg class="on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="w" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+      <svg class="off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="w" d="M17 9.5l5 5M22 9.5l-5 5"/></svg>
+      <span class="sr" id="sound-label">Ton einschalten</span>
+    </button>
+  </footer>
+</div>
+<div id="live" class="sr" aria-live="polite"></div>
+
+<!--
+  MENU DATA – single source of truth for the menu.
+  Node fields:
+    id        url-safe id (used in the address, e.g. #/unterricht/mathematik/klasse-10)
+    label     visible title            lang   "de" | "en" (inherited by children)
+    sub       short description        tag    small kicker text (optional)
+    href      link target (leaf)       locked true → lock icon (password protected)
+    children  sub-levels (branch). Any depth works: e.g. add a "topics" level under a grade
+              by giving the grade children like {"id":"brueche","label":"Brüche","children":[ …leaves… ]}.
+    hue       accent colour for a branch (inherited)
+-->
+<script type="application/json" id="menu-data">
+{
+  "id": "start",
+  "label": "Start",
+  "children": [
+    {
+      "id": "unterricht", "label": "Unterricht", "lang": "de", "hue": "#2dd4bf",
+      "sub": "Theodor Fontane Gemeinschaftsschule · Lehrer P. Kurlavičius",
+      "children": [
+        {
+          "id": "mathematik", "label": "Mathematik", "hue": "#22d3ee",
+          "sub": "Präsentationen, Übungen und Selbstlernseiten",
+          "children": [
+            { "id": "klasse-7", "label": "Klasse 7", "children": [
+              { "id": "mathe7", "label": "Rationale Zahlen & Koordinatensystem", "tag": "Mathematik · Klasse 7",
+                "sub": "Präsentation mit Übungen, Heftübersicht und Arbeitsblatt.", "href": "mathe7/", "locked": true },
+              { "id": "regeln7a", "label": "Klassenregeln 7a", "tag": "Klasse 7a · Allgemein",
+                "sub": "Präsentation „Unser Neustart in Mathe“ mit Regel-Aushang und Sitzplan.", "href": "regeln7a/", "locked": true }
+            ]},
+            { "id": "klasse-8", "label": "Klasse 8", "children": [
+              { "id": "mathe8", "label": "Terme und Gleichungen", "tag": "Mathematik · Klasse 8",
+                "sub": "Interaktive Präsentation zum Entdecken, Üben und Wiederholen.", "href": "mathe8/", "locked": true }
+            ]},
+            { "id": "klasse-10", "label": "Klasse 10", "children": [
+              { "id": "mathe10-aehnlichkeit", "label": "Ähnlichkeit", "tag": "Mathematik · Klasse 10",
+                "sub": "Selbstlernseite mit Modulen, Trainingsaufgaben und Selbsttest.", "href": "mathe10-aehnlichkeit/", "locked": true },
+              { "id": "mathe10-diagnose", "label": "Diagnosetest Realschulabschluss", "tag": "Mathematik · Klasse 10a",
+                "sub": "12 echte Prüfungsaufgaben (ohne und mit Taschenrechner) – zeigt, welche Themen wir noch üben.", "href": "mathe10-diagnose/", "locked": true }
+            ]}
+          ]
+        },
+        {
+          "id": "informatik", "label": "Informatik", "hue": "#a78bfa",
+          "sub": "Medien, Daten und der Computer im Alltag",
+          "children": [
+            { "id": "klasse-6", "label": "Klasse 6", "children": [
+              { "id": "informatik6-medien", "label": "Informationen und Medien im Alltag", "tag": "Informatik · Klasse 6",
+                "sub": "Präsentation mit Heftmaterial und interaktiven Beispielen.", "href": "informatik6-medien/", "locked": true },
+              { "id": "informatik6-ordner", "label": "Ordner und Dateien", "tag": "Informatik · Klasse 6",
+                "sub": "Ordnung auf dem Computer: Explorer-Simulator mit Missionen, Hefter-Stopps und Übungen.", "href": "informatik6-ordner/", "locked": true }
+            ]}
+          ]
+        },
+        {
+          "id": "werkzeuge", "label": "Werkzeuge", "hue": "#5eead4",
+          "sub": "Hilfen für den Unterricht",
+          "children": [
+            { "id": "taschenrechner", "label": "Taschenrechner-Anleitung", "tag": "Mathematik · Werkzeug",
+              "sub": "Schritt-für-Schritt-Hilfe für Casio fx-82MS und fx-87DE X.", "href": "taschenrechner/", "locked": true }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "computer-science", "label": "Computer Science", "lang": "en", "hue": "#a78bfa",
+      "sub": "Projects & presentations",
+      "children": [
+        {
+          "id": "programming", "label": "Programming", "hue": "#c084fc",
+          "sub": "Software projects",
+          "children": [
+            { "id": "quote-manager", "label": "Quote manager – Java", "tag": "Java · Desktop app",
+              "sub": "Beleg 17: a Java application for managing quotes – presentation with UML and code walkthrough (slides in German).",
+              "href": "https://forbisk.github.io/beleg17-praesentation/", "locked": true }
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="fp/network.js"></script>
+<script src="fp/sound.js"></script>
+<script src="fp/app.js"></script>
+<script>/* watchdog: show the plain link list if the app did not start */
+window.addEventListener('load',function(){if(!window.FP_READY)document.documentElement.classList.remove('js');});</script>
 </body>
 </html>
