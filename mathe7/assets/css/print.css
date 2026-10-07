@@ -1,0 +1,116 @@
+/* Druckseiten: Heft-Übersicht, Arbeitsblatt, Lösungen, Lehrerseite (A4) */
+:root{--ink:#1b2536;--ink2:#3b4658;--muted:#6b7688;--blue:#1c3f8a;--red:#d9483b;--gold:#e0a614;--violet:#8e4fd8;--green:#1b8a4a;--line:#dfe5ee}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;background:#e9edf3;color:var(--ink);font:500 15px/1.45 "Nunito","Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Fredoka","Nunito",sans-serif;font-weight:600;margin:0}
+a{color:#2f6fe0}
+.m{font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums lining-nums}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;line-height:1.02;font-size:.85em;margin:0 .06em}
+.fr>span{padding:0 .12em}.fr>span:first-child{border-bottom:.09em solid currentColor}
+sup{font-size:.65em;line-height:0}
+.hole{display:inline-block;min-width:1.4em;border-bottom:2px solid #9aa6b8;text-align:center;color:transparent}
+.hole-ans{color:var(--violet);font-weight:800}
+.plus{color:var(--green)}.minus{color:#c62828}.res{color:var(--green)}
+/* Kopfleiste (nur Bildschirm) */
+.bar{position:sticky;top:0;z-index:10;display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:var(--ink);color:#fff;padding:10px 20px;font-weight:700}
+.bar span{margin-right:auto}
+.bar button,.bar a{border:0;border-radius:999px;background:#fff;color:var(--ink);padding:7px 16px;font:800 14px "Nunito",sans-serif;text-decoration:none;cursor:pointer}
+.bar button{background:#f7c948}
+/* Seite */
+.page{width:210mm;min-height:297mm;margin:18px auto;background:#fff;padding:14mm 14mm 12mm;box-shadow:0 6px 24px rgba(0,0,0,.12)}
+.page>header{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;border-bottom:3px solid var(--ink);padding-bottom:8px;margin-bottom:12px}
+.page>header h1{font-size:22px;line-height:1.15}
+.hsub{font-weight:700;color:var(--ink2);font-size:13px;margin-top:4px}
+.nm{font-weight:700;font-size:13px;white-space:nowrap;text-align:right;line-height:1.9}
+.page>footer{margin-top:10px;border-top:1px solid var(--line);padding-top:6px;font-size:11.5px;color:var(--muted)}
+.legend{font-size:13px;font-weight:700;color:var(--ink2);margin:0 0 10px}
+/* Heft-Übersicht */
+.heftpage .hgrid{display:flex;flex-direction:column;gap:10px}
+.entry{border:1.5px solid var(--line);border-radius:10px;padding:9px 12px 10px;break-inside:avoid;
+  background-image:linear-gradient(rgba(70,130,200,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(70,130,200,.14) 1px,transparent 1px);background-size:5mm 5mm}
+.entry>h2{font-size:18px;color:var(--blue);display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.entry>h2 .n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#f7c948;color:#3d2c00;font-size:15px}
+.entry>h2 small{margin-left:auto;font:700 11px "Nunito",sans-serif;color:var(--muted)}
+.entry .heft-body h2,.entry .hkicker{display:none}
+.hb-wrap{display:grid;grid-template-columns:1fr;gap:12px}
+.hb-wrap.has-svg{grid-template-columns:1fr 46mm}
+.hb-main{display:flex;flex-direction:column;gap:6px}
+.hmerk{position:relative;border:2px solid var(--red);border-radius:7px;background:rgba(255,255,255,.9);padding:9px 11px 6px;font:600 16px/1.25 "Fredoka",sans-serif;color:var(--blue);margin-top:7px}
+.auf{position:absolute;top:-9px;left:9px;font:900 9px/1 "Nunito",sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:3px 6px;border-radius:4px;color:#fff}
+.auf.abschreiben{background:var(--red)}.auf.beispiel{background:var(--gold)}
+.hrule-l{font-size:14px;padding-left:14px;position:relative}
+.hrule-l::before{content:"";position:absolute;left:2px;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.hex{position:relative;border:1.5px dashed var(--gold);border-radius:7px;background:rgba(255,248,220,.92);padding:9px 11px 5px;font-size:14px;margin-top:7px;line-height:1.55}
+.hex .probe{color:var(--green)}
+.hlaw{border-left:4px solid var(--violet);background:rgba(255,255,255,.9);padding:3px 9px;font-size:13.5px}
+.hlaw b{color:var(--violet);font-family:"Fredoka",sans-serif}
+.hlaw .lex{color:var(--ink2)}
+.hstairs2{display:flex;flex-direction:column;gap:3px}
+.hs{display:flex;align-items:center;gap:7px;color:#fff;border-radius:6px;padding:2px 9px;width:62mm;font:600 14px "Fredoka",sans-serif}
+.hs i{font-style:normal;width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.3);display:grid;place-items:center;font-size:12px}
+.hs.s1{background:#d9483b}.hs.s2{background:#e8772e;margin-left:5mm}.hs.s3{background:#8e4fd8;margin-left:10mm}.hs.s4{background:#2f6fe0;margin-left:15mm}
+.hb-svg svg{width:100%;height:auto}
+.small-n{font-size:12px;color:var(--muted)}
+/* Arbeitsblatt / Lösungen */
+.ab{break-inside:avoid;margin:0 0 11px;border:1.5px solid var(--line);border-radius:9px;padding:8px 11px}
+.ab h3{font-size:16px;display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.ab h3 .an{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;font-size:13px}
+.ab h3 small{margin-left:auto;font:700 11px "Nunito",sans-serif;color:var(--muted)}
+.abi{margin:0 0 5px;font-size:13.5px;color:var(--ink2)}
+.abcols{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.abcols:has(>.abcol:only-child){grid-template-columns:1fr}
+.abcols:has(>.abcol:only-child) ol{columns:2;column-gap:20px}
+.abcol{border-top:4px solid #9aa6b8;padding-top:3px}
+.abcol.n1{border-color:#1b9a64}.abcol.n2{border-color:var(--gold)}.abcol.n3{border-color:var(--red)}.abcol.n0{border-color:#2f6fe0}
+.abh{font:800 11.5px "Nunito",sans-serif;letter-spacing:.06em;color:var(--ink2);margin-bottom:2px}
+.abcol ol{list-style:none;margin:0;padding:0}
+.abcol li{font-size:14px;padding:4px 0;break-inside:avoid;line-height:1.5}
+.abcol li b{color:var(--muted);margin-right:3px}
+.line{display:inline-block;width:26mm;border-bottom:1.3px solid #9aa6b8;vertical-align:baseline;height:1em}
+.aba{color:var(--green);font-weight:800}
+.aba .m{color:var(--green)}
+.anote{font-size:11px;color:var(--muted);font-weight:700}
+.sach-r{font-weight:800}.sach-a{color:var(--green);font-weight:700}
+.abks{display:flex;gap:12px;align-items:flex-start}
+.abks svg{width:72mm;height:auto;flex:none}
+.abks>div{flex:1}
+.abbild{margin:0;padding-left:18px;font-size:13.5px;line-height:1.7}
+.abpage.sol .line{display:none}
+/* Lehrerseite */
+body.lehrer{background:#f4f6fa}
+.lehrer .wrap{max-width:1150px;margin:0 auto;padding:26px 30px 60px}
+.lehrer h1{font-size:30px;line-height:1.15}
+.lehrer .sub{font-weight:800;color:var(--ink2);margin:6px 0 14px}
+.lehrer h2{font-size:22px;margin:26px 0 8px;color:var(--blue)}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.links a{background:#fff;border:2px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:800;text-decoration:none;color:var(--ink)}
+.links a.g{background:#1b9a64;border-color:#1b9a64;color:#fff}
+.box{background:#fff;border-radius:12px;padding:12px 16px;border:1.5px solid var(--line);line-height:1.6}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.lehrer table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;font-size:14px}
+.lehrer th{background:var(--ink);color:#fff;text-align:left;padding:7px 10px;font-weight:800}
+.lehrer td{padding:6px 10px;border-top:1px solid var(--line);vertical-align:top}
+.lehrer td.min{white-space:nowrap;font-weight:800;color:var(--ink2);width:70px}
+.lehrer td.f{white-space:nowrap;width:80px}
+.lehrer tr.res td{background:#f6f7fb;color:var(--muted)}
+.tag{display:inline-block;border-radius:6px;padding:1px 7px;font:900 11px/1.6 "Nunito",sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#fff;margin-right:4px;vertical-align:1px}
+.tag.H{background:#d9483b}.tag.H2{background:#e0a614}.tag.N{background:#6b7688}.tag.D{background:#8e4fd8}.tag.U{background:#2f6fe0}.tag.P2{background:#b8327a}
+.tag.L{background:#18a06a}.tag.Q{background:#e2455b}.tag.C{background:#0d8f9c}
+.opt{color:var(--muted);font-style:italic}
+.own{color:#c25a00;background:#fff3e6}
+span.own{padding:0 4px;border-radius:4px}
+.small{font-size:12.5px;color:var(--muted)}
+kbd{display:inline-block;border:1.5px solid #b8c2d0;border-bottom-width:3px;border-radius:6px;padding:0 6px;font:800 12px "Nunito",sans-serif;background:#fff}
+/* Druck */
+@page{size:A4;margin:11mm 12mm}
+@media print{
+  body{background:#fff}
+  .bar,.links{display:none!important}
+  .page{margin:0;box-shadow:none;width:auto;min-height:0;padding:0}
+  .lehrer .wrap{padding:0;max-width:none}
+  .lehrer table{font-size:11.5px}
+  .lehrer h2{break-after:avoid}
+  .lehrer tr{break-inside:avoid}
+  body.lehrer{background:#fff}
+}
