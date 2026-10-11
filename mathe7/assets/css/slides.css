@@ -587,3 +587,7 @@ svg .grid{display:inline}
 .ks-side .tl{gap:8px}
 #stage.on-title #hud{color:var(--muted)}
 #stage.on-title #hud button{background:rgba(27,37,54,.06);color:var(--ink-2)}
+
+/* Periodenstrich (periodische Dezimalbrüche): Strich über den Periodenziffern, ohne die Zeilenhöhe zu ändern */
+.per{display:inline-block;position:relative;line-height:1}
+.per::before{content:"";position:absolute;left:.05em;right:.05em;top:-.07em;border-top:.075em solid currentColor}

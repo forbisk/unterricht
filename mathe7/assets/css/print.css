@@ -114,3 +114,7 @@ kbd{display:inline-block;border:1.5px solid #b8c2d0;border-bottom-width:3px;bord
   .lehrer tr{break-inside:avoid}
   body.lehrer{background:#fff}
 }
+
+/* Periodenstrich (periodische Dezimalbrüche): Strich über den Periodenziffern, ohne die Zeilenhöhe zu ändern */
+.per{display:inline-block;position:relative;line-height:1}
+.per::before{content:"";position:absolute;left:.05em;right:.05em;top:-.07em;border-top:.075em solid currentColor}
