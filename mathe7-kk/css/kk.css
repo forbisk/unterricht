@@ -16,3 +16,7 @@ input.warn{border-color:#e67700!important;background:#fff4e6}
 .tr-badge.ohne{background:#ffe3e3;color:#c92a2a}.tr-badge.mit{background:#d3f9d8;color:#2b8a3e}
 .notice{padding:.8rem 1rem;border-radius:12px;background:#fff4e6;margin:1rem 0}.notice.green{background:#ebfbee}
 code{background:#f1f3f5;padding:0 .3em;border-radius:4px}
+.tp{display:inline-block;margin-left:.4rem;padding:.05rem .45rem;border-radius:999px;background:#e7f5ff;color:#1864ab;font-weight:700;font-size:.85rem;white-space:nowrap}
+.gruppe-badge{display:inline-block;background:#ffe066;color:#5c3c00;font-weight:900;padding:.05rem .6rem;border-radius:999px}
+.papier{border:3px solid #f08c00;background:#fff9db}
+.task .pts{font-weight:800}
