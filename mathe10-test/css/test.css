@@ -96,3 +96,8 @@ input.err{border-color:var(--bad);background:var(--bad-l)}
   .tab .lab{display:block;font-weight:800;color:var(--pri);margin-bottom:.2rem}
   .satz input{width:100%}
 }
+.formel{float:right;clear:right;max-width:46%;margin:.1rem 0 .5rem .8rem;padding:.35rem .6rem;background:#e8f2fd;border:1px solid #b6d4f2;border-radius:10px;font-size:.8rem;line-height:1.5;color:#1b3a5c}
+.formel b{display:block;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:#1565C0}
+.formel .fr{font-size:.95em}
+.task::after{content:"";display:block;clear:both}
+@media (max-width:600px){.formel{float:none;max-width:none;margin:.2rem 0 .6rem;display:block}}
