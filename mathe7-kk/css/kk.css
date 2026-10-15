@@ -20,3 +20,10 @@ code{background:#f1f3f5;padding:0 .3em;border-radius:4px}
 .gruppe-badge{display:inline-block;background:#ffe066;color:#5c3c00;font-weight:900;padding:.05rem .6rem;border-radius:999px}
 .papier{border:3px solid #f08c00;background:#fff9db}
 .task .pts{font-weight:800}
+.bin{display:inline-flex;align-items:center;gap:.3rem}
+.bfr{display:inline-flex;flex-direction:column;align-items:center}
+.rechnen input.ans.bx{width:4.2rem;text-align:center;font-size:1.05rem;padding:.25rem .3rem}
+.rechnen .bin>input.bx{width:2.8rem}
+.bstr{display:block;width:100%;min-width:4.4rem;border-top:3px solid currentColor;margin:.2rem 0}
+.bnote,.bnote-top{margin-top:.7rem;padding:.6rem .8rem;border-radius:10px;background:#d3f9d8;border:2px solid #2b8a3e;color:#1b5e20}
+.bnote-top{font-size:1.1rem;margin:1rem 0}
