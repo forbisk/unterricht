@@ -1,0 +1,35 @@
+/* Ergänzungen Mathe 10a */
+.rsa-tag{display:inline-block;background:#1d4ed8;color:#fff;border-radius:10px;padding:4px 16px;font:800 26px var(--font);letter-spacing:.02em;margin-left:14px;vertical-align:middle}
+.figbox{flex:none;width:560px;background:#fff;border-radius:26px;box-shadow:var(--shadow);padding:18px;display:flex;align-items:center;justify-content:center}
+.figbox svg{width:100%;height:auto}
+.tasks.c1{grid-template-columns:1fr}
+.tasks .task-i.txt, .task-i.txt{font-size:34px}
+.qtext{font-size:38px;line-height:1.35;font-weight:600}
+.kt{border-collapse:collapse;font-size:44px;margin:10px auto}
+.kt th,.kt td{border:3px solid #cbd5e1;padding:10px 30px;text-align:center}
+.kt th{background:var(--accent-soft)}
+.kt td.k2{color:#c2185b;font-weight:900}.kt td.k3{color:#7c3aed;font-weight:900}
+.pool{columns:2;gap:40px;font-size:34px;line-height:1.35}
+.pool li{margin:0 0 14px;break-inside:avoid}
+.zeit{width:100%;border-collapse:collapse;font-size:38px}
+.zeit td{padding:12px 20px;border-bottom:2px dashed #cbd5e1}.zeit td:first-child{font:900 36px var(--font);color:var(--accent);white-space:nowrap;width:210px}
+.calc{display:flex;flex-direction:column;gap:12px;font-size:44px;font-weight:700}
+.cl{padding:10px 20px;border-radius:14px;background:#fff;box-shadow:inset 0 0 0 2px #e2e8f0}
+.cl.fin{background:color-mix(in srgb,var(--accent) 13%,white);box-shadow:inset 0 0 0 4px var(--accent)}
+.two .card svg.fig{width:100%;height:auto}
+.two .card svg.fig{max-height:600px}
+.figbox{width:600px}
+.tasks.c1 .task-a .q{font-size:38px;font-weight:800}.tasks.c1 .task-a .a{font-size:38px;padding-left:20px}.tasks.c1 .task-a{padding:12px 0}
+.tasks.c1 .qtext{font-size:36px}
+.pa-side .twidget{min-width:0}
+
+/* Schreibweise-Folie */
+.schreib{font-size:34px;line-height:1.5;padding:26px 30px}
+.schreib .sz{display:flex;gap:18px;align-items:baseline;margin:.12em 0}.schreib .sl{flex:none;width:210px;font-weight:800;color:#1971c2;font-size:.8em;text-align:right}.schreib .st{flex:1}
+.schreib .st.res,.schreib .antw{background:#fff3bf;border-radius:8px;padding:2px 10px}
+.col .hint{font-size:30px}
+
+.task-i .k,.task-a .k{flex:none;min-width:3.4em;margin-right:.5em}
+.lead{font-size:26px}
+.tasks.c1 .task-a .q{font-size:30px}.tasks.c1 .task-a .a{font-size:34px}
+.tasks.c1 .qtext.long{font-size:27px;line-height:1.35}
