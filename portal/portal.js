@@ -39,12 +39,24 @@
 
   /* ---------- Klassenpasswort-Schlüssel der Seiten (StatiCrypt "Angemeldet bleiben") ---------- */
   function gateKeyName(o) { return "tfgs_sc_" + o; }
-  function applyGates(seiten) {
-    var old = lsGet(LSG) || {}, now = {};
-    seiten.forEach(function (s) {
-      if (!s.gate || !okFolder(s.ordner)) return;
-      try { localStorage.setItem(gateKeyName(s.ordner), s.gate); now[s.ordner] = s.gate; } catch (e) {}
+  /* Spalte "Gate-Key" im Blatt: entweder nur der Schlüssel der eigenen Seite, oder "schluessel;ordner=schluessel;…" (zusätzliche Ordner,
+     die von dieser Seite aus verlinkt sind bzw. dasselbe Klassenpasswort haben). Nur 64 Hex-Zeichen und gültige Ordnernamen werden übernommen. */
+  function parseGate(own, g) {
+    var m = {}; String(g || "").split(";").forEach(function (p, i) {
+      p = p.trim(); var e = p.indexOf("="), f = own, k = p;
+      if (e > 0) { f = p.slice(0, e); k = p.slice(e + 1); } else if (i > 0) return;
+      if (okFolder(f) && /^[0-9a-f]{64}$/.test(k) && !m[f]) m[f] = k;
     });
+    return m;
+  }
+  function gatesOf(seiten) {
+    var all = {};
+    seiten.forEach(function (s) { if (!s.gate || !okFolder(s.ordner)) return; var m = parseGate(s.ordner, s.gate); Object.keys(m).forEach(function (f) { if (!all[f] || f === s.ordner) all[f] = m[f]; }); });
+    return all;
+  }
+  function applyGates(all) {
+    var old = lsGet(LSG) || {}, now = {};
+    Object.keys(all).forEach(function (o) { try { localStorage.setItem(gateKeyName(o), all[o]); now[o] = all[o]; } catch (e) {} });
     Object.keys(old).forEach(function (o) {   // nicht mehr sichtbare Seiten: nur entfernen, wenn der Schlüssel vom Portal stammt
       if (!now[o] && okFolder(o)) { try { if (localStorage.getItem(gateKeyName(o)) === old[o]) localStorage.removeItem(gateKeyName(o)); } catch (e) {} }
     });
@@ -60,8 +72,8 @@
   function takePayload(p) {
     S.sess = { token: (p.token || (S.sess && S.sess.token)), benutzer: p.profil.benutzer, name: p.profil.name, klasse: p.profil.klasse, rolle: p.profil.rolle };
     S.seiten = p.seiten || []; S.offline = false;
-    S.gates = {}; S.seiten.forEach(function (x) { if (x.gate && okFolder(x.ordner)) S.gates[x.ordner] = x.gate; });
-    applyGates(S.seiten);
+    S.gates = gatesOf(S.seiten);
+    applyGates(S.gates);
     lsSet(LS, S.sess);
     lsSet(LSC, { seiten: S.seiten.map(function (s) { var c = {}; Object.keys(s).forEach(function (k) { if (k !== "gate") c[k] = s[k]; }); return c; }) });
   }
@@ -73,6 +85,14 @@
     var tok = S.sess && S.sess.token; if (tok) api({ action: "logout", token: tok });   // best effort
     dropSession("Du bist abgemeldet.");
   }
+  /* Rücksprung von einer verschlüsselten Seite: ?weiter=<ordner>/<datei> -> nach der Anmeldung dorthin (Schlüssel liegen dann schon im Speicher). */
+  function weiterZiel() {
+    var m = /[?&]weiter=([^&#]*)/.exec(location.search); if (!m) return "";
+    var w; try { w = decodeURIComponent(m[1]); } catch (e) { return ""; }
+    var p = /^([a-z0-9][a-z0-9\-]*)\/([A-Za-z0-9_\-]+(?:\.[A-Za-z0-9_\-]+)?)?$/.exec(w);
+    return p && w.indexOf("..") < 0 ? "../" + w : "";
+  }
+  function gehWeiter() { var z = weiterZiel(); if (z) { try { history.replaceState(null, "", location.pathname); } catch (e) {} location.replace(z); return true; } return false; }
   function boot() {
     var s = lsGet(LS), c = lsGet(LSC);
     if (!s || !s.token) return renderLogin("");
@@ -83,7 +103,7 @@
   function refresh() {
     if (!S.sess) return;
     api({ action: "sitzung", token: S.sess.token }).then(function (r) {
-      if (r.ok) { takePayload(r); render(); }
+      if (r.ok) { takePayload(r); if (gehWeiter()) return; render(); }
       else if (r.relogin) dropSession("Bitte melde dich neu an.");
       else if (r.network) { S.offline = true; if (lsGet(LSC)) render(); else renderLogin(r.error); }
       else { S.offline = true; render(); }
@@ -101,7 +121,7 @@
       e.preventDefault(); if (!user.value.trim() || !code.value.trim()) return;
       btn.disabled = true; err.textContent = "";
       api({ action: "login", user: user.value.trim(), code: code.value, geraet: (navigator.userAgent || "").replace(/\(.*?\)/g, "").slice(0, 50) }).then(function (r) {
-        if (r.ok) { takePayload(r); S.tab = "menue"; render(); }
+        if (r.ok) { takePayload(r); S.tab = "menue"; if (gehWeiter()) return; render(); }
         else { btn.disabled = false; err.textContent = r.error || "Anmeldung fehlgeschlagen."; code.value = ""; code.focus(); }
       });
     } },
