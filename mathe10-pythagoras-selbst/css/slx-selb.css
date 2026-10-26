@@ -66,3 +66,11 @@ details.bspbox{margin:.5rem 0;background:#f8f9fa;border-radius:10px;padding:.4re
 main.solo .task{border-width:3px}
 #selbToast{position:fixed;left:50%;bottom:1.2rem;transform:translate(-50%,40px);background:#2b8a3e;color:#fff;font-weight:700;padding:.7rem 1.2rem;border-radius:999px;box-shadow:0 4px 16px #0005;opacity:0;pointer-events:none;transition:all .3s;z-index:9000;font-size:1.05rem}
 #selbToast.show{opacity:1;transform:translate(-50%,0)}
+
+.kern{background:#fff3bf;color:#7a5b00;border-radius:6px;padding:0 .4rem;font-size:.75rem;font-weight:700}.ausw{background:#f1f3f5;color:#868e96;border-radius:6px;padding:0 .4rem;font-size:.72rem}
+.card.kern{border-left:6px solid #f2b01e}.btnlink{display:inline-block;background:#364fc7;color:#fff;border-radius:8px;padding:.4rem .9rem;text-decoration:none;font-weight:700}
+table.plan{border-collapse:collapse;margin:.6rem 0 0;font-size:.92rem}table.plan caption{text-align:left;font-weight:700;margin-bottom:.2rem}table.plan td{padding:.25rem .6rem;border-top:1px solid #dee2e6;vertical-align:top}table.plan td.num{white-space:nowrap;font-weight:700}
+
+#clBanner{position:fixed;left:12px;bottom:12px;z-index:60;background:#0b6e63;color:#fff;padding:10px 16px;border-radius:999px;font:600 15px/1.2 system-ui,sans-serif;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.task.klasse{outline:3px solid #0b6e63;outline-offset:2px}
+.cl-pos{background:#0b6e63;color:#fff;border-radius:999px;padding:2px 8px;font-size:13px}.cl-ok{background:#e6f4ea;color:#1e6b34;border-radius:999px;padding:2px 8px;font-size:13px}.cl-nach{background:#fff3cd;color:#8a5a00;border-radius:999px;padding:2px 8px;font-size:13px}

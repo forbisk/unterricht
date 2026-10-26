@@ -29,7 +29,7 @@
 .schreib .st.res,.schreib .antw{background:#fff3bf;border-radius:8px;padding:2px 10px}
 .col .hint{font-size:30px}
 
-.task-i .k,.task-a .k{flex:none;min-width:3.4em;margin-right:.5em}
+.task-i .k,.task-a .k{flex:none;min-width:4.2em;margin-right:.5em}
 .lead{font-size:26px}
 .tasks.c1 .task-a .q{font-size:30px}.tasks.c1 .task-a .a{font-size:34px}
 .tasks.c1 .qtext.long{font-size:27px;line-height:1.35}
@@ -44,3 +44,14 @@
 .bspcard table.tab{border-collapse:collapse;width:100%;font-size:32px}.bspcard table.tab th,.bspcard table.tab td{border:2px solid #cbd5e1;padding:8px 14px;text-align:left}.bspcard table.tab th{background:#eef2ff}
 .bspcard .fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;line-height:1.1;margin:0 .2em}
 .bspcard .fr>span:first-child{border-bottom:3px solid currentColor;padding:0 .2em}
+
+.kernmark,.auswahl{display:none}html.lehrer .kernmark{display:inline}html.lehrer .auswahl{display:inline-block}
+.auswahl{font:700 .42em/1 var(--font);background:#e9ecef;color:#6c757d;border-radius:99px;padding:.25em .7em;vertical-align:middle;margin-left:.4em}
+.kernbadge{font:700 .5em/1 var(--font);background:#fff3bf;color:#7a5b00;border-radius:99px;padding:.25em .7em;vertical-align:middle}
+.zeit .kern td{background:#fff9db}
+
+html.lehrer::after{content:'Lehrermodus (L)';position:fixed;left:10px;top:8px;z-index:9999;font:700 13px system-ui;background:#fff3bf;color:#7a5b00;border-radius:99px;padding:2px 10px;opacity:.85;pointer-events:none}
+.teachernote h3{color:#7a5b00}
+.zt td{padding:6px 16px!important}.zt td:first-child{font-size:30px!important;width:150px!important}.zt .small{font-size:22px;color:#6c757d}
+.teachernote .takeaway{font-size:28px}
+.selblink{position:fixed;top:14px;right:84px;z-index:50;font:600 14px/1 system-ui,sans-serif;background:#fff;border:1px solid #cfd8dc;border-radius:999px;padding:8px 12px;color:#0b6e63;text-decoration:none;opacity:.85}.selblink:hover{opacity:1}@media print{.selblink{display:none}}
