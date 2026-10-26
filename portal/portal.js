@@ -10,7 +10,7 @@
   var FACH = { mathe: "Mathe", informatik: "Informatik", klasse: "Klasse", privat: "Sonstiges" };
   var ART = { material: ["Material", "📘"], mission: ["Missionen", "🚀"], selbstlernen: ["Selbstlernen", "🧠"], karten: ["Karteikarten", "🗂️"], tool: ["Werkzeug", "🧮"], test: ["Test", "📝"] };
   var app = document.getElementById("app");
-  var S = { sess: null, seiten: [], offline: false, tab: "menue", klasse: "", admin: null, dash: null, dashKlasse: "", dashSeite: "", dashSort: "name", dashDetail: "", dashLoading: false, dashErr: "", dashAt: 0, busy: false };
+  var S = { kop: {}, sess: null, seiten: [], offline: false, tab: "menue", klasse: "", admin: null, dash: null, dashKlasse: "", dashSeite: "", dashSort: "name", dashDetail: "", dashLoading: false, dashErr: "", dashAt: 0, busy: false };
 
   /* ---------- Hilfen ---------- */
   function h(tag, attrs) {
@@ -36,6 +36,32 @@
       .then(function (r) { return r.json(); }).then(function (j) { if (t) clearTimeout(t); return j; })
       .catch(function () { if (t) clearTimeout(t); return { ok: false, network: true, error: "Keine Verbindung. Bitte Internet prüfen." }; });
   }
+
+  /* ---------- Kopplung "Karte nur nach Freischaltung" (z. B. Testberichtigung) ----------
+     Seiten, die ihre Freischaltung selbst im Selbstlern-Backend verwalten (testStatus), stehen in config.js unter PORTAL_KOPPLUNG:
+     { "<Seiten-Key>": { url: "<Web-App-Adresse>", testId: "<Test-Kennung>" } }. Schüler sehen die Karte erst, wenn die Lehrkraft dort
+     „Jetzt freischalten“ geklickt hat (Prüfung beim Öffnen, beim Zurückkehren und alle 30 s); Lehrkräfte sehen sie immer, mit Statusmarke.
+     Unbekannter Status (kein Netz/Fehler) = Karte bleibt unsichtbar. Die Seite selbst ist zusätzlich gesperrt, solange nicht freigeschaltet. */
+  var KOP = window.PORTAL_KOPPLUNG || {};
+  function kopStatus(c) {
+    var ctl = window.AbortController ? new AbortController() : null, t = ctl && setTimeout(function () { ctl.abort(); }, 15000);
+    return fetch(c.url, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify({ action: "testStatus", testId: c.testId }), redirect: "follow", signal: ctl ? ctl.signal : undefined })
+      .then(function (r) { return r.json(); }).then(function (j) { if (t) clearTimeout(t); return (j && j.ok) ? (j.open === true) : undefined; })
+      .catch(function () { if (t) clearTimeout(t); return undefined; });
+  }
+  function kopPruefen() {
+    if (!S.sess) return;
+    var keys = S.seiten.map(function (s) { return s.key; }).filter(function (k) { return KOP[k] && KOP[k].url && KOP[k].testId; });
+    if (!keys.length) return;
+    Promise.all(keys.map(function (k) { return kopStatus(KOP[k]).then(function (v) { return [k, v]; }); })).then(function (res) {
+      var changed = false;
+      res.forEach(function (r) { if (r[1] === undefined) return; if (S.kop[r[0]] !== r[1]) { S.kop[r[0]] = r[1]; changed = true; } });
+      S.kopDone = true;
+      if (changed && S.sess) render();
+    });
+  }
+  function kopSichtbar(s) { return !KOP[s.key] || S.kop[s.key] === true; }
+  setInterval(function () { if (!document.hidden && S.sess) kopPruefen(); }, 30000);
 
   /* ---------- Klassenpasswort-Schlüssel der Seiten (StatiCrypt "Angemeldet bleiben") ---------- */
   function gateKeyName(o) { return "tfgs_sc_" + o; }
@@ -97,13 +123,13 @@
     var s = lsGet(LS), c = lsGet(LSC);
     if (!s || !s.token) return renderLogin("");
     S.sess = s;
-    if (c && c.seiten) { S.seiten = c.seiten; render(); }
+    if (c && c.seiten) { S.seiten = c.seiten; render(); kopPruefen(); }
     refresh();
   }
   function refresh() {
     if (!S.sess) return;
     api({ action: "sitzung", token: S.sess.token }).then(function (r) {
-      if (r.ok) { takePayload(r); if (gehWeiter()) return; render(); }
+      if (r.ok) { takePayload(r); if (gehWeiter()) return; render(); kopPruefen(); }
       else if (r.relogin) dropSession("Bitte melde dich neu an.");
       else if (r.network) { S.offline = true; if (lsGet(LSC)) render(); else renderLogin(r.error); }
       else { S.offline = true; render(); }
@@ -121,7 +147,7 @@
       e.preventDefault(); if (!user.value.trim() || !code.value.trim()) return;
       btn.disabled = true; err.textContent = "";
       api({ action: "login", user: user.value.trim(), code: code.value, geraet: (navigator.userAgent || "").replace(/\(.*?\)/g, "").slice(0, 50) }).then(function (r) {
-        if (r.ok) { takePayload(r); S.tab = "menue"; if (gehWeiter()) return; render(); }
+        if (r.ok) { takePayload(r); S.tab = "menue"; if (gehWeiter()) return; render(); kopPruefen(); }
         else { btn.disabled = false; err.textContent = r.error || "Anmeldung fehlgeschlagen."; code.value = ""; code.focus(); }
       });
     } },
@@ -141,7 +167,8 @@
     var setGate = function () { if (S.gates && S.gates[s.ordner]) { try { localStorage.setItem(gateKeyName(s.ordner), S.gates[s.ordner]); } catch (e) {} } };
     var normal = vor && h("span", { class: "tag lg", role: "link", tabindex: "0", style: "cursor:pointer", text: "normal öffnen",
       onclick: function (e) { e.preventDefault(); e.stopPropagation(); setGate(); location.href = "../" + s.ordner + "/"; } });
-    var tags = h("div", { class: "tags" }, h("span", { class: "tag" + (isTest ? " test" : ""), text: a[0] }), s.eigenerLogin && h("span", { class: "tag lg", text: "eigener Login" }), vor && h("span", { class: "tag", text: "👁 Vorschau" }), normal);
+    var tags = h("div", { class: "tags" }, h("span", { class: "tag" + (isTest ? " test" : ""), text: a[0] }), s.eigenerLogin && h("span", { class: "tag lg", text: "eigener Login" }), vor && h("span", { class: "tag", text: "👁 Vorschau" }), normal,
+      !!(S.sess && S.sess.rolle === "lehrer" && KOP[s.key]) && h("span", { class: "tag" + (S.kop[s.key] === true ? "" : " test"), text: S.kop[s.key] === true ? "🔓 für Schüler freigeschaltet" : (S.kop[s.key] === false ? "🔒 für Schüler gesperrt (unsichtbar)" : "Status wird geprüft …") }));
     var link = h("a", { class: "card glass", href: okFolder(s.ordner) ? "../" + s.ordner + "/" + (vor ? "?vorschau" : "") : "#",
       onclick: setGate },
       h("div", { class: "ico " + (isTest ? "test" : f), text: a[1], "aria-hidden": "true" }),
@@ -173,7 +200,7 @@
     app.className = (S.sess.rolle === "lehrer" && S.tab === "dash") ? "wide" : "";
     var kids = [header()];
     if (S.offline) kids.push(h("div", { class: "banner", text: "Offline – Anzeige vom letzten Mal. Zum Öffnen der Seiten brauchst du Internet." }));
-    if (S.sess.rolle === "lehrer") kids.push(teacherTabs()); else kids.push(groups(S.seiten));
+    if (S.sess.rolle === "lehrer") kids.push(teacherTabs()); else kids.push(groups(S.seiten.filter(kopSichtbar)));
     app.replaceChildren.apply(app, kids);
   }
 
