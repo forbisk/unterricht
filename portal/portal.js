@@ -134,11 +134,16 @@
     app.replaceChildren(form); user.focus();
   }
 
+  var VORSCHAU_ART = { selbstlernen: 1, mission: 1, karten: 1, test: 1 };   // Seiten mit Schüler-Anmeldung/Abgabe: Lehrkraft öffnet sie als Vorschau (?vorschau, nichts wird gespeichert/gesendet)
   function card(s) {
     var f = fachKey(s.fach), isTest = s.art === "test", a = ART[s.art] || ART.material;
-    var tags = h("div", { class: "tags" }, h("span", { class: "tag" + (isTest ? " test" : ""), text: a[0] }), s.eigenerLogin && h("span", { class: "tag lg", text: "eigener Login" }));
-    var link = h("a", { class: "card glass", href: okFolder(s.ordner) ? "../" + s.ordner + "/" : "#" ,
-      onclick: function () { if (S.gates && S.gates[s.ordner]) { try { localStorage.setItem(gateKeyName(s.ordner), S.gates[s.ordner]); } catch (e) {} } } },
+    var vor = !!(S.sess && S.sess.rolle === "lehrer" && VORSCHAU_ART[s.art] && okFolder(s.ordner));
+    var setGate = function () { if (S.gates && S.gates[s.ordner]) { try { localStorage.setItem(gateKeyName(s.ordner), S.gates[s.ordner]); } catch (e) {} } };
+    var normal = vor && h("span", { class: "tag lg", role: "link", tabindex: "0", style: "cursor:pointer", text: "normal öffnen",
+      onclick: function (e) { e.preventDefault(); e.stopPropagation(); setGate(); location.href = "../" + s.ordner + "/"; } });
+    var tags = h("div", { class: "tags" }, h("span", { class: "tag" + (isTest ? " test" : ""), text: a[0] }), s.eigenerLogin && h("span", { class: "tag lg", text: "eigener Login" }), vor && h("span", { class: "tag", text: "👁 Vorschau" }), normal);
+    var link = h("a", { class: "card glass", href: okFolder(s.ordner) ? "../" + s.ordner + "/" + (vor ? "?vorschau" : "") : "#",
+      onclick: setGate },
       h("div", { class: "ico " + (isTest ? "test" : f), text: a[1], "aria-hidden": "true" }),
       h("div", {}, h("div", { class: "t", text: s.titel }), s.untertitel && h("div", { class: "s", text: s.untertitel }), tags),
       h("div", { class: "chev", text: "›", "aria-hidden": "true" }));
