@@ -7,3 +7,4 @@
 #tbG{font:inherit;padding:.3rem .5rem;border:2px solid #94a3b8;border-radius:8px}
 .fr{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;margin:0 .15rem;font-size:.9em}.fr>span:first-child{border-bottom:1px solid currentColor;padding:0 .2rem}
 .fig{margin:.4rem 0;text-align:center}.fig svg{max-width:100%;height:auto}.small{font-size:.85rem;color:#495057}
+.tbok:not(:empty){font-size:.8rem;background:#d3f9d8;color:#1b5e20;border-radius:999px;padding:.05rem .6rem}
