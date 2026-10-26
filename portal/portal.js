@@ -338,7 +338,7 @@
     var tbl = h("table", {}, h("thead", {}, h("tr", {}, head1), h("tr", {}, head2)),
       h("tbody", {}, v.sch.map(function (s) {
         var z = d.zellen[s.id] || {};
-        return h("tr", {}, h("th", { class: "l" }, h("button", { class: "nm", text: s.anzeige, title: "Klasse " + s.klasse + " – Details", onclick: function () { S.dashDetail = s.id; render(); } }), !S.dashKlasse && h("small", { text: " " + s.klasse })),
+        return h("tr", { class: "rw", onclick: function () { S.dashDetail = s.id; render(); } }, h("th", { class: "l" }, h("button", { class: "nm", type: "button", text: s.anzeige, title: "Klasse " + s.klasse + " – Details" }), !S.dashKlasse && h("small", { text: " " + s.klasse })),
           v.th.map(function (t) { var c = z[t.seite + "|" + t.thema]; return h("td", { class: cls(c), text: ctext(c), title: t.label + ": " + cdesc(c) + (c && c.zuletzt ? " · " + fdt(c.zuletzt) : "") }); }),
           h("td", { class: "lt", text: ago(s._last), title: s._last ? fdt(s._last) : "keine Aktivität" }));
       })));
