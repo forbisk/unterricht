@@ -1,0 +1,9 @@
+/* Ergänzungen für die Testberichtigung (zusammen mit slx-selb.css) */
+.task.tb .tbteil{font-size:.8rem;color:#495057;background:#f1f3f5;border-radius:999px;padding:.05rem .6rem}
+.tbf{margin:.4rem 0 .6rem 1.2rem;padding:0}.tbf li{margin:.2rem 0}.tbf .unit{color:#6c757d;font-size:.9rem}
+.tip{background:#fff9db;border-left:5px solid #f08c00;border-radius:6px;padding:.4rem .7rem;margin:.4rem 0}
+.fbox{background:#f8f9fa;border:1px solid #dee2e6;border-radius:8px;padding:.3rem .7rem;margin:.4rem 0}.fbox summary{cursor:pointer;font-weight:600}
+.b-heft{background:#868e96}.b-heft.on{background:#2b8a3e}.btns .b-t{background:#f08c00}.btns .b-t:disabled{background:#ced4da;color:#868e96;cursor:not-allowed}
+#tbG{font:inherit;padding:.3rem .5rem;border:2px solid #94a3b8;border-radius:8px}
+.fr{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;margin:0 .15rem;font-size:.9em}.fr>span:first-child{border-bottom:1px solid currentColor;padding:0 .2rem}
+.fig{margin:.4rem 0;text-align:center}.fig svg{max-width:100%;height:auto}.small{font-size:.85rem;color:#495057}
