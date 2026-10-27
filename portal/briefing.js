@@ -5,7 +5,7 @@
 (function () {
   "use strict";
   var TONES = { high: "high", mid: "mid", low: "low", info: "info", ok: "ok" }, TONE_LABEL = { high: "Wichtig", mid: "Bald", low: "Später", info: "Info", ok: "Erledigt" };
-  var TYP = { daily: ["Tagesbriefing", "🗓️"], weekly: ["Wochenbriefing", "🗂️"] };
+  var TYP = { daily: ["Tagesbriefing", "🗓️"], weekly: ["Wochenbriefing", "🗂️"], afternoon: ["Nachmittagsbriefing", "🌤️"] };
   var LOADING_MS = 25000;
 
   function h(tag, attrs) {
