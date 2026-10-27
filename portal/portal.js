@@ -10,7 +10,7 @@
   var FACH = { mathe: "Mathe", informatik: "Informatik", klasse: "Klasse", privat: "Sonstiges" };
   var ART = { material: ["Material", "📘"], mission: ["Missionen", "🚀"], selbstlernen: ["Selbstlernen", "🧠"], karten: ["Karteikarten", "🗂️"], tool: ["Werkzeug", "🧮"], test: ["Test", "📝"] };
   var app = document.getElementById("app");
-  var S = { kop: {}, sess: null, seiten: [], offline: false, tab: "menue", klasse: "", admin: null, dash: null, dashKlasse: "", dashSeite: "", dashSort: "name", dashDetail: "", dashLoading: false, dashErr: "", dashAt: 0, busy: false };
+  var S = { kop: {}, br: null, brErr: "", brLoading: false, deckId: "", deckCtl: null, sess: null, seiten: [], offline: false, tab: "menue", klasse: "", admin: null, dash: null, dashKlasse: "", dashSeite: "", dashSort: "name", dashDetail: "", dashLoading: false, dashErr: "", dashAt: 0, busy: false };
 
   /* ---------- Hilfen ---------- */
   function h(tag, attrs) {
@@ -104,6 +104,7 @@
     lsSet(LSC, { seiten: S.seiten.map(function (s) { var c = {}; Object.keys(s).forEach(function (k) { if (k !== "gate") c[k] = s[k]; }); return c; }) });
   }
   function dropSession(msg) {
+    deckStop(); S.br = null;
     clearGates(); lsDel(LS); lsDel(LSC); S.sess = null; S.seiten = []; S.admin = null; S.dash = null; S.dashDetail = ""; S.dashKlasse = ""; S.dashSeite = ""; S.tab = "menue"; S.klasse = "";
     renderLogin(msg || "");
   }
@@ -197,6 +198,9 @@
   }
   function render() {
     if (!S.sess) return renderLogin("");
+    var bid = briefingId();
+    if (bid) return S.sess.rolle === "lehrer" ? showBriefing(bid) : briefingDenied();
+    deckStop();
     app.className = (S.sess.rolle === "lehrer" && S.tab === "dash") ? "wide" : "";
     var kids = [header()];
     if (S.offline) kids.push(h("div", { class: "banner", text: "Offline – Anzeige vom letzten Mal. Zum Öffnen der Seiten brauchst du Internet." }));
@@ -204,14 +208,73 @@
     app.replaceChildren.apply(app, kids);
   }
 
+/* ---------- Briefings als Lernfolien (nur Lehrkraft) ----------
+   Liste (Tab "Briefings") und Folien-Ansicht (#/briefing/<id>): Inhalt kommt erst nach dem Lehrer-Login vom Backend (briefing_list / briefing_open),
+   der Renderer (briefing.js/.css) wird erst dann nachgeladen. Das Öffnen der Liste öffnet kein Briefing; erst der Klick auf einen Eintrag (=erster Aufruf,
+   startet die 60 Minuten). Im öffentlichen Code steht kein Briefing-Inhalt. */
+  var BR_RE = /^#\/briefing\/([a-f0-9]{8,40})$/;
+  function briefingId() { var m = BR_RE.exec(location.hash || ""); return m ? m[1] : ""; }
+  function deckStop() { if (S.deckCtl) { try { S.deckCtl.destroy(); } catch (e) {} } S.deckCtl = null; S.deckId = ""; }
+  function loadBriefingLib() {
+    if (window.PortalBriefing) return Promise.resolve();
+    return new Promise(function (ok, no) {
+      var l = document.createElement("link"); l.rel = "stylesheet"; l.href = "briefing.css"; document.head.appendChild(l);
+      var sc = document.createElement("script"); sc.src = "briefing.js"; sc.onload = ok; sc.onerror = no; document.head.appendChild(sc);
+    });
+  }
+  function leaveBriefing() { deckStop(); try { history.pushState(null, "", location.pathname + location.search); } catch (e) { location.hash = ""; } S.tab = "briefings"; loadBriefings(); render(); }
+  function showBriefing(id) {
+    if (S.deckId === id) return;   // schon geöffnet oder wird gerade geladen (z. B. Sitzungs-Auffrischung): nicht neu laden/öffnen
+    deckStop(); S.deckId = id; app.className = "deckmode";
+    app.replaceChildren(h("div", { class: "spin", "aria-label": "Folien werden geladen" }));
+    loadBriefingLib().then(function () {
+      if (S.deckId !== id || !S.sess) return;
+      S.deckCtl = window.PortalBriefing.mount(app, { id: id, token: S.sess.token, api: api, onExit: leaveBriefing, onRelogin: function () { dropSession("Bitte melde dich neu an."); } });
+    }, function () { if (S.deckId === id) { app.replaceChildren(h("div", { class: "glass empty" }, h("p", { class: "muted", text: "Die Folien-Ansicht konnte nicht geladen werden (keine Verbindung?)." }), h("div", { style: "margin-top:12px" }, h("button", { class: "btn small", text: "Zurück", onclick: leaveBriefing })))); } });
+  }
+  function briefingDenied() {
+    deckStop(); app.className = "";
+    app.replaceChildren(h("div", { class: "glass empty", style: "margin-top:20vh" }, h("p", { text: "Kein Zugriff." }), h("div", { style: "margin-top:12px" }, h("button", { class: "btn small", text: "Zum Portal", onclick: function () { try { history.pushState(null, "", location.pathname + location.search); } catch (e) { location.hash = ""; } render(); } }))));
+  }
+  window.addEventListener("hashchange", function () { if (S.sess) render(); });
+  function loadBriefings() {
+    if (!S.sess || S.brLoading) return;
+    S.brLoading = true; S.brErr = ""; if (S.tab === "briefings" && !briefingId()) render();
+    api({ action: "briefing_list", token: S.sess.token }).then(function (r) {
+      S.brLoading = false;
+      if (r.ok) S.br = r; else if (r.relogin) return dropSession("Bitte melde dich neu an."); else S.brErr = r.error === "unbekannte Aktion" ? "Das Backend kennt Briefings noch nicht (neue Code.gs-Version fehlt, siehe DEPLOY-briefing.md)." : (r.error || "Konnte nicht geladen werden.");
+      if (S.tab === "briefings" && !briefingId()) render();
+    });
+  }
+  function brLabel(b) {
+    var m;
+    if (b.typ === "weekly") { m = /^(\d{4})-W(\d{2})$/.exec(b.periodKey); return "Wochenbriefing · KW " + (m ? +m[2] + " / " + m[1] : b.periodKey); }
+    m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(b.periodKey);
+    return "Tagesbriefing · " + (m ? new Date(+m[1], +m[2] - 1, +m[3]).toLocaleDateString("de-DE", { weekday: "short", day: "2-digit", month: "2-digit", year: "numeric" }) : b.periodKey);
+  }
+  function teacherBriefings() {
+    if (!S.br) return h("div", { class: "glass empty" }, h("p", { class: "muted", text: S.brErr || "Lade …" }), S.brErr ? h("div", { style: "margin-top:12px" }, h("button", { class: "btn small", text: "Erneut versuchen", onclick: loadBriefings })) : null);
+    var list = S.br.briefings || [], now = Date.now();
+    return h("div", {},
+      h("p", { class: "note", text: "Briefings als Lernfolien. Die Folien löschen sich 60 Minuten nach dem ersten Öffnen; nie geöffnete verfallen nach 7 (Tag) bzw. 14 (Woche) Tagen. Ein Klick öffnet das Briefing und startet die Uhr." }),
+      h("div", { class: "list" }, list.map(function (b) {
+        var st = b.status === "geoeffnet" ? "geöffnet · noch " + (b.minLeft != null ? b.minLeft : "?") + " Min." : "neu · nicht geöffnet · verfällt " + new Date(b.loeschenAb).toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit" });
+        return h("a", { class: "card glass", href: "#/briefing/" + b.id },
+          h("div", { class: "ico " + (b.typ === "weekly" ? "informatik" : "mathe"), text: b.typ === "weekly" ? "🗂️" : "🗓️", "aria-hidden": "true" }),
+          h("div", {}, h("div", { class: "t", text: brLabel(b) }), h("div", { class: "s", text: st }), h("div", { class: "tags" }, h("span", { class: "tag" + (b.status === "neu" ? " test" : ""), text: b.status === "neu" ? "Neu" : "Offen" }))),
+          h("div", { class: "chev", text: "›", "aria-hidden": "true" }));
+      })), !list.length ? h("div", { class: "glass empty" }, h("p", { class: "muted", text: "Keine aktiven Briefings. Das nächste erscheint mit dem nächsten Tages-/Wochenbriefing." })) : null,
+      h("div", { style: "margin-top:12px" }, h("button", { class: "btn ghost small", text: "↻ Aktualisieren", onclick: loadBriefings })));
+  }
+
   /* ---------- Lehrer ---------- */
   function teacherTabs() {
-    var tabs = [["menue", "Seiten"], ["freigaben", "Freigaben"], ["konten", "Sitzungen"], ["dash", "Dashboard"]];
+    var tabs = [["menue", "Seiten"], ["freigaben", "Freigaben"], ["konten", "Sitzungen"], ["dash", "Dashboard"], ["briefings", "Briefings"]];
     var bar = h("div", { class: "tabs glass", role: "tablist" }, tabs.map(function (t) {
-      return h("button", { role: "tab", "aria-selected": S.tab === t[0] ? "true" : "false", text: t[1], onclick: function () { S.tab = t[0]; if (t[0] === "freigaben" || t[0] === "konten") loadAdmin(); if (t[0] === "dash") loadDash(false); render(); } });
+      return h("button", { role: "tab", "aria-selected": S.tab === t[0] ? "true" : "false", text: t[1], onclick: function () { S.tab = t[0]; if (t[0] === "freigaben" || t[0] === "konten") loadAdmin(); if (t[0] === "dash") loadDash(false); if (t[0] === "briefings") loadBriefings(); render(); } });
     }));
     var body = h("div", {});
-    if (S.tab === "menue") body = teacherMenu(); else if (S.tab === "freigaben") body = teacherFreigaben(); else if (S.tab === "konten") body = teacherKonten(); else body = teacherDash();
+    if (S.tab === "menue") body = teacherMenu(); else if (S.tab === "freigaben") body = teacherFreigaben(); else if (S.tab === "konten") body = teacherKonten(); else if (S.tab === "briefings") body = teacherBriefings(); else body = teacherDash();
     return h("div", {}, bar, body);
   }
   function classChips(cur, onpick, all) {

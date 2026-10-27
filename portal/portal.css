@@ -122,3 +122,4 @@ main.wide{max-width:1180px}
 @media (max-width:420px){h1{font-size:30px}.tiles{grid-template-columns:repeat(2,1fr)}}
 
 .heat tbody th.l{z-index:1;min-width:120px;padding:0 6px}.heat tbody tr.rw{cursor:pointer;-webkit-tap-highlight-color:rgba(0,0,0,.08)}.heat tbody tr.rw:hover th.l{background:var(--glass-b)}.heat button.nm{min-height:36px;touch-action:manipulation}.heat td{cursor:pointer}
+main.deckmode{max-width:none;padding:0}
