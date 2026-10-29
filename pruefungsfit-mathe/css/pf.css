@@ -74,3 +74,5 @@ html{background:var(--bg)}
 :root[data-th=light]{--bg:#fff8f0;--bg2:#e9e4ff;--w:60,40,150;--tx:#1d1a3a;--mut:#4d4a72;--pri:#6d4aff;--acc:#f59e0b;--acct:#a14b00;--ok:#15803d;--bad:#d42a4a;--pk:#e8459f;--fig:#2c2860;--card:#ffffffcc;--cb:#6d4aff2e;color-scheme:light}
 .thb{border:1px solid var(--cb);background:var(--card);color:var(--tx);border-radius:99px;padding:5px 10px;font:600 .85rem Fredoka,sans-serif;cursor:pointer}
 .toast{transition:bottom .3s}
+.trk{margin:4px 0 10px}.trk button{display:flex;flex-direction:column;align-items:center;gap:1px;padding:8px 4px;font-size:.86rem}.trk button small{font:600 .7rem Nunito,sans-serif;opacity:.8}
+.toast{pointer-events:none}
