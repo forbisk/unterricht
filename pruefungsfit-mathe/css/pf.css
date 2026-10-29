@@ -52,3 +52,14 @@ select option{color:#111}select{flex:1;min-width:0;max-width:100%}
 .rings{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:8px 0}.rc{text-decoration:none}
 .stats{display:flex;flex-direction:column;gap:10px;margin:12px 0}.st{padding:14px;border-radius:18px;background:var(--card);border-left:5px solid var(--c)}.st p{font-size:.88rem;color:var(--mut)}
 .card{margin-top:8px;padding:18px;border-radius:22px;background:var(--card);border:1px solid var(--cb)}.mode{margin:12px 0;padding:14px;border-radius:16px;border:2px solid var(--cb)}.mode.on{border-color:var(--acc)}.mode p{margin:6px 0 10px;font-size:.9rem}
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0 4px}.qk{padding:10px 8px;border-radius:16px;background:var(--card);border:1px solid var(--cb);color:var(--tx);text-decoration:none;font-size:.85rem;text-align:center}.qk b{display:block;font-size:.72rem;color:var(--mut)}.qk.hot{border-color:var(--acc);box-shadow:0 0 0 2px #ffd23f33}
+.node.old .dot{border-style:dotted;opacity:.7}.node.try .dot{border-color:var(--bad)}
+.tipp.tw{background:#22d3ee1a;border-color:#22d3ee}.tipp.fo{background:#7c5cff26;border-color:var(--pri)}
+.skz{margin:10px 0;padding:12px 14px;border-radius:14px;background:#ff6ec71a;border-left:4px solid var(--pk)}.skz p{font-size:.92rem;margin:4px 0 8px}.skz.done{opacity:.6}.skz.done button{display:none}
+.tbar{display:flex;justify-content:space-between;align-items:center;margin:4px 0}.tbar #clock{font:700 1.05rem Fredoka;color:var(--acc)}.tbar #clock.late{color:var(--bad)}
+.res{margin:10px 0 10px 20px}.res li{margin:6px 0}.res li.ok{color:var(--ok)}.res li.bad small{color:var(--acc)}.card ul{margin:6px 0 0 18px}
+.btn[disabled]{opacity:.4}
+.quick{grid-template-columns:repeat(2,1fr)}.tipp.tr{background:#22c55e1a;border-color:var(--ok)}.trh summary{cursor:pointer}.trh ol{margin:8px 0 0 20px}.trh{padding:12px 16px}.trl{font-size:.75rem;padding:3px 9px;border-radius:99px;background:#22c55e26;color:var(--tx);text-decoration:none}
+.quick{grid-template-columns:1fr 1fr}.due{display:block;margin:12px 0 0;padding:12px 14px;border-radius:16px;background:linear-gradient(135deg,#ffd23f33,#ff6ec722);border:1px solid var(--acc);color:var(--tx);text-decoration:none;font-size:.92rem}
+.fb.pop{animation:boom .5s}@keyframes boom{0%{transform:scale(.8);opacity:0}60%{transform:scale(1.08)}to{transform:none;opacity:1}}
+details.lp summary{cursor:pointer}.btn.go{margin:16px 0 4px;font-size:1.2rem;box-shadow:0 8px 30px #7c5cff55}.land{font-size:.8rem}.land select{padding:6px 10px}
