@@ -76,3 +76,4 @@ html{background:var(--bg)}
 .toast{transition:bottom .3s}
 .trk{margin:4px 0 10px}.trk button{display:flex;flex-direction:column;align-items:center;gap:1px;padding:8px 4px;font-size:.86rem}.trk button small{font:600 .7rem Nunito,sans-serif;opacity:.8}
 .toast{pointer-events:none}
+.tipp.sk{border-left-color:#22d3ee}.tipp.skf{border-left-color:#22d3ee}.tipp .fig{margin:8px 0 0;background:var(--card);border-radius:12px}
