@@ -123,3 +123,8 @@ main.wide{max-width:1180px}
 
 .heat tbody th.l{z-index:1;min-width:120px;padding:0 6px}.heat tbody tr.rw{cursor:pointer;-webkit-tap-highlight-color:rgba(0,0,0,.08)}.heat tbody tr.rw:hover th.l{background:var(--glass-b)}.heat button.nm{min-height:36px;touch-action:manipulation}.heat td{cursor:pointer}
 main.deckmode{max-width:none;padding:0}
+/* Meldungen */
+.meld .mgrp{margin-top:10px;padding:8px 12px}.meld .mhead{all:unset;cursor:pointer;display:flex;gap:10px;align-items:center;width:100%;flex-wrap:wrap}
+.meld .mcnt{min-width:28px;text-align:center;border-radius:99px;background:#e8590c;color:#fff;font-weight:700;padding:2px 8px}
+.meld .mbadge{margin-left:6px;font-size:.8rem;padding:2px 8px;border-radius:99px;background:#c92a2a;color:#fff}.meld .mbadge.f{background:#868e96}
+.meld .mrow{border-top:1px solid #8884;padding:8px 0}.meld .mcom{margin:4px 0;white-space:pre-wrap}.meld .mbtns{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;align-items:center}
